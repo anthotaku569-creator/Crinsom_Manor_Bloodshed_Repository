@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__input_class_player",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__input_class_player",
+  "parent":{
+    "name":"(System)",
+    "path":"folders/Input/(System).yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

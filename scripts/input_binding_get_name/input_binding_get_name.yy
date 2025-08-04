@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"input_binding_get_name",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_binding_get_name",
+  "parent":{
+    "name":"Bindings",
+    "path":"folders/Input/Bindings.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

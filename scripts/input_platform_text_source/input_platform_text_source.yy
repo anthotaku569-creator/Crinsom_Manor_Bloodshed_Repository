@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"input_platform_text_source",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_platform_text_source",
+  "parent":{
+    "name":"Other",
+    "path":"folders/Input/Other.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

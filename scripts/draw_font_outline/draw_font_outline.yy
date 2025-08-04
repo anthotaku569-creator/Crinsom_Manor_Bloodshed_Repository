@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_font_outline",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_font_outline",
+  "parent":{
+    "name":"Alien_Production",
+    "path":"folders/Scripts/Alien_Production.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

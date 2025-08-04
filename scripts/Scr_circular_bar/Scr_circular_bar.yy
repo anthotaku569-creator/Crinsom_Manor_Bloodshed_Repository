@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Scr_circular_bar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Scr_circular_bar",
+  "parent":{
+    "name":"Gamerev",
+    "path":"folders/Scripts/Gamerev.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

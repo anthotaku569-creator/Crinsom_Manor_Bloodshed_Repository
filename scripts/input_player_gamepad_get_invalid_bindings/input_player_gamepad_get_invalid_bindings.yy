@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"input_player_gamepad_get_invalid_bindings",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"input_player_gamepad_get_invalid_bindings",
+  "parent":{
+    "name":"Players",
+    "path":"folders/Input/Players.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
