@@ -1366,10 +1366,22 @@ function run_function(){
 }
 
 function redeye_activation(){
-	if input_check_pressed(inputs.k_L, wich_player, 3)
+	if (input_check_pressed(inputs.k_L, wich_player, 3)
 		and input_check_pressed(inputs.k_M, wich_player, 3)
-		and input_check_pressed(inputs.k_H, wich_player, 3) {
+		and input_check_pressed(inputs.k_H, wich_player, 3)) or (
+		input_check_released(inputs.k_L, wich_player, 1)
+		and input_check_released(inputs.k_M, wich_player, 1)
+		and input_check_released(inputs.k_H, wich_player, 1)
+		) {
 		if (25 <= match_controller.get_bloodlust(wich_player)){
+			
+			if image_index < 2 and (
+				state = states.l_attack or
+				state = states.m_attack or
+				state = states.h_attack){
+				cancel = true;
+			}
+			
 			match_controller.modify_blodlust(-25, wich_player);
 			image_index = 0;
 			state = states.curse_eye;

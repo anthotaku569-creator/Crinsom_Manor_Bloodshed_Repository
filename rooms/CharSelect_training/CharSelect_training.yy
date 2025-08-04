@@ -8,7 +8,6 @@
   "instanceCreationOrder":[
     {"name":"inst_10887D0D_1","path":"rooms/CharSelect_training/CharSelect_training.yy",},
     {"name":"inst_69D75A23_2","path":"rooms/CharSelect_training/CharSelect_training.yy",},
-    {"name":"inst_26FD1CE7_1","path":"rooms/CharSelect_training/CharSelect_training.yy",},
     {"name":"inst_3FCB2252","path":"rooms/CharSelect_training/CharSelect_training.yy",},
   ],
   "isDnd":false,
@@ -18,7 +17,6 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_cursor","path":"objects/obj_cursor/obj_cursor.yy",},"propertyId":{"name":"wich_player","path":"objects/obj_cursor/obj_cursor.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":296.0,"y":200.0,},
         {"$GMRInstance":"v2","%Name":"inst_69D75A23_2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_69D75A23_2","objectId":{"name":"Obj_Back_Button","path":"objects/Obj_Back_Button/Obj_Back_Button.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":0.0,},
-        {"$GMRInstance":"v2","%Name":"inst_26FD1CE7_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_26FD1CE7_1","objectId":{"name":"obj_select_father","path":"objects/obj_select_father/obj_select_father.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":392.0,"y":296.0,},
         {"$GMRInstance":"v2","%Name":"inst_3FCB2252","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3FCB2252","objectId":{"name":"obj_select_Lucas","path":"objects/obj_select_Lucas/obj_select_Lucas.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":296.0,"y":200.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"THEGRID","assets":[
