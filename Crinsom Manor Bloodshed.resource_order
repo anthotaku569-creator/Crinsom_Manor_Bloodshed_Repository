@@ -223,6 +223,7 @@
     {"name":"Crinsom_color_palette","order":5,"path":"sprites/Crinsom_color_palette/Crinsom_color_palette.yy",},
     {"name":"Crinsom_crouch","order":1,"path":"sprites/Crinsom_crouch/Crinsom_crouch.yy",},
     {"name":"Crinsom_curseeye","order":1,"path":"sprites/Crinsom_curseeye/Crinsom_curseeye.yy",},
+    {"name":"Crinsom_entrance","order":12,"path":"sprites/Crinsom_entrance/Crinsom_entrance.yy",},
     {"name":"Crinsom_f_walk","order":2,"path":"sprites/Crinsom_f_walk/Crinsom_f_walk.yy",},
     {"name":"Crinsom_hard_kdown","order":1,"path":"sprites/Crinsom_hard_kdown/Crinsom_hard_kdown.yy",},
     {"name":"Crinsom_hitstun","order":2,"path":"sprites/Crinsom_hitstun/Crinsom_hitstun.yy",},

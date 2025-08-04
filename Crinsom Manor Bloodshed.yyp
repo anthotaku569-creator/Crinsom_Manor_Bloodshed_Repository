@@ -376,6 +376,7 @@
     {"id":{"name":"Crinsom_crouch","path":"sprites/Crinsom_crouch/Crinsom_crouch.yy",},},
     {"id":{"name":"Crinsom_curseeye_dash","path":"sprites/Crinsom_curseeye_dash/Crinsom_curseeye_dash.yy",},},
     {"id":{"name":"Crinsom_curseeye","path":"sprites/Crinsom_curseeye/Crinsom_curseeye.yy",},},
+    {"id":{"name":"Crinsom_entrance","path":"sprites/Crinsom_entrance/Crinsom_entrance.yy",},},
     {"id":{"name":"Crinsom_f_walk","path":"sprites/Crinsom_f_walk/Crinsom_f_walk.yy",},},
     {"id":{"name":"Crinsom_hard_kdown","path":"sprites/Crinsom_hard_kdown/Crinsom_hard_kdown.yy",},},
     {"id":{"name":"Crinsom_hitstun","path":"sprites/Crinsom_hitstun/Crinsom_hitstun.yy",},},

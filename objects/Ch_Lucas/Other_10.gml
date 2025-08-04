@@ -42,7 +42,7 @@ extras = {
 }
 
 animations = {
-	enter: FatherHat_Super_I,
+	enter: Crinsom_entrance,
 	idle: Crinsom_idle,
 	walk: Crinsom_f_walk,
 	walkback: Crinsom_b_walk,
@@ -78,8 +78,8 @@ animations = {
 		dash: Crinsom_curseeye_dash,
 		redpause: Crinsom_curseeye
 	},
-	entrance : Crinsom_idle,
-	death : Crinsom_light_kdown,
+	entrance : Crinsom_entrance,
+	death : Crinsom_hard_kdown,
 	/*
 	run : Father_walk,
 	d_jmp : Father_walk,
