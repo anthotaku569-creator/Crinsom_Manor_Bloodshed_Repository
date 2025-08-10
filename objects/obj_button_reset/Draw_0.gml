@@ -5,6 +5,10 @@ draw_set_color(c_blue);
 draw_rectangle(x + 32 , y, x + 192, y + 16, true);
 */
 
+if mouse_enter == true {
+	draw_text_ext_transformed(x , y, ">", 2, 160, 1, 1, 0)
+}
+
 draw_set_color(c_black);
 draw_text_ext_transformed(
 x + 32 , y, "Reset all, player " + string(_wich_player), 12, 160, 1, 1, 0)

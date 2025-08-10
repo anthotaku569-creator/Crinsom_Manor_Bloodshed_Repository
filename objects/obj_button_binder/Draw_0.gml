@@ -8,6 +8,10 @@ var _key_binding = string_delete(_verb, string_length(_verb) - 2, 3)
 var _binded = input_binding_get_name(input_binding_get(_verb, INPUT_SOURCE.KEYBOARD_AND_MOUSE, _wich_player));
 
 
+if mouse_enter == true {
+	draw_text_ext_transformed(x , y, ">", 2, 160, 1, 1, 0)
+}
+
 switch(edit_state){
 	case 0:
 		draw_set_alpha(1);

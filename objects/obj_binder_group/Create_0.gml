@@ -27,7 +27,9 @@ if wich_player == 1	{
 	sons[7]._verb = "S1_p1";			sons[7]._wich_player = wich_player;
 	sons[8]._verb = "S2_p1";			sons[8]._wich_player = wich_player;	
 	sons[9]._verb = "S3_p1";			sons[9]._wich_player = wich_player;	
-	sons[10]._verb = "pause_p1";		sons[10]._wich_player = wich_player;	
+	sons[10]._verb = "pause_p1";		sons[10]._wich_player = wich_player;
+	sons[11]._wich_player = wich_player;
+	sons[12].wich_player = wich_player;
 }
 
 else{
@@ -42,4 +44,6 @@ else{
 	sons[8]._verb = "S2_p2";			sons[8]._wich_player = wich_player;	
 	sons[9]._verb = "S3_p2";			sons[9]._wich_player = wich_player;	
 	sons[10]._verb = "pause_p2";		sons[10]._wich_player = wich_player;
+	sons[11]._wich_player = wich_player;
+	sons[12].wich_player = wich_player;
 }
