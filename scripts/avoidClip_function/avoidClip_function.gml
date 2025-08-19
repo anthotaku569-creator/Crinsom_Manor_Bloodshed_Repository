@@ -2,10 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function avoidClip_function(obj){
 	var _pass = false;
-	
+	/*
 	if variable_instance_exists(obj, "pass"){
 		_pass = obj.pass;
-	}
+	}*/
 	
 	dist = 1;
 	while obj.bbox_collision_function(obj.x, obj.y, _pass){

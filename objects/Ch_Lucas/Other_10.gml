@@ -104,7 +104,7 @@ explosion_s1 = {
 	duration : 26,
 	dmg : 50,
 	kdwn: false,
-	hts : 20,
+	hts : 24,
 	bls : 12 ,
 	bloc : blc_types.pry,
 	strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -115,8 +115,8 @@ explosion_s1 = {
 		posy : 0,
 	},
 	kback : {
-		strength : 10, // +1 pnts
-		angle : 90, //counter-clock
+		strength : 18, // +1 pnts
+		angle : 70, //counter-clock
 	},
 	stt_effects : {
 		burn : 5,
@@ -173,7 +173,7 @@ attacks = {
 						posy : -48,
 					},
 					kback : {
-						strength : 6,
+						strength : 8,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -246,7 +246,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 6,
+						strength : 8,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -309,7 +309,7 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: false,
-					hts : 20,
+					hts : 26,
 					bls : 10,
 					bloc : blc_types.mid,
 					reflect : false,
@@ -320,7 +320,7 @@ attacks = {
 						posy : -48,
 					},
 					kback : {
-						strength : 10,
+						strength : 12,
 						angle : 45, //counter-clock
 					},
 					stt_effects : {
@@ -379,8 +379,8 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 0.5,
+					scale_x : 0.5,
+					scale_y : 1,
 					duration : 4,
 					dmg : 20,
 					kdwn: false,
@@ -691,7 +691,7 @@ attacks = {
 						posy : -24,
 					},
 					kback : {
-						strength : 8, // +1 pnts
+						strength : 12, // +1 pnts
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -754,19 +754,19 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 80, // -6 pnts
 					kdwn: true,
-					hts : 34,
+					hts : 42,
 					bls : 12,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +36,
+						posx : +44,
 						posy : 0,
 					},
 					kback : {
-						strength : 10,
-						angle : 15, //counter-clock
+						strength : 8,
+						angle : 20, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -819,12 +819,12 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2,
-					scale_y : 1,
+					scale_x : 1,
+					scale_y : 2,
 					duration : 4,
 					dmg : 120,
 					kdwn: true,
-					hts : 60,
+					hts : 80,
 					bls : 14,
 					bloc : blc_types.mid,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -835,7 +835,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 15, // +1 pnts
+						strength : 20, // +1 pnts
 						angle : 60, //counter-clock
 					},
 					stt_effects : {
@@ -1059,7 +1059,7 @@ attacks = {
 										0, 0,
 										)
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(2)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1205,7 +1205,7 @@ attacks = {
 									_graber.velx = -8 * _graber.image_xscale;
 									_graber.vely = -8;	
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(2)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1468,7 +1468,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 10, // +1 pnts
+						strength : 20, // +1 pnts
 						angle : 60, //counter-clock
 					},
 					stt_effects : {
@@ -1521,7 +1521,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 10, // +1 pnts
+						strength : 20, // +1 pnts
 						angle : 60, //counter-clock
 					},
 					stt_effects : {
@@ -1730,7 +1730,7 @@ attacks = {
 					scale_y : 2,
 					duration : 58, // -2 pnts
 					dmg : 80, // -6 pnts
-					kdwn: true,
+					kdwn: false,
 					hts : 80, // -6 pnts
 					bls : 20,
 					bloc : blc_types.ovh,
@@ -1819,7 +1819,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 10, // +1 pnts
+						strength : 20, // +1 pnts
 						angle : 60, //counter-clock
 					},
 					stt_effects : {
@@ -1872,7 +1872,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 10, // +1 pnts
+						strength : 20, // +1 pnts
 						angle : 60, //counter-clock
 					},
 					stt_effects : {
@@ -1910,7 +1910,7 @@ attacks = {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
 					scale_x : 1,
-					scale_y : 1,
+					scale_y : 2,
 					duration : 4, // -2 pnts
 					dmg : 40, // -6 pnts
 					kdwn: true,
@@ -1922,7 +1922,7 @@ attacks = {
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
 						posx : +40,
-						posy : -64,
+						posy : -16,
 					},
 					kback : {
 						strength : 20, // +1 pnts

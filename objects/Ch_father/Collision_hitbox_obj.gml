@@ -11,7 +11,7 @@ function calc_damage(_dmg){
 	
 	if state != states.grab {
 		if stt_effects.burn > 0 {
-			if stt_effects.burn > 90*60 {
+			/*if stt_effects.burn > 90*60 {
 				actual_dmg = actual_dmg * 1.4;
 			}
 			if stt_effects.burn > 60*60 {
@@ -21,10 +21,11 @@ function calc_damage(_dmg){
 				actual_dmg = actual_dmg * 1.2;
 			} else {
 				actual_dmg = actual_dmg * 1.1;
-			}
+			}*/
+			actual_dmg = actual_dmg * 1.2;
 		}
 		if _hbox.master.stt_effects.berserker > 0 {
-			if _hbox.master.stt_effects.berserker > 60*60 {
+			/*if _hbox.master.stt_effects.berserker > 60*60 {
 				actual_dmg = actual_dmg * 1.4;
 			}
 			if _hbox.master.stt_effects.berserker > 40*60 {
@@ -34,7 +35,8 @@ function calc_damage(_dmg){
 				actual_dmg = actual_dmg * 1.2;
 			} else {
 				actual_dmg = actual_dmg * 1.1;
-			}
+			}*/
+			actual_dmg = actual_dmg * 1.2;
 		}
 	}
 	
@@ -74,15 +76,17 @@ function cleanhit_function(){
 		scaling.cum_dmg = 0;
 	}
 	
+	//hit stop
+	match_controller.hit_pause(_hbox.strg);
+	
 	//Check if peration/stalling/scaling is necesary
 	if scaling.combo > 0{
 		scaling.dmg = scaling.dmg*(0.9 + (0.01*_hbox.strg))
 		scaling.kbck = scaling.kbck*(1.05 + (0.01*_hbox.strg))
+		match_controller.hit_pause(_hbox.strg*2);
 	}
 	scaling.enemy = _hbox.master
 	
-	//hit stop
-	match_controller.hit_pause(calc_damage(_hbox.dmg), _hbox.hts + _hbox.stt_effects.paralysis, _hbox.kback.strength);
 	//hitstun
 	bars.HitstunBar.actual = calc_hitstun(_hbox.hts);
 	
@@ -176,7 +180,7 @@ function cleanhit_function(){
 function blockedhit_function(){
 	
 	//hit stop
-	match_controller.hit_pause(calc_damage(_hbox.dmg), _hbox.hts + _hbox.stt_effects.paralysis, _hbox.kback.strength)
+	match_controller.hit_pause(_hbox.strg)
 	//blocstun
 //	if collision_function(self.x, self.y+1){
 	var _blocstun = calc_hitstun(ceil(_hbox.bls)) + _hbox.stt_effects.paralysis;
@@ -241,7 +245,7 @@ function blockedhit_function(){
 function perfectbloc_function(){
 	//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
 	//hit stop
-	match_controller.hit_pause(calc_damage(_hbox.dmg), _hbox.hts + _hbox.stt_effects.paralysis, _hbox.kback.strength)
+	match_controller.hit_pause(_hbox.strg)
 	//blocstun
 		var _blocstun = calc_hitstun(ceil(_hbox.bls - 2)) + _hbox.stt_effects.paralysis;
 		bars.HitstunBar.actual = _blocstun;
@@ -335,7 +339,7 @@ function did_he_blocked(){
 				case blc_types.low:
 					 if sprite_index == extras.parry.animations.low and image_index <= 8{
 						match_controller.modify_blodlust(25, wich_player);
-						match_controller.hit_pause(200, 60, 60);
+						match_controller.hit_pause(4);
 						//kckback
 						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
 						prot = protections.full
@@ -352,7 +356,7 @@ function did_he_blocked(){
 				case blc_types.ovh:
 					 if sprite_index == extras.parry.animations.high and image_index <= 8{
 						match_controller.modify_blodlust(25, wich_player);
-						match_controller.hit_pause(200, 60, 60);
+						match_controller.hit_pause(4);
 						//kckback
 						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
 						prot = protections.full
@@ -369,7 +373,7 @@ function did_he_blocked(){
 				default:
 					if image_index <= 8{
 						match_controller.modify_blodlust(25, wich_player);
-						match_controller.hit_pause(60, 60, 60);
+						match_controller.hit_pause(4);
 						//kckback
 						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
 						prot = protections.full
@@ -416,7 +420,7 @@ function grab_function(){
 		}
 		_hbox.master.grabing._victim = self.id;
 		grabing._victim = self.id;
-		match_controller.hit_pause(10, 10, 10);
+		match_controller.hit_pause(4);
 		//cancel
 		_hbox.master.cancel = false;
 		//script
@@ -483,7 +487,7 @@ if (_hbox.master.wich_player != wich_player and state != states.grab){
 						//damage
 						bars.HealthBar.actual -= calc_damage(_hbox.dmg*0.8)
 						//hit stop
-						match_controller.hit_pause(calc_damage(_hbox.dmg), _hbox.hts + _hbox.stt_effects.paralysis, _hbox.kback.strength);
+						match_controller.hit_pause(4);
 						with(_hbox){
 							instance_destroy();
 						};

@@ -7,19 +7,19 @@ function StatFunctions(W, G, A, J){
 		weight : {
 			HealthPoint: (W * 30) + 250,//(W * 30) + 150,
 			DI_Tap: 0,
-			DI_hold: ceil(W / 10),
-			hit_red: floor(W / 8)
+			DI_hold: ceil(W / 40),
+			hit_red: floor(W / 16)
 		},
 		ground : {
-			ground_speed: gnd_fric_1 + (G * (2/5)) ,
+			ground_speed: gnd_fric_1 + (G * (3/5)) ,
 		},
 		aerial : {
 			max_air_speed: air_fric_1 + (A * (1/5)) ,
-			air_acc: A / 15 ,
+			air_acc: A / 12 ,
 		},
 		jump : {
-			j_heigh: sqrt(240)*((J + 10)/20),
-			grav: (J + 10)/20,
+			j_heigh: sqrt(48*3*((J + 5)/10)),
+			grav: (J + 5)/20,
 		}
 	};
 	

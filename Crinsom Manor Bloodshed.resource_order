@@ -296,6 +296,7 @@
     {"name":"Sofia_talking","order":4,"path":"sprites/Sofia_talking/Sofia_talking.yy",},
     {"name":"Sofia_whistle","order":3,"path":"sprites/Sofia_whistle/Sofia_whistle.yy",},
     {"name":"Sophie_dialogue","order":1,"path":"sprites/Sophie_dialogue/Sophie_dialogue.yy",},
+    {"name":"Spr_gamepad_buttons","order":1,"path":"sprites/Spr_gamepad_buttons/Spr_gamepad_buttons.yy",},
     {"name":"spr_Str4_palette","order":1,"path":"sprites/spr_Str4_palette/spr_Str4_palette.yy",},
     {"name":"Str4w_a_grab","order":1,"path":"sprites/Str4w_a_grab/Str4w_a_grab.yy",},
     {"name":"Str4w_a_throw","order":7,"path":"sprites/Str4w_a_throw/Str4w_a_throw.yy",},

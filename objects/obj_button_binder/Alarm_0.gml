@@ -1,0 +1,1 @@
+//show_debug_message(input_binding_get(_verb, control_type, _wich_player));

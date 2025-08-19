@@ -703,6 +703,7 @@
     {"id":{"name":"spr_font_2","path":"sprites/spr_font_2/spr_font_2.yy",},},
     {"id":{"name":"spr_font_3","path":"sprites/spr_font_3/spr_font_3.yy",},},
     {"id":{"name":"spr_font_4","path":"sprites/spr_font_4/spr_font_4.yy",},},
+    {"id":{"name":"Spr_gamepad_buttons","path":"sprites/Spr_gamepad_buttons/Spr_gamepad_buttons.yy",},},
     {"id":{"name":"Spr_HealthBar","path":"sprites/Spr_HealthBar/Spr_HealthBar.yy",},},
     {"id":{"name":"Spr_InspBar","path":"sprites/Spr_InspBar/Spr_InspBar.yy",},},
     {"id":{"name":"spr_jeffrey_palette","path":"sprites/spr_jeffrey_palette/spr_jeffrey_palette.yy",},},
