@@ -149,7 +149,10 @@ function cleanhit_function(){
 		alarm[0] = 1;
 	}
 	//damage
-	if state == states.l_attack or state == states.dodge {
+	if state == states.l_attack 
+		or state == states.m_attack 
+		or state == states.h_attack 
+		or state == states.dodge {
 		scaling.dmg = scaling.dmg*1.1
 		//match_controller.sophie_dialoge_action(sophie_states.counter, wich_player);
 	}
@@ -164,6 +167,9 @@ function cleanhit_function(){
 	
 	bars.HealthBar.actual -= calc_damage(_hbox.dmg)
 	scaling.cum_dmg += calc_damage(_hbox.dmg)
+	if match_controller.get_bloodlust(wich_player) > 50{
+		match_controller.modify_blodlust(-2, wich_player);
+	}
 	//status effects
 	stt_effects.poison += _hbox.stt_effects.poison * 60
 	stt_effects.curse += _hbox.stt_effects.curse * 60

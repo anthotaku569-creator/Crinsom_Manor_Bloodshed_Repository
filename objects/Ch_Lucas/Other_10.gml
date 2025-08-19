@@ -173,7 +173,7 @@ attacks = {
 						posy : -48,
 					},
 					kback : {
-						strength : 8,
+						strength : 4,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -246,7 +246,7 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 8,
+						strength : 4,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -304,7 +304,7 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
-					scale_x : 0.5,
+					scale_x : 1,
 					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
@@ -316,7 +316,7 @@ attacks = {
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +36,
+						posx : +48,
 						posy : -48,
 					},
 					kback : {
@@ -675,7 +675,7 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
-					scale_x : 1.5,
+					scale_x : 2,
 					scale_y : 1,
 					duration : 4,
 					dmg : 80,
@@ -687,7 +687,7 @@ attacks = {
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +44,
+						posx : +72,
 						posy : -24,
 					},
 					kback : {
@@ -1437,7 +1437,7 @@ attacks = {
 			if input_check(_self.inputs.k_S2, _self.wich_player)
 				and _self.image_index > 6
 				and _self.image_index < 16 {
-				_self.velx += _self.image_xscale*gnd_fric_1/2;
+				_self.x += _self.image_xscale*gnd_fric_1;
 			}
 		}
 	},
@@ -1720,6 +1720,57 @@ attacks = {
 		animation: Crinsom_s2_2, //18 frames total
 		lnd_strng: 3,
 		hboxs: [
+			//Pushback 1
+			{
+				create : 1,
+				hbox: {
+					hitspark: noone,
+					spr : hitbox_spr,
+					scale_x : 4,
+					scale_y : 1,
+					duration : 6, // -2 pnts
+					dmg : 0, // -6 pnts
+					kdwn: false,
+					hts : 0, // -6 pnts
+					bls : 0,
+					bloc : blc_types.push,
+					strg: 0, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +32,
+						posy : -96,
+					},
+					kback : {
+						strength : 10, // +3 pnts
+						angle : -120, //counter-clock
+					},
+					stt_effects : {
+						burn : 0,
+						paralysis : 0,
+						cold : 0,
+						poison : 0,
+						curse : 0,
+						water : true,
+					},
+					pry_properties : {
+						velx : 0,
+						vely : 0,
+						bmrng : false,
+						activation : {
+							delay: -1,
+							contact: false,
+							summon: noone
+						},
+						physics : {
+							grav : 0,
+							air_frict : 0,
+							bounce : false, collision : false,magnet : false,
+							grnd_frict : 0,
+						},
+					},
+				},
+			},
 			//hit 1
 			{
 				create : 6,

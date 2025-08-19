@@ -2759,7 +2759,7 @@ training_settings()
 #endregion
 
 function InspirationGain(){
-	if abs(velx) > 0{
+	if sign(velx) == sign(match_controller.x - x){
 		match_controller.modify_blodlust(0.1, wich_player);
 	}
 }
