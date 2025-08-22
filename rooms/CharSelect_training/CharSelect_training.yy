@@ -9,6 +9,7 @@
     {"name":"inst_10887D0D_1","path":"rooms/CharSelect_training/CharSelect_training.yy",},
     {"name":"inst_69D75A23_2","path":"rooms/CharSelect_training/CharSelect_training.yy",},
     {"name":"inst_3FCB2252","path":"rooms/CharSelect_training/CharSelect_training.yy",},
+    {"name":"inst_3C4A3B6","path":"rooms/CharSelect_training/CharSelect_training.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -18,6 +19,7 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":296.0,"y":200.0,},
         {"$GMRInstance":"v2","%Name":"inst_69D75A23_2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_69D75A23_2","objectId":{"name":"Obj_Back_Button","path":"objects/Obj_Back_Button/Obj_Back_Button.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":0.0,},
         {"$GMRInstance":"v2","%Name":"inst_3FCB2252","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3FCB2252","objectId":{"name":"obj_select_Lucas","path":"objects/obj_select_Lucas/obj_select_Lucas.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":296.0,"y":200.0,},
+        {"$GMRInstance":"v2","%Name":"inst_3C4A3B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3C4A3B6","objectId":{"name":"obj_select_Ulysses","path":"objects/obj_select_Ulysses/obj_select_Ulysses.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":392.0,"y":104.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"THEGRID","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_4468A97_2","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_4468A97_2","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"CharacterGrid","path":"sprites/CharacterGrid/CharacterGrid.yy",},"x":128.0,"y":64.0,},

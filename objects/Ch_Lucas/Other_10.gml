@@ -36,6 +36,7 @@ extras = {
 		animations : {
 			high : Crinsom_parry_high,
 			low : Crinsom_parry_low,
+			air : Crinsom_parry_air,
 		},
 	},
 	special_defense : true,
@@ -1353,7 +1354,7 @@ attacks = {
 				y_speed: 0,
 			}*/
 		],
-		cost : 0,
+		cost : 10,
 		scrpt : function(_self){}
 		
 	},
@@ -1711,7 +1712,7 @@ attacks = {
 				y_speed: 0,
 			}*/
 		],
-		cost : 0,
+		cost : 10,
 		scrpt : function(_self){}
 		
 	},

@@ -875,6 +875,10 @@ switch(state){
 		#endregion
 	case states.parry:
 		techable = false;
+		if check_collision and sprite_index == extras.parry.animations.air {
+			sprite_index = extras.parry.animations.high;
+		}
+		
 		if image_index <= 8 {
 			cancel = true;
 			redeye_activation();

@@ -75,7 +75,9 @@ function attach_hitbox(){
 			}
 		}
 		//Proyectile magneting
-		magnet_to_enemy();
+		if pry_properties.physics.magnet == true{
+			magnet_to_enemy();
+		}
 		
 		//collision horizontal
 		var vecx=sign(pry_properties.velx)*0.01

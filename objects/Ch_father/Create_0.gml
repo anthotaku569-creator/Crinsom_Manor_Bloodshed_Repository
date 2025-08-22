@@ -106,6 +106,7 @@ extras = {
 		animations : {
 			high : Father_parry_high,
 			low : Father_parry_low,
+			air: Father_parry_high,
 		},
 	},
 	special_defense : true,
@@ -3356,7 +3357,11 @@ function passion_state(){
 function cold_state(){
 	if (stt_effects.cold > 0){
 		stt_effects.cold -= 1;
-		if (state == states.normal_atack or state == states.special_atack or state == states.super_atack){
+		if (state == states.l_attack or
+			state == states.m_attack or
+			state == states.h_attack or
+			state == states.special_atack
+			or state == states.super_atack){
 			if image_index mod 2 != 0{
 				image_speed = 0.5;
 			}
@@ -3576,8 +3581,12 @@ function block_near(){
 					sprite_index = extras.parry.animations.high;
 					image_index = 0;
 				}
-				state = states.parry;
 			}
+			else{
+				sprite_index = extras.parry.animations.air;
+				image_index = 0;
+			}
+			state = states.parry;
 		}
 	}
 

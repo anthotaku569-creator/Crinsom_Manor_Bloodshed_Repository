@@ -149,7 +149,7 @@ function cleanhit_function(){
 		alarm[0] = 1;
 	}
 	//damage
-	if state == states.l_attack 
+	/*if state == states.l_attack 
 		or state == states.m_attack 
 		or state == states.h_attack 
 		or state == states.dodge {
@@ -163,7 +163,7 @@ function cleanhit_function(){
 	if state == states.super_atack{
 		scaling.dmg = scaling.dmg*1.2
 		//match_controller.sophie_dialoge_action(sophie_states.counter, wich_player);
-	}
+	}*/
 	
 	bars.HealthBar.actual -= calc_damage(_hbox.dmg)
 	scaling.cum_dmg += calc_damage(_hbox.dmg)
@@ -343,7 +343,8 @@ function did_he_blocked(){
 	else if state == states.parry{
 		switch(_hbox.bloc){
 				case blc_types.low:
-					 if sprite_index == extras.parry.animations.low and image_index <= 8{
+					 if sprite_index == extras.parry.animations.low
+						and image_index <= 8{
 						match_controller.modify_blodlust(25, wich_player);
 						match_controller.hit_pause(4);
 						//kckback
@@ -360,7 +361,9 @@ function did_he_blocked(){
 					 }
 					 break;
 				case blc_types.ovh:
-					 if sprite_index == extras.parry.animations.high and image_index <= 8{
+					 if (sprite_index == extras.parry.animations.high
+						or sprite_index == extras.parry.animations.air)
+						and image_index <= 8{
 						match_controller.modify_blodlust(25, wich_player);
 						match_controller.hit_pause(4);
 						//kckback
