@@ -3571,9 +3571,10 @@ function block_near(){
 	}
 
 	function parry_function(){
-		if input_check_pressed(inputs.k_M, wich_player, 3) and input_check_pressed(inputs.k_H, wich_player, 3) {
-			if bbox_collision_function(x, y + 1){
-				if input_check(inputs.k_down, wich_player){
+		if input_check_pressed(inputs.k_M, wich_player, 3)
+			and input_check_pressed(inputs.k_H, wich_player, 3) {
+			if bbox_collision_function(self.x, self.y+1, false) {
+				if input_check(inputs.k_down, wich_player, 3) {
 					sprite_index = extras.parry.animations.low;
 					image_index = 0;
 				}

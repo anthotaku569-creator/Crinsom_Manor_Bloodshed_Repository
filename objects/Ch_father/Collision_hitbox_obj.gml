@@ -69,7 +69,7 @@ function calc_hitstun(_hts){
 function cleanhit_function(){
 	if state == states.special_atack or state == states.h_attack or state == states.m_attack or state == states.parry or state == states.dodge{
 		scaling.dmg = scaling.dmg*(1 + (0.1*_hbox.strg))
-		scaling.kbck = scaling.kbck*(0.8 + (0.01*_hbox.strg))
+		//scaling.kbck = scaling.kbck*(0.8 + (0.01*_hbox.strg))
 	}
 	//Restart cummulative damage
 	if state != states.hitstun and state != states.knockdown{
@@ -81,9 +81,9 @@ function cleanhit_function(){
 	
 	//Check if peration/stalling/scaling is necesary
 	if scaling.combo > 0{
-		scaling.dmg = scaling.dmg*(0.9 + (0.01*_hbox.strg))
-		scaling.kbck = scaling.kbck*(1.05 + (0.01*_hbox.strg))
-		match_controller.hit_pause(_hbox.strg*2);
+		scaling.dmg = scaling.dmg*(0.5 + (0.1*_hbox.strg))
+		//scaling.kbck = scaling.kbck*(1.05 + (0.01*_hbox.strg))
+		match_controller.hit_pause(_hbox.strg);
 	}
 	scaling.enemy = _hbox.master
 	
@@ -192,7 +192,7 @@ function blockedhit_function(){
 	var _blocstun = calc_hitstun(ceil(_hbox.bls)) + _hbox.stt_effects.paralysis;
 	
 	if !collision_function(self.x, self.y+1, pass){
-		_blocstun += 4;
+		_blocstun += 10;
 	}
 	
 	bars.HitstunBar.actual = _blocstun;

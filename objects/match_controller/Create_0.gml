@@ -35,7 +35,7 @@ ds_map_add(training_settings, "Delay", 0);
 function create_chars(_selectp1, _selectp2){
 	#region playerone
 		player_one = instance_create_depth(
-			room_width/2 - 240,
+			room_width/2 - 160,
 			room_height - 48, 0,
 			global.player_one_selection.character
 			);
@@ -52,7 +52,7 @@ function create_chars(_selectp1, _selectp2){
 	#endregion
 	#region playertwo
 		player_two = instance_create_depth(
-			room_width/2 + 240,
+			room_width/2 + 160,
 			room_height - 48, 0,
 			global.player_two_selection.character);
 		player_two.wich_player = 2;
@@ -110,7 +110,7 @@ function pause(){
 }
 
 function hit_pause(_pwr){
-	room_speed = 60/(5 + _pwr)
+	room_speed = 60/(10 + (_pwr*2))
 	alarm[0] = 1
 }
 
