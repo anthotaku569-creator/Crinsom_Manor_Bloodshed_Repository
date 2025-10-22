@@ -53,7 +53,7 @@ input_default_gamepad_button(gp_face3,  "H_p1");
 input_default_gamepad_button(gp_face4,  "S1_p1");
 input_default_gamepad_button(gp_shoulderl,  "S2_p1");
 input_default_gamepad_button(gp_shoulderlb,  "S3_p1");
-input_default_gamepad_button(gp_shoulderr,  "pause_p1");
+input_default_gamepad_button(gp_start,  "pause_p1");
 
 //Inputs default player 2
 
@@ -81,7 +81,7 @@ input_default_gamepad_button(gp_face3,  "H_p2");
 input_default_gamepad_button(gp_face4,  "S1_p2");
 input_default_gamepad_button(gp_shoulderl,  "S2_p2");
 input_default_gamepad_button(gp_shoulderlb,  "S3_p2");
-input_default_gamepad_button(gp_shoulderr,  "pause_p2");
+input_default_gamepad_button(gp_start,  "pause_p2");
 
 //input_player_gamepad_set(0, 1);
 //input_player_gamepad_set(0, 2);

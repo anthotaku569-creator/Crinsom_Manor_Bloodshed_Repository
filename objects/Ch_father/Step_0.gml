@@ -129,7 +129,6 @@ switch(state){
 				light_attack();
 				medium_attack();
 				heavy_attack();
-				parry_function();
 				dodge_function();
 				special_attack();
 				grab_attack();
@@ -206,6 +205,7 @@ switch(state){
 		if block_near(){
 			state = states.block
 		}
+		parry_function();
 		redeye_activation();
 		break;
 		#endregion
@@ -214,9 +214,6 @@ switch(state){
 		functionCurrentAttack();
 		InspirationGain();
 		reduceVelocity();
-		if image_index < 2 {
-			parry_function();
-		}
 		if (bbox_collision_function(self.x, self.y+1, pass)) {
 			if  input_check(inputs.k_up, wich_player, 3) and cancel == true{
 				jumpFunction(stats.jump.j_heigh);
@@ -304,6 +301,9 @@ switch(state){
 					sprite_index = animations.air.falling
 				}
 			}
+		}
+		if image_index < 2 {
+			parry_function();
 		}
 		special_attack();
 		redeye_activation();
@@ -879,7 +879,17 @@ switch(state){
 			sprite_index = extras.parry.animations.high;
 		}
 		
+		if image_index == 8 and
+			input_check(inputs.k_M, wich_player) and
+			input_check(inputs.k_H, wich_player) {
+			image_index = 1;
+		}
+		
 		if image_index <= 8 {
+			if !input_check(inputs.k_M, wich_player) or
+				!input_check(inputs.k_H, wich_player){
+				image_index = 9;
+			}
 			cancel = true;
 			redeye_activation();
 		}

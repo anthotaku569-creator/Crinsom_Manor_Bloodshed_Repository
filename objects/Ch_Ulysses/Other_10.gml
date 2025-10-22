@@ -111,7 +111,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 4,
-					dmg : 15,
+					dmg : 10,
 					kdwn: false,
 					hts : 10,
 					bls : 12,
@@ -185,7 +185,7 @@ attacks = {
 					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
+					dmg : 10, // -6 pnts
 					kdwn: false,
 					hts : 12,
 					bls : 8,
@@ -334,7 +334,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 4,
-					dmg : 15,
+					dmg : 10,
 					kdwn: false,
 					hts : 10,
 					bls : 4,
@@ -406,10 +406,10 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_cold,
 					spr : hitbox_spr,
-					scale_x : 2.5,
+					scale_x : 3,
 					scale_y : 1.5,
 					duration : 4,
-					dmg : 30,
+					dmg : 25,
 					kdwn: false,
 					hts : 20,
 					bls : 16,
@@ -418,11 +418,11 @@ attacks = {
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +84,
+						posx : +84+24,
 						posy : -24,
 					},
 					kback : {
-						strength : 10,
+						strength : 16,
 						angle : 180, //counter-clock
 					},
 					stt_effects : {
@@ -482,7 +482,7 @@ attacks = {
 					scale_x : 2.5,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
+					dmg : 25, // -6 pnts
 					kdwn: false,
 					hts : 20,
 					bls : 12,
@@ -557,9 +557,9 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 10, // -6 pnts
+					dmg : 25, // -6 pnts
 					kdwn: false,
-					hts : 12,
+					hts : 24,
 					bls : 10,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -610,7 +610,7 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
 					kdwn: false,
-					hts : 12,
+					hts : 24,
 					bls : 10,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -661,7 +661,7 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
 					kdwn: false,
-					hts : 18,
+					hts : 24,
 					bls : 10,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -808,7 +808,7 @@ attacks = {
 					scale_x : 3,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
+					dmg : 40, // -6 pnts
 					kdwn: true,
 					hts : 35,
 					bls : 18,
@@ -932,7 +932,7 @@ attacks = {
 			{
 				start: 8,
 				x_speed: -9.8,
-				y_speed: 9.8,
+				y_speed: -9.8,
 			}
 		],
 		cost : 0,
@@ -966,7 +966,7 @@ attacks = {
 					},
 					kback : {
 						strength : 24, // +1 pnts
-						angle : 20, //counter-clock
+						angle : 10, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1354,7 +1354,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 320,
-					dmg : 50,
+					dmg : 40,
 					kdwn: true,
 					hts : 60,
 					bls : 10 ,
@@ -1367,8 +1367,8 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 12, // +1 pnts
-						angle : 0, //counter-clock
+						strength : 14, // +1 pnts
+						angle : 30, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1431,7 +1431,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 40,
-					dmg : 30,
+					dmg : 25,
 					kdwn: true,
 					hts : 5,
 					bls : 12 ,
@@ -1449,7 +1449,7 @@ attacks = {
 					},
 					stt_effects : {
 						burn : 0,
-						paralysis : 10,
+						paralysis : 30,
 						cold : 0,
 						poison : 0,
 						curse : 0,
@@ -1534,7 +1534,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 320,
-					dmg : 50,
+					dmg : 40,
 					kdwn: true,
 					hts : 60,
 					bls : 10 ,
@@ -1547,8 +1547,8 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 12, // +1 pnts
-						angle : 0, //counter-clock
+						strength : 14, // +1 pnts
+						angle : 30, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1611,7 +1611,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 40,
-					dmg : 30,
+					dmg : 25,
 					kdwn: true,
 					hts : 5,
 					bls : 12 ,
@@ -1629,7 +1629,7 @@ attacks = {
 					},
 					stt_effects : {
 						burn : 0,
-						paralysis : 10,
+						paralysis : 30,
 						cold : 0,
 						poison : 0,
 						curse : 0,
