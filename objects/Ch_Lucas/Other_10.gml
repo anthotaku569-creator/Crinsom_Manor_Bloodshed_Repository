@@ -147,6 +147,73 @@ explosion_s1 = {
 	},
 };
 
+	
+n_M_charge = {
+	animation: Crinsom_5chargeM,
+	lnd_strng: -1,
+	hboxs: [
+		//hit 1
+		{
+			create : 27,
+			hbox: {
+				hitspark: hitspark_fire,
+				spr : hitbox_spr,
+				scale_x : 1.5,
+				scale_y : 1,
+				duration : 4,
+				dmg : 30+5,
+				kdwn: false,
+				hts : 17+40,
+				bls : 17+10,
+				bloc : blc_types.ovh,
+				strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+				reflect : false,
+				grb_script : function (_graber,_victim){},
+				rel_pos : {
+					posx : +36,
+					posy : -48,
+				},
+				kback : {
+					strength : 12,
+					angle : -60, //counter-clock
+				},
+				stt_effects : {
+					burn : 2,
+					paralysis : 0,
+					cold : 0,
+					poison : 0,
+					curse : 0,
+					water : false,
+				},
+				pry_properties : {
+					velx : 0,
+					vely : 0,
+					bmrng : false,
+					activation : {
+						delay: -1,
+						contact: false,
+						summon: noone
+					},
+					physics : {
+						grav : 0,
+						air_frict : 0,
+						bounce : false, collision : false,magnet : false,
+						grnd_frict : 0,
+					},
+				},
+			},
+		}
+	],
+	prots : [
+	],
+	movements: [
+	],
+	cost : 0,
+	scrpt : function(_self){
+			}
+	
+}
+
 attacks = {
 	n_L:{
 		animation: Crinsom_5L,
@@ -163,8 +230,8 @@ attacks = {
 					duration : 4,
 					dmg : 15,
 					kdwn: false,
-					hts : 12,
-					bls : 12,
+					hts : 9+0,
+					bls : 9+2,
 					bloc : blc_types.mid,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -236,8 +303,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 15, // -6 pnts
 					kdwn: false,
-					hts : 13,
-					bls : 11,
+					hts : 11+0,
+					bls : 11+1,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -310,8 +377,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 25, // -6 pnts
 					kdwn: false,
-					hts : 28,
-					bls : 12,
+					hts : 13+10,
+					bls : 13-7,
 					bloc : blc_types.mid,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -385,8 +452,8 @@ attacks = {
 					duration : 4,
 					dmg : 15,
 					kdwn: false,
-					hts : 14,
-					bls : 6,
+					hts : 9,
+					bls : 9-3,
 					bloc : blc_types.ovh,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -460,8 +527,8 @@ attacks = {
 					duration : 4,
 					dmg : 30,
 					kdwn: false,
-					hts : 18,
-					bls : 18,
+					hts : 13+3,
+					bls : 13+3,
 					bloc : blc_types.mid,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -516,7 +583,12 @@ attacks = {
 			}*/
 		],
 		cost : 0,
-		scrpt : function(_self){}
+		scrpt : function(_self) {
+			if input_check(_self.inputs.k_M, _self.wich_player) and
+			 	_self.image_index == 5 {
+				_self.functionAttackStart(_self.n_M_charge, states.m_attack);
+			}
+		}
 		
 	},
 	
@@ -533,8 +605,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: false,
-					hts : 17,
-					bls : 14,
+					hts : 15+2,
+					bls : 15+3,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -606,8 +678,8 @@ attacks = {
 					duration : 12, // -2 pnts
 					dmg : 35, // -6 pnts
 					kdwn: false,
-					hts : 26,
-					bls : 14,
+					hts : 19+3,
+					bls : 19-3,
 					bloc : blc_types.ovh,
 					reflect : false,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -681,8 +753,8 @@ attacks = {
 					duration : 4,
 					dmg : 45,
 					kdwn: false,
-					hts : 23,
-					bls : 23,
+					hts : 17+4,
+					bls : 17+0,
 					bloc : blc_types.mid,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -755,8 +827,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 45, // -6 pnts
 					kdwn: true,
-					hts : 44,
-					bls : 14,
+					hts : 27+12,
+					bls : 27-8,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -825,8 +897,8 @@ attacks = {
 					duration : 4,
 					dmg : 45,
 					kdwn: true,
-					hts : 82,
-					bls : 16,
+					hts : 27+24,
+					bls : 27-20,
 					bloc : blc_types.mid,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -899,8 +971,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 70, // -6 pnts
 					kdwn: true,
-					hts : 60,
-					bls : 10,
+					hts : 20+22,
+					bls : 20-18,
 					bloc : blc_types.ovh,
 					reflect : false,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -1659,7 +1731,7 @@ attacks = {
 			if _self.image_index > 13
 				and _self.image_index < 16
 				and _self.cancel == true
-				and !_self.bbox_collision_function(_self.x, _self.y +1, false){
+				and !_self.bbox_collision_function(_self.x, _self.y +1, false) {
 					if input_check_pressed(_self.inputs.k_S2, _self.wich_player, 5){
 						_self.velx = 0;
 						_self.vely = 0;

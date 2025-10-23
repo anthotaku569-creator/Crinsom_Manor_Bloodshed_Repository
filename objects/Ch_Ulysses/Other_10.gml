@@ -113,8 +113,8 @@ attacks = {
 					duration : 4,
 					dmg : 10,
 					kdwn: false,
-					hts : 10,
-					bls : 12,
+					hts : 9+0,
+					bls : 9+1,
 					bloc : blc_types.mid,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -187,8 +187,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
 					kdwn: false,
-					hts : 12,
-					bls : 8,
+					hts : 11-1,
+					bls : 11+0,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -261,8 +261,8 @@ attacks = {
 					duration : 8, // -2 pnts
 					dmg : 20, // -6 pnts
 					kdwn: false,
-					hts : 20,
-					bls : 4,
+					hts : 15+11,
+					bls : 15-10,
 					bloc : blc_types.pry,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -336,8 +336,8 @@ attacks = {
 					duration : 4,
 					dmg : 10,
 					kdwn: false,
-					hts : 10,
-					bls : 4,
+					hts : 11+0,
+					bls : 11-6,
 					bloc : blc_types.ovh,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -411,8 +411,8 @@ attacks = {
 					duration : 4,
 					dmg : 25,
 					kdwn: false,
-					hts : 20,
-					bls : 16,
+					hts : 19+1,
+					bls : 19+1,
 					bloc : blc_types.mid,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -484,8 +484,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 25, // -6 pnts
 					kdwn: false,
-					hts : 20,
-					bls : 12,
+					hts : 19+0,
+					bls : 19+1,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -559,7 +559,7 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 25, // -6 pnts
 					kdwn: false,
-					hts : 24,
+					hts : 31,
 					bls : 10,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -610,7 +610,7 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
 					kdwn: false,
-					hts : 24,
+					hts : 31,
 					bls : 10,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -661,8 +661,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
 					kdwn: false,
-					hts : 24,
-					bls : 10,
+					hts : 31,
+					bls : 31-10,
 					bloc : blc_types.ovh,
 					reflect : false,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -736,8 +736,8 @@ attacks = {
 					duration : 4,
 					dmg : 40,
 					kdwn: false,
-					hts : 60,
-					bls : 10,
+					hts : 34+25,
+					bls : 34-24,
 					bloc : blc_types.mid,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -810,8 +810,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 40, // -6 pnts
 					kdwn: true,
-					hts : 35,
-					bls : 18,
+					hts : 26+21,
+					bls : 26-20,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -880,8 +880,8 @@ attacks = {
 					duration : 16,
 					dmg : 30,
 					kdwn: true,
-					hts : 60,
-					bls : 10,
+					hts : 17+28,
+					bls : 17-7,
 					bloc : blc_types.pry,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -954,8 +954,8 @@ attacks = {
 					duration : 4,
 					dmg : 40,
 					kdwn: false,
-					hts : 60,
-					bls : 10,
+					hts : 33+31,
+					bls : 33-30,
 					bloc : blc_types.mid,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,

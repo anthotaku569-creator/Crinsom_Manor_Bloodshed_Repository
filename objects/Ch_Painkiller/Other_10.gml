@@ -149,22 +149,22 @@ explosion_s1 = {
 
 attacks = {
 	n_L:{
-		animation: Crinsom_5L,
+		animation: Painkiller_5L,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 4,
+				create : 5,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4,
-					dmg : 20,
+					dmg : 15,
 					kdwn: false,
-					hts : 11,
-					bls : 11,
+					hts : 11+0,
+					bls : 11+2,
 					bloc : blc_types.mid,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -178,7 +178,7 @@ attacks = {
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
-						burn : 1,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -224,20 +224,21 @@ attacks = {
 	},
 	
 	d_L:{
-		animation: Crinsom_2L,
+		animation: Painkiller_2L,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 5,
-				hbox: { hitspark: hitspark_normal,
+				create : 6,
+				hbox: {
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
-					dmg : 20, // -6 pnts
+					dmg : 15, // -6 pnts
 					kdwn: false,
-					hts : 12,
-					bls : 10,
+					hts : 13+0,
+					bls : 13+1,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -297,35 +298,35 @@ attacks = {
 	},
 	
 	f_L:{
-		animation: Crinsom_6L,
+		animation: Painkiller_6L,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 7,
+				create : 8,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 1,
-					scale_y : 1,
-					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
+					scale_y : 0.5,
+					duration : 4,
+					dmg : 15,
 					kdwn: false,
-					hts : 26,
-					bls : 10,
+					hts : 18+12,
+					bls : 18-10,
 					bloc : blc_types.mid,
-					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +48,
+						posx : +32,
 						posy : -48,
 					},
 					kback : {
-						strength : 12,
-						angle : 45, //counter-clock
+						strength : 14,
+						angle : 30, //counter-clock
 					},
 					stt_effects : {
-						burn : 1,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -371,22 +372,22 @@ attacks = {
 	},
 	
 	j_L:{
-		animation: Crinsom_8L,
+		animation: Painkiller_8L,
 		lnd_strng: 1,
 		hboxs: [
 			//hit 1
 			{
-				create : 4,
+				create : 5,
 				hbox: {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
 					scale_x : 0.5,
 					scale_y : 1,
 					duration : 4,
-					dmg : 20,
+					dmg : 15,
 					kdwn: false,
-					hts : 12,
-					bls : 4,
+					hts : 11,
+					bls : 11-3,
 					bloc : blc_types.ovh,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -400,7 +401,7 @@ attacks = {
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
-						burn : 1,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
