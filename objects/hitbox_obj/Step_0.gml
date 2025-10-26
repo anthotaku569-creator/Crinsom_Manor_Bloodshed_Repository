@@ -75,7 +75,7 @@ function attach_hitbox(){
 			}
 		}
 		//Proyectile magneting
-		if pry_properties.physics.magnet == true{
+		if pry_properties.physics.magnet == true {
 			magnet_to_enemy();
 		}
 		

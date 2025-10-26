@@ -33,12 +33,18 @@ if stt_effects.water{
 	}
 }
 
-if other.reflect == true and bloc== blc_types.pry{
-	if (pry_properties.physics.collision != true){
-		pry_properties.velx = pry_properties.velx * -1
-		pry_properties.vely = pry_properties.vely * -1
+
+if bloc== blc_types.pry{
+	if other.reflect == true{
+		if (pry_properties.physics.collision != true){
+			pry_properties.velx = pry_properties.velx * -1
+			pry_properties.vely = pry_properties.vely * -1
+		}
+		duration += 10
+		master = other.master
+		//match_controller.sophie_dialoge_action(sophie_states.reflect, master.wich_player);
 	}
-	duration += 10
-	master = other.master
-	//match_controller.sophie_dialoge_action(sophie_states.reflect, master.wich_player);
+	else if other.bloc == bloc{
+		instance_destroy();
+	}
 }

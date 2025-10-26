@@ -97,6 +97,106 @@ dodge_properties = {
 
 active_prys = ds_map_create();
 
+spe1_hit2 = {
+				hitspark: hitspark_purplefire,
+				spr : ulysses_s1_pry,
+				scale_x : 1,
+				scale_y : 1,
+				duration : 320,
+				dmg : 20,
+				kdwn: true,
+				hts : 60,
+				bls : 10 ,
+				bloc : blc_types.pry,
+				strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+				reflect : false,
+				grb_script : function (_graber,_victim){},
+				rel_pos : {
+					posx : +0,
+					posy : 0,
+				},
+				kback : {
+					strength : 16, // +1 pnts
+					angle : 60, //counter-clock
+				},
+				stt_effects : {
+					burn : 0,
+					paralysis : 0,
+					cold : 0,
+					poison : 0,
+					curse : 5,
+					water : false,
+				},
+				pry_properties : {
+					velx : 2,
+					vely : 0,
+					bmrng : false,
+					activation : {
+						delay: 2,
+						contact: true,
+						summon: noone
+					},
+					physics : {
+						grav : 0,
+						air_frict : 0,
+						bounce : false,
+						collision : false,
+						magnet : false,
+						grnd_frict : 0,
+					},
+				},
+			};
+
+spe1_hit1 = {
+				hitspark: hitspark_purplefire,
+					spr : ulysses_s1_pry,
+					scale_x : 1,
+					scale_y : 1,
+					duration : 320,
+					dmg : 10,
+					kdwn: false,
+					hts : 60,
+					bls : 10 ,
+					bloc : blc_types.pry,
+					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +0,
+						posy : 0,
+					},
+					kback : {
+						strength : 4, // +1 pnts
+						angle : 90, //counter-clock
+					},
+				stt_effects : {
+					burn : 0,
+					paralysis : 0,
+					cold : 0,
+					poison : 0,
+					curse : 5,
+					water : false,
+				},
+				pry_properties : {
+					velx : 2,
+					vely : 0,
+					bmrng : false,
+					activation : {
+						delay: 2,
+						contact: true,
+						summon: spe1_hit2
+					},
+					physics : {
+						grav : 0,
+						air_frict : 0,
+						bounce : false,
+						collision : false,
+						magnet : false,
+						grnd_frict : 0,
+					},
+				},
+			};
+
 attacks = {
 	n_L:{
 		animation: ulysses_5L,
@@ -406,7 +506,7 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_cold,
 					spr : hitbox_spr,
-					scale_x : 3,
+					scale_x : 4.5,
 					scale_y : 1.5,
 					duration : 4,
 					dmg : 25,
@@ -418,11 +518,11 @@ attacks = {
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +84+24,
+						posx : +132,
 						posy : -24,
 					},
 					kback : {
-						strength : 16,
+						strength : 18,
 						angle : 180, //counter-clock
 					},
 					stt_effects : {
@@ -479,7 +579,7 @@ attacks = {
 				create : 11,
 				hbox: { hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2.5,
+					scale_x : 4.5,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
 					dmg : 25, // -6 pnts
@@ -491,7 +591,7 @@ attacks = {
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +84,
+						posx : +132,
 						posy : 0,
 					},
 					kback : {
@@ -554,10 +654,10 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_slash,
 					spr : hitbox_spr,
-					scale_x : 1,
+					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 25, // -6 pnts
+					dmg : 10, // -6 pnts
 					kdwn: false,
 					hts : 31,
 					bls : 10,
@@ -566,12 +666,12 @@ attacks = {
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
+						posx : +32,
 						posy : -48,
 					},
 					kback : {
 						strength : 8,
-						angle : -10, //counter-clock
+						angle : 10, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -605,7 +705,7 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_slash,
 					spr : hitbox_spr,
-					scale_x : 1,
+					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
@@ -617,12 +717,12 @@ attacks = {
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +72,
+						posx : +72+12,
 						posy : -48,
 					},
 					kback : {
 						strength : 8,
-						angle : -10, //counter-clock
+						angle : 10, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -656,7 +756,7 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_slash,
 					spr : hitbox_spr,
-					scale_x : 1,
+					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 10, // -6 pnts
@@ -668,12 +768,12 @@ attacks = {
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +120,
+						posx : +120+12,
 						posy : -48,
 					},
 					kback : {
 						strength : 8,
-						angle : -10, //counter-clock
+						angle : 170, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -805,7 +905,7 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 3,
+					scale_x : 4.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 40, // -6 pnts
@@ -817,7 +917,7 @@ attacks = {
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +96,
+						posx : +132,
 						posy : 0,
 					},
 					kback : {
@@ -880,7 +980,7 @@ attacks = {
 					duration : 16,
 					dmg : 30,
 					kdwn: true,
-					hts : 17+28,
+					hts : 17+28+8,
 					bls : 17-7,
 					bloc : blc_types.pry,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -932,7 +1032,7 @@ attacks = {
 			{
 				start: 8,
 				x_speed: -9.8,
-				y_speed: -9.8,
+				y_speed: -4.9,
 			}
 		],
 		cost : 0,
@@ -1341,7 +1441,7 @@ attacks = {
 		
 	},
 	
-	n_S_one:{
+	n_S_one: {
 		animation: ulysses_s1,
 		lnd_strng: -1,
 		hboxs: [
@@ -1354,8 +1454,8 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 320,
-					dmg : 40,
-					kdwn: true,
+					dmg : 15,
+					kdwn: false,
 					hts : 60,
 					bls : 10 ,
 					bloc : blc_types.pry,
@@ -1367,8 +1467,8 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 14, // +1 pnts
-						angle : 30, //counter-clock
+						strength : 4, // +1 pnts
+						angle : 90, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1385,14 +1485,14 @@ attacks = {
 						activation : {
 							delay: 2,
 							contact: true,
-							summon: noone
+							summon: spe1_hit1
 						},
 						physics : {
 							grav : 0,
 							air_frict : 0,
 							bounce : false,
 							collision : false,
-							magnet : true,
+							magnet : false,
 							grnd_frict : 0,
 						},
 					},
@@ -1418,7 +1518,7 @@ attacks = {
 		
 	},
 	
-	n_S_two:{
+	n_S_two: {
 		animation: ulysses_s2,
 		lnd_strng: -1,
 		hboxs: [
@@ -1434,7 +1534,7 @@ attacks = {
 					dmg : 25,
 					kdwn: true,
 					hts : 5,
-					bls : 12 ,
+					bls : 0 ,
 					bloc : blc_types.pry,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -1449,7 +1549,7 @@ attacks = {
 					},
 					stt_effects : {
 						burn : 0,
-						paralysis : 30,
+						paralysis : 15,
 						cold : 0,
 						poison : 0,
 						curse : 0,
@@ -1521,7 +1621,7 @@ attacks = {
 		}
 	},
 	
-	a_S_one:{
+	a_S_one: {
 		animation: ulysses_s1,
 		lnd_strng: -1,
 		hboxs: [
@@ -1534,8 +1634,8 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1,
 					duration : 320,
-					dmg : 40,
-					kdwn: true,
+					dmg : 15,
+					kdwn: false,
 					hts : 60,
 					bls : 10 ,
 					bloc : blc_types.pry,
@@ -1547,8 +1647,8 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 14, // +1 pnts
-						angle : 30, //counter-clock
+						strength : 4, // +1 pnts
+						angle : 90, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1565,14 +1665,14 @@ attacks = {
 						activation : {
 							delay: 2,
 							contact: true,
-							summon: noone
+							summon: spe1_hit1
 						},
 						physics : {
 							grav : 0,
 							air_frict : 0,
 							bounce : false,
 							collision : false,
-							magnet : true,
+							magnet : false,
 							grnd_frict : 0,
 						},
 					},
@@ -1598,7 +1698,7 @@ attacks = {
 		
 	},
 	
-	a_S_two:{
+	a_S_two: {
 		animation: ulysses_s2,
 		lnd_strng: -1,
 		hboxs: [
@@ -1614,7 +1714,7 @@ attacks = {
 					dmg : 25,
 					kdwn: true,
 					hts : 5,
-					bls : 12 ,
+					bls : 0 ,
 					bloc : blc_types.pry,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -1629,7 +1729,7 @@ attacks = {
 					},
 					stt_effects : {
 						burn : 0,
-						paralysis : 30,
+						paralysis : 15,
 						cold : 0,
 						poison : 0,
 						curse : 0,
@@ -1640,7 +1740,7 @@ attacks = {
 						vely : 0,
 						bmrng : false,
 						activation : {
-							delay: 2,
+							delay: -1,
 							contact: true,
 							summon: noone
 						},
@@ -1674,7 +1774,7 @@ attacks = {
 		scrpt : function(_self){}
 		
 	},
-		
+	
 	a_S_three:{
 		animation: ulysses_s3, //18 frames total
 		lnd_strng: -1,

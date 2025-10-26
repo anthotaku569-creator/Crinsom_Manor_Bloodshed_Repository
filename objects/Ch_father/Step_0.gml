@@ -5,11 +5,11 @@ event_user(1);
 
 //gravity
 
-var check_floor = bbox_place_meeting(self.x,self.y,Collision_normal);
-var check_collision = bbox_collision_function(self.x, self.y+1, false);
+check_floor = bbox_place_meeting(self.x,self.y,Collision_normal);
+check_collision = bbox_collision_function(self.x, self.y+1, false);
 
-var press_hold_right = input_check(inputs.k_right, wich_player);
-var press_hold_left = input_check(inputs.k_left, wich_player);
+press_hold_right = input_check(inputs.k_right, wich_player);
+press_hold_left = input_check(inputs.k_left, wich_player);
 
 if !check_floor{
 	if state == states.hitstun or state == states.knockdown or state == states.kdown_recovery{
@@ -602,7 +602,7 @@ switch(state){
 			}
 			if (sprite_index == animations.hitstun) {
 				image_index = bars.HitstunBar.actual;
-				if (!check_collision){
+				if (!check_collision) {
 					sprite_index = animations.thumble;
 					scaling.kbck = scaling.kbck*1.2
 					bars.HitstunBar.kdwn = 1;
@@ -715,7 +715,13 @@ switch(state){
 		redeye_activation();
 		run_framedata = 0;
 		//blocking
-		if (bars.HitstunBar.actual<=0) {
+		if (bars.HitstunBar.actual<=0){
+			light_attack();
+			medium_attack();
+			heavy_attack();
+			dodge_function();
+			special_attack();
+			grab_attack();
 			bars.HitstunBar.actual = 0;
 			if bbox_collision_function(self.x, self.y+1, pass){
 				if input_check(inputs.k_down, wich_player){
@@ -735,7 +741,7 @@ switch(state){
 				state = states.idle
 			}
 		}
-		else{
+		else {
 			reduceVelocity()
 			bars.HitstunBar.actual--;
 			if check_collision{
@@ -886,12 +892,18 @@ switch(state){
 		}
 		
 		if image_index <= 8 {
+			if (bars.HitstunBar.actual <= 0) {
 			if !input_check(inputs.k_M, wich_player) or
-				!input_check(inputs.k_H, wich_player){
+				!input_check(inputs.k_H, wich_player) {
 				image_index = 9;
 			}
 			cancel = true;
 			redeye_activation();
+			}
+			else{
+				image_index = 1
+				bars.HitstunBar.actual--;
+			}
 		}
 		break;
 	case states.air_dash:

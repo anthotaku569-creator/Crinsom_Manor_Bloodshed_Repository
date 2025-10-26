@@ -282,7 +282,7 @@ function did_he_blocked(){
 	frame_data = 0;
 	// Finally, analyze blocking
 	
-	if blocking_function() == true {
+	if blocking_function() == true or state == states.block {
 		state = states.block;
 		if collision_function(self.x, self.y+1, pass){
 			switch(_hbox.bloc){
@@ -349,8 +349,8 @@ function did_he_blocked(){
 						match_controller.hit_pause(4);
 						//kckback
 						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
-						prot = protections.full
-						image_index = 9;
+						image_index = 1;
+						bars.HitstunBar.actual = calc_hitstun(ceil(_hbox.bls)/2) + (_hbox.stt_effects.paralysis/2);
 						//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
 					 }
 					 else{
@@ -368,9 +368,9 @@ function did_he_blocked(){
 						match_controller.hit_pause(4);
 						//kckback
 						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
-						prot = protections.full
-						image_index = 9;
+						image_index = 1;
 						//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
+						bars.HitstunBar.actual = calc_hitstun(ceil(_hbox.bls)/2) + (_hbox.stt_effects.paralysis/2);
 					 }
 					 else{
 						match_controller.modify_blodlust(-10, wich_player);
@@ -385,9 +385,9 @@ function did_he_blocked(){
 						match_controller.hit_pause(4);
 						//kckback
 						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
-						prot = protections.full
-						image_index = 9;
+						image_index = 1;
 						//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
+						bars.HitstunBar.actual = calc_hitstun(ceil(_hbox.bls)/2) + (_hbox.stt_effects.paralysis/2);
 					 }
 					 else{
 						match_controller.modify_blodlust(-10, wich_player);
@@ -417,6 +417,11 @@ function grab_function(){
 			state = states.kdown_recovery;
 			return;
 		}
+		//Restart cummulative damage
+		if state != states.hitstun and state != states.knockdown{
+			scaling.cum_dmg = 0;
+		}
+		
 		_hbox.master.velx = 0
 		_hbox.master.vely = 0
 		//grabing.
@@ -446,7 +451,7 @@ function grab_function(){
 	}
 }
 
-function hasStats(){
+function hasStats() {
 	if _hbox.dmg > 0 or _hbox.hts > 0 or
 	_hbox.kback.strength > 0 or _hbox.stt_effects.paralysis > 0 
 	or _hbox.stt_effects.burn > 0 or _hbox.stt_effects.cold > 0

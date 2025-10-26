@@ -160,6 +160,13 @@ p_bloc = {
 	cooldown: 0,
 }
 
+
+check_floor = bbox_place_meeting(self.x,self.y,Collision_normal);
+check_collision = bbox_collision_function(self.x, self.y+1, false);
+
+press_hold_right = input_check(inputs.k_right, wich_player);
+press_hold_left = input_check(inputs.k_left, wich_player);
+
 animations = {
 	enter: FatherHat_Super_I,
 	idle: Father_idle,
@@ -2738,7 +2745,7 @@ training_settings()
 					or state == states.super_atack or state == states.landing {
 				if _enemy.bars.HitstunBar.actual > 0 or _enemy.stt_effects.paralysis > 0
 					or _enemy.state == states.knockdown
-					or _enemy.state == states.kdown_recovery{
+					or _enemy.state == states.kdown_recovery {
 					frame_data = 0;
 				}
 				else {
@@ -3435,7 +3442,7 @@ function blocking_function() {
 function block_near(){
 	var _enemy_hit = instance_place(x + 24*image_xscale, y, hitbox_obj )
 	if !(input_check(inputs.k_right, wich_player) and input_check(inputs.k_left, wich_player)){
-		if blocking_function() and _enemy_hit!= noone and _enemy_hit.master != self{
+		if blocking_function() and _enemy_hit!= noone and _enemy_hit.master != self {
 			return true;
 		}
 	}

@@ -174,8 +174,8 @@ n_M_charge = {
 					posy : -48,
 				},
 				kback : {
-					strength : 12,
-					angle : -60, //counter-clock
+					strength : 20,
+					angle : -80, //counter-clock
 				},
 				stt_effects : {
 					burn : 2,
@@ -1885,7 +1885,7 @@ attacks = {
 					dmg : 45, // -6 pnts
 					kdwn: false,
 					hts : 80, // -6 pnts
-					bls : 30,
+					bls : 10,
 					bloc : blc_types.ovh,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -1895,8 +1895,8 @@ attacks = {
 						posy : +24,
 					},
 					kback : {
-						strength : 25, // +3 pnts
-						angle : -90, //counter-clock
+						strength : 12,//5, // +3 pnts
+						angle : 40, //counter-clock
 					},
 					stt_effects : {
 						burn : 5,
