@@ -1,5 +1,28 @@
 
 stats  = StatFunctions(6, 12, 8, 14);
+
+bars = {
+	HealthBar : {
+		actual : stats.weight.HealthPoint,
+		show : stats.weight.HealthPoint,
+		maximum :  stats.weight.HealthPoint,
+	},
+	HitstunBar: {
+		actual : 0,
+		maximum : 120,
+		kdwn: 0, // 0 => no hitstun; 1 => light kdwn; 2 => heavy kdwn
+	},
+	InspirationBar: {
+		actual : 25,
+		maximum : 100,
+	},
+	Charge : {
+		actual : 60,
+		maximum: 80,
+	}
+}
+
+
 pallete = {
 	sprite: Painkiller_color_palette,
 	i : 0,
@@ -43,7 +66,7 @@ extras = {
 }
 
 animations = {
-	enter: Crinsom_entrance,
+	enter: Painkiller_entrance,
 	idle: Painkiller_idle,
 	walk: Painkiller_f_walk,
 	walkback: Painkiller_b_walk,
@@ -80,7 +103,7 @@ animations = {
 		redpause: Painkiller_curse_eye
 	},
 	entrance : Crinsom_entrance,
-	death : Crinsom_hard_kdown,
+	death : Painkiller_hard_kdown,
 	/*
 	run : Father_walk,
 	d_jmp : Father_walk,
@@ -255,7 +278,7 @@ explosion_s1 = {
 	duration : 15,
 	dmg : 30,
 	kdwn: false,
-	hts : 12,
+	hts : 30,
 	bls : 24 ,
 	bloc : blc_types.pry,
 	strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special

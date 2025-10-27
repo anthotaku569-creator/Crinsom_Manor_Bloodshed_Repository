@@ -1,5 +1,27 @@
 
 stats  = StatFunctions(8, 8, 12, 6);
+
+bars = {
+	HealthBar : {
+		actual : stats.weight.HealthPoint,
+		show : stats.weight.HealthPoint,
+		maximum :  stats.weight.HealthPoint,
+	},
+	HitstunBar: {
+		actual : 0,
+		maximum : 120,
+		kdwn: 0, // 0 => no hitstun; 1 => light kdwn; 2 => heavy kdwn
+	},
+	InspirationBar: {
+		actual : 25,
+		maximum : 100,
+	},
+	Charge : {
+		actual : 60,
+		maximum: 80,
+	}
+}
+
 pallete = {
 	sprite: ulysses_color_palette,
 	i : 0,

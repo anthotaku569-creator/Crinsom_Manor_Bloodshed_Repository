@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"ulysses_portrait_small",
-    "path":"sprites/ulysses_portrait_small/ulysses_portrait_small.yy",
+    "name":"Painkiller_Portrait_small",
+    "path":"sprites/Painkiller_Portrait_small/Painkiller_Portrait_small.yy",
   },
   "spriteMaskId":null,
   "visible":true,

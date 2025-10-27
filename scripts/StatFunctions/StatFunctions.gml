@@ -5,9 +5,9 @@ function StatFunctions(W, G, A, J){
 	var result =
 	{
 		weight : {
-			HealthPoint: (W * 20) + 150,//(W * 30) + 150,
+			HealthPoint: (W * 50) + 100,//(W * 30) + 150,
 			DI_Tap: 0,
-			DI_hold: ceil(W / 40),
+			DI_hold: 0,
 			hit_red: floor(W / 15)
 		},
 		ground : {

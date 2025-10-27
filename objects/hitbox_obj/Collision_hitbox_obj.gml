@@ -44,7 +44,7 @@ if bloc== blc_types.pry{
 		master = other.master
 		//match_controller.sophie_dialoge_action(sophie_states.reflect, master.wich_player);
 	}
-	else if other.bloc == bloc{
+	else if other.bloc == bloc and other.master != master{
 		instance_destroy();
 	}
 }

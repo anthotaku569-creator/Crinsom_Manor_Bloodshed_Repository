@@ -3,9 +3,9 @@
 
 //characters
 char = Ch_Painkiller;
-banner = ulysses_Banner;
+banner = Painkiller_Banner;
 idle = Painkiller_idle;
-smol = ulysses_portrait_small;
+smol = Painkiller_Portrait_small;
 name = "Painkiller"
 //supers
 

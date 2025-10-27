@@ -71,6 +71,13 @@ draw_sprite_part_ext(
 	-1, 1,
 	c_white, 1
 );
+
+if global.training_mode == true{
+	draw_set_font(global.bitmap_font2);
+	draw_set_halign(fa_right);
+	draw_text(84+204, 4, string(player_one.bars.HealthBar.actual));
+}
+
 #endregion
 
 #region Inspiration Player 1
@@ -205,6 +212,12 @@ draw_sprite_part_ext(
 	1, 1,
 	c_white, 1
 );
+
+if global.training_mode == true{
+	draw_set_font(global.bitmap_font2);
+	draw_set_halign(fa_left);
+	draw_text(560-204, 4, string(player_two.bars.HealthBar.actual));
+}
 #endregion
 
 #region Inspiration Player 2

@@ -87,8 +87,12 @@ function cleanhit_function(){
 	}
 	scaling.enemy = _hbox.master
 	
+	var _hitstun = calc_hitstun(_hbox.hts);
+	if !collision_function(self.x, self.y+1, pass){
+		_hitstun += 32 - (_hbox.strg*8);
+	}
 	//hitstun
-	bars.HitstunBar.actual = calc_hitstun(_hbox.hts);
+	bars.HitstunBar.actual = _hitstun;
 	
 	//FRAME DATA
 	if _hbox.bloc ==  blc_types.pry and _hbox.master.state = states.idle{
