@@ -81,7 +81,8 @@ function cleanhit_function(){
 	
 	//Check if peration/stalling/scaling is necesary
 	if scaling.combo > 0{
-		scaling.dmg = scaling.dmg*(0.5 + (0.1*_hbox.strg))
+		scaling.dmg = scaling.dmg*(0.6 + (0.1*_hbox.strg))
+		// 0.7  0.8  0.9
 		//scaling.kbck = scaling.kbck*(1.05 + (0.01*_hbox.strg))
 		match_controller.hit_pause(_hbox.strg);
 	}

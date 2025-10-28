@@ -170,7 +170,6 @@ explosion_s1 = {
 	},
 };
 
-	
 n_M_charge = {
 	animation: Crinsom_5chargeM,
 	lnd_strng: -1,
@@ -236,6 +235,135 @@ n_M_charge = {
 			}
 	
 }
+
+S_three_followup = {
+		animation: Crinsom_s2_2, //18 frames total
+		lnd_strng: 3,
+		hboxs: [
+			//Pushback 1
+			{
+				create : 1,
+				hbox: {
+					hitspark: noone,
+					spr : hitbox_spr,
+					scale_x : 4,
+					scale_y : 1,
+					duration : 6, // -2 pnts
+					dmg : 0, // -6 pnts
+					kdwn: false,
+					hts : 0, // -6 pnts
+					bls : 0,
+					bloc : blc_types.push,
+					strg: 0, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +32,
+						posy : -96,
+					},
+					kback : {
+						strength : 10, // +3 pnts
+						angle : -90, //counter-clock
+					},
+					stt_effects : {
+						burn : 0,
+						paralysis : 0,
+						cold : 0,
+						poison : 0,
+						curse : 0,
+						water : true,
+					},
+					pry_properties : {
+						velx : 0,
+						vely : 0,
+						bmrng : false,
+						activation : {
+							delay: -1,
+							contact: false,
+							summon: noone
+						},
+						physics : {
+							grav : 0,
+							air_frict : 0,
+							bounce : false, collision : false,magnet : false,
+							grnd_frict : 0,
+						},
+					},
+				},
+			},
+			//hit 1
+			{
+				create : 6,
+				hbox: {
+					hitspark: hitspark_fire,
+					spr : hitbox_spr,
+					scale_x : 1,
+					scale_y : 2,
+					duration : 58, // -2 pnts
+					dmg : 45, // -6 pnts
+					kdwn: false,
+					hts : 80, // -6 pnts
+					bls : 2,
+					bloc : blc_types.mid,
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +32,
+						posy : +24,
+					},
+					kback : {
+						strength : 12,//5, // +3 pnts
+						angle : -90, //counter-clock
+					},
+					stt_effects : {
+						burn : 5,
+						paralysis : 0,
+						cold : 0,
+						poison : 0,
+						curse : 0,
+						water : true,
+					},
+					pry_properties : {
+						velx : 0,
+						vely : 0,
+						bmrng : false,
+						activation : {
+							delay: -1,
+							contact: false,
+							summon: noone
+						},
+						physics : {
+							grav : 0,
+							air_frict : 0,
+							bounce : false, collision : false,magnet : false,
+							grnd_frict : 0,
+						},
+					},
+				},
+			},
+		],
+		helper: {
+			frame: -1,
+			object: noone
+		},
+		prots : [],
+		movements: [
+			{
+				start: 7,
+				x_speed: 8,
+				y_speed: 12,
+			},
+		],
+		cost : 10,
+		scrpt : function(_self){
+			if _self.image_index < 7 {
+				_self.velx = 0;
+				_self.vely = 0;
+			}
+		}
+}
+	
 
 attacks = {
 	n_L:{
@@ -1758,7 +1886,7 @@ attacks = {
 					if input_check_pressed(_self.inputs.k_S2, _self.wich_player, 5){
 						_self.velx = 0;
 						_self.vely = 0;
-						_self.functionAttackStart(_self.attacks.a_S_two, states.special_atack);
+						_self.functionAttackStart(_self.S_three_followup, states.special_atack);
 					}
 			}
 		}
@@ -1845,57 +1973,6 @@ attacks = {
 		animation: Crinsom_s2_2, //18 frames total
 		lnd_strng: 3,
 		hboxs: [
-			//Pushback 1
-			{
-				create : 1,
-				hbox: {
-					hitspark: noone,
-					spr : hitbox_spr,
-					scale_x : 4,
-					scale_y : 1,
-					duration : 6, // -2 pnts
-					dmg : 0, // -6 pnts
-					kdwn: false,
-					hts : 0, // -6 pnts
-					bls : 0,
-					bloc : blc_types.push,
-					strg: 0, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +32,
-						posy : -96,
-					},
-					kback : {
-						strength : 10, // +3 pnts
-						angle : -120, //counter-clock
-					},
-					stt_effects : {
-						burn : 0,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : true,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: noone
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false, collision : false,magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
 			//hit 1
 			{
 				create : 6,
@@ -1908,7 +1985,7 @@ attacks = {
 					dmg : 45, // -6 pnts
 					kdwn: false,
 					hts : 80, // -6 pnts
-					bls : 10,
+					bls : 14,
 					bloc : blc_types.ovh,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -1918,8 +1995,8 @@ attacks = {
 						posy : +24,
 					},
 					kback : {
-						strength : 12,//5, // +3 pnts
-						angle : 40, //counter-clock
+						strength : 20,//5, // +3 pnts
+						angle : 20, //counter-clock
 					},
 					stt_effects : {
 						burn : 5,
@@ -2160,7 +2237,7 @@ attacks = {
 					if input_check_pressed(_self.inputs.k_S2, _self.wich_player, 5){
 						_self.velx = 0;
 						_self.vely = 0;
-						_self.functionAttackStart(_self.attacks.a_S_two, states.special_atack);
+						_self.functionAttackStart(_self.S_three_followup, states.special_atack);
 					}
 			}
 		}
