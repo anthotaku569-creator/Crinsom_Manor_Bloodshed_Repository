@@ -1076,9 +1076,9 @@ attacks = {
 		],
 		prots : [
 			{
-				start: 5,
+				start: 3,
 				type: protections.mid_invul,
-				finish: 13,
+				finish: 16,
 			}
 		],
 		movements: [
@@ -1878,7 +1878,7 @@ attacks = {
 		],
 		movements: [
 		],
-		cost : 0,
+		cost : 15,
 		scrpt : function(_self){
 			if _self.image_index < 11 {
 				_self.vely = 0;
@@ -2199,7 +2199,7 @@ attacks = {
 		],
 		movements: [
 		],
-		cost : 0,
+		cost : 15,
 		scrpt : function(_self){
 			if _self.image_index < 11 {
 				_self.vely = 0;

@@ -1706,7 +1706,7 @@ attacks = {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
 					scale_x : 1,
-					scale_y : 2,
+					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: true,
@@ -1718,7 +1718,7 @@ attacks = {
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
 						posx : +40,
-						posy : 0,
+						posy : -32,
 					},
 					kback : {
 						strength : 20, // +1 pnts
@@ -2057,7 +2057,7 @@ attacks = {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
 					scale_x : 1,
-					scale_y : 2,
+					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: true,
@@ -2069,7 +2069,7 @@ attacks = {
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
 						posx : +40,
-						posy : 0,
+						posy : -32,
 					},
 					kback : {
 						strength : 20, // +1 pnts
