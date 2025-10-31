@@ -28,8 +28,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"_verb","filters":[],"listItems":[],"multiselect":false,"name":"_verb","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"right_p1","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"_wich_player","filters":[],"listItems":[],"multiselect":false,"name":"_wich_player","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"_verb","filters":[],"listItems":[],"multiselect":false,"name":"_verb","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"right_p1","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"_wich_player","filters":[],"listItems":[],"multiselect":false,"name":"_wich_player","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

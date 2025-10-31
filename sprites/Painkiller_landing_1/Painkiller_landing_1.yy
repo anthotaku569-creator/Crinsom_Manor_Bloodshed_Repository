@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"Painkiller_landing_1",
   "bboxMode":2,
   "bbox_bottom":319,
@@ -12,12 +12,12 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f49256b5-d701-4a4c-a9a8-ca7ee533e73c","name":"f49256b5-d701-4a4c-a9a8-ca7ee533e73c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"888b28fe-ecee-4705-9add-27979ef7ad66","name":"888b28fe-ecee-4705-9add-27979ef7ad66","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"2cdd9020-6211-4fd0-b3cb-72dc5924505c","name":"2cdd9020-6211-4fd0-b3cb-72dc5924505c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"3fffd344-19ff-4928-8ab4-ad45b6d264ff","name":"3fffd344-19ff-4928-8ab4-ad45b6d264ff","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"394e6a0b-863b-4e48-ad92-2704aff4f925","name":"394e6a0b-863b-4e48-ad92-2704aff4f925","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b6f1fab1-c305-4851-af12-5903e56c23a0","name":"b6f1fab1-c305-4851-af12-5903e56c23a0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f49256b5-d701-4a4c-a9a8-ca7ee533e73c","name":"f49256b5-d701-4a4c-a9a8-ca7ee533e73c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"888b28fe-ecee-4705-9add-27979ef7ad66","name":"888b28fe-ecee-4705-9add-27979ef7ad66","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2cdd9020-6211-4fd0-b3cb-72dc5924505c","name":"2cdd9020-6211-4fd0-b3cb-72dc5924505c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3fffd344-19ff-4928-8ab4-ad45b6d264ff","name":"3fffd344-19ff-4928-8ab4-ad45b6d264ff","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"394e6a0b-863b-4e48-ad92-2704aff4f925","name":"394e6a0b-863b-4e48-ad92-2704aff4f925","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b6f1fab1-c305-4851-af12-5903e56c23a0","name":"b6f1fab1-c305-4851-af12-5903e56c23a0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -75,24 +75,12 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f49256b5-d701-4a4c-a9a8-ca7ee533e73c","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a283f007-0347-42c4-9964-a4e5346afa66","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"888b28fe-ecee-4705-9add-27979ef7ad66","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"29245a3f-c0e3-4ffb-b091-7025796280b5","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2cdd9020-6211-4fd0-b3cb-72dc5924505c","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"80136bda-ee45-4b85-ba77-23d024621a43","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3fffd344-19ff-4928-8ab4-ad45b6d264ff","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"619ad2e0-b92a-4b8f-9388-cea1d5b65eef","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"394e6a0b-863b-4e48-ad92-2704aff4f925","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"33fd3cf7-71b4-436c-9e11-b4a0e869e2da","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b6f1fab1-c305-4851-af12-5903e56c23a0","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bd7b1be1-f501-455e-899e-aa19a1a3e265","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"f49256b5-d701-4a4c-a9a8-ca7ee533e73c","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"a283f007-0347-42c4-9964-a4e5346afa66","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"888b28fe-ecee-4705-9add-27979ef7ad66","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"29245a3f-c0e3-4ffb-b091-7025796280b5","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"2cdd9020-6211-4fd0-b3cb-72dc5924505c","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"80136bda-ee45-4b85-ba77-23d024621a43","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"3fffd344-19ff-4928-8ab4-ad45b6d264ff","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"619ad2e0-b92a-4b8f-9388-cea1d5b65eef","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"394e6a0b-863b-4e48-ad92-2704aff4f925","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"33fd3cf7-71b4-436c-9e11-b4a0e869e2da","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"b6f1fab1-c305-4851-af12-5903e56c23a0","path":"sprites/Painkiller_landing_1/Painkiller_landing_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"bd7b1be1-f501-455e-899e-aa19a1a3e265","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
