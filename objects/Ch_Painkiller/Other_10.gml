@@ -278,7 +278,7 @@ explosion_s1 = {
 	duration : 15,
 	dmg : 30,
 	kdwn: false,
-	hts : 30,
+	hts : 40,
 	bls : 24 ,
 	bloc : blc_types.pry,
 	strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -896,7 +896,7 @@ attacks = {
 					},
 					kback : {
 						strength : 8,
-						angle : 10, //counter-clock
+						angle : 180, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,

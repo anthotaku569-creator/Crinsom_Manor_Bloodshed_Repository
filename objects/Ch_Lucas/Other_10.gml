@@ -186,7 +186,7 @@ n_M_charge = {
 				dmg : 30+5,
 				kdwn: false,
 				hts : 17+40,
-				bls : 17+10,
+				bls : 17+0,
 				bloc : blc_types.ovh,
 				strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 				reflect : false,
