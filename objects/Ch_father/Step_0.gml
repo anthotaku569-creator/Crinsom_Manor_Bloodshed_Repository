@@ -658,7 +658,7 @@ switch(state){
 			prot = protections.full;	
 		}
 		else{
-			prot = protections.grab_invul;	
+			prot = protections.nothing;	
 		}
 		if (bars.HitstunBar.kdwn == 1){
 			sprite_index = animations.kdown.light

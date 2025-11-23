@@ -38,10 +38,11 @@ if global.training_mode == true{
 			case 0: draw_text(0 ,330, "Inmunity : noone"); break;
 			case 1: draw_text(0 ,330, "Inmunity : Armor"); break;
 			case 2: draw_text(0 ,330, "Inmunity : Hit Invul."); break;
-			case 3: draw_text(0 ,330, "Inmunity : Grab Invul."); break;
-			case 4: draw_text(0 ,330, "Inmunity : Proyectile Inv."); break;
-			case 5: draw_text(0 ,330, "Inmunity : Invulnerable"); break;
-				
+			case 3: draw_text(0 ,330, "Inmunity : Low invul."); break;
+			case 4: draw_text(0 ,330, "Inmunity : Mid invul."); break;
+			case 5: draw_text(0 ,330, "Inmunity : Overhead invul."); break;
+			case 6: draw_text(0 ,330, "Inmunity : Proyectile invul."); break;
+			case 7: draw_text(0 ,330, "Inmunity : Full invul."); break;
 		}
 		//n_hitboxes
 		break;
@@ -75,9 +76,11 @@ if global.training_mode == true{
 			case 0: draw_text(640 ,330, "Inmunity : noone"); break;
 			case 1: draw_text(640 ,330, "Inmunity : Armor"); break;
 			case 2: draw_text(640 ,330, "Inmunity : Hit Invul."); break;
-			case 3: draw_text(640 ,330, "Inmunity : Grab Invul."); break;
-			case 4: draw_text(640 ,330, "Inmunity : Proyectile Inv."); break;
-			case 5: draw_text(640 ,330, "Inmunity : Invulnerable"); break;
+			case 3: draw_text(640 ,330, "Inmunity : Low invul."); break;
+			case 4: draw_text(640 ,330, "Inmunity : Mid invul."); break;
+			case 5: draw_text(640 ,330, "Inmunity : Overhead invul."); break;
+			case 6: draw_text(640 ,330, "Inmunity : Proyectile invul."); break;
+			case 7: draw_text(640 ,330, "Inmunity : Full invul."); break;
 				
 		}
 		

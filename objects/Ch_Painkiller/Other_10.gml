@@ -384,7 +384,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4,
-					dmg : 15,
+					dmg : 20,
 					kdwn: false,
 					hts : 11+0,
 					bls : 11+2,
@@ -458,7 +458,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
+					dmg : 20, // -6 pnts
 					kdwn: false,
 					hts : 13+0,
 					bls : 13+1,
@@ -532,7 +532,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4,
-					dmg : 15,
+					dmg : 20,
 					kdwn: false,
 					hts : 18+12,
 					bls : 18-10,
@@ -607,7 +607,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 12,
-					dmg : 15,
+					dmg : 20,
 					kdwn: false,
 					hts : 17,
 					bls : 17-3,
@@ -682,7 +682,7 @@ attacks = {
 					scale_x : 1.5,
 					scale_y : 0.5,
 					duration : 4,
-					dmg : 30,
+					dmg : 35,
 					kdwn: false,
 					hts : 15+3,
 					bls : 15+3,
@@ -756,7 +756,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
+					dmg : 35, // -6 pnts
 					kdwn: true,
 					hts : 17+12,
 					bls : 17-8,
@@ -831,7 +831,7 @@ attacks = {
 					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 25, // -6 pnts
+					dmg : 27, // -6 pnts
 					kdwn: false,
 					hts : 31,
 					bls : 10,
@@ -882,7 +882,7 @@ attacks = {
 					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 25, // -6 pnts
+					dmg : 28, // -6 pnts
 					kdwn: false,
 					hts : 15+3,
 					bls : 15-3,
@@ -957,7 +957,7 @@ attacks = {
 					scale_x : 1.5,
 					scale_y : 1,
 					duration : 4,
-					dmg : 45,
+					dmg : 50,
 					kdwn: false,
 					hts : 18+4,
 					bls : 18-0,
@@ -1031,7 +1031,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 0.5,
 					duration : 6, // -2 pnts
-					dmg : 45, // -6 pnts
+					dmg : 50, // -6 pnts
 					kdwn: true,
 					hts : 17+12,
 					bls : 17-8,
@@ -1106,7 +1106,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 2,
 					duration : 4,
-					dmg : 45,
+					dmg : 50,
 					kdwn: true,
 					hts : 27+24,
 					bls : 27-20,
@@ -1180,7 +1180,7 @@ attacks = {
 					scale_x : 2,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 70, // -6 pnts
+					dmg : 75, // -6 pnts
 					kdwn: true,
 					hts : 21+20,
 					bls : 21-18,
@@ -1193,7 +1193,7 @@ attacks = {
 						posy : +0,
 					},
 					kback : {
-						strength : 25, // +1 pnts
+						strength : 20, // +1 pnts
 						angle : -60, //counter-clock
 					},
 					stt_effects : {
@@ -1340,7 +1340,7 @@ attacks = {
 									particle_function(hitspark_normal,
 										_graber.x + (32 * _graber.image_xscale),
 										_graber.y - 4,
-										0, 0,
+										0, 0
 										)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)
@@ -1797,7 +1797,7 @@ attacks = {
 										particle_function(hitspark_slash,
 										_graber.x + (48 * _graber.image_xscale),
 										_graber.y - 48,
-										0, 0,
+										0, 0
 										);
 									}
 								}
@@ -1805,7 +1805,7 @@ attacks = {
 									particle_function(hitspark_slash,
 										_graber.x + (48 * _graber.image_xscale),
 										_graber.y - 48,
-										0, 0,
+										0, 0
 										)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)
@@ -1840,8 +1840,8 @@ attacks = {
 						}
 					},
 					rel_pos : {
-						posx : +32,
-						posy : -48,
+						posx : +84,
+						posy : +0,
 					},
 					kback : {
 						strength : 0, // +1 pnts
@@ -2051,7 +2051,7 @@ attacks = {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 2,
-					scale_y : 1,
+					scale_y : 2,
 					duration : 2,
 					dmg : 0,
 					kdwn: false,
@@ -2118,7 +2118,7 @@ attacks = {
 										particle_function(hitspark_slash,
 										_graber.x + (48 * _graber.image_xscale),
 										_graber.y - 48,
-										0, 0,
+										0, 0
 										);
 									}
 								}
@@ -2126,7 +2126,7 @@ attacks = {
 									particle_function(hitspark_slash,
 										_graber.x + (48 * _graber.image_xscale),
 										_graber.y - 48,
-										0, 0,
+										0, 0
 										)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)
@@ -2161,8 +2161,8 @@ attacks = {
 						}
 					},
 					rel_pos : {
-						posx : +32,
-						posy : -48,
+						posx : +84,
+						posy : +48,
 					},
 					kback : {
 						strength : 0, // +1 pnts
