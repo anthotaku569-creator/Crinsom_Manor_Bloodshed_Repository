@@ -6289,7 +6289,7 @@ attacks.super_a = attacks.super_n;
 
 //the thingy of pallete
 
-pallete = Crinsom_color_palette;
+pallete = Perfection_color_palette;
 
 
 

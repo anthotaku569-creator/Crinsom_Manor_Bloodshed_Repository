@@ -3453,7 +3453,7 @@ function block_near(){
 
 	function light_attack(){
 		if cancel == true {
-			if bbox_collision_function(x, y + 1){
+			if bbox_collision_function(x, y + 1) and vely >= 0{
 				if input_check_pressed(inputs.k_L, wich_player, 3) and !input_check(inputs.k_up, wich_player){
 					if state != states.run{
 						run_framedata = 0;
@@ -3485,7 +3485,7 @@ function block_near(){
 
 	function medium_attack(){
 		if cancel == true {
-			if bbox_collision_function(x, y + 1){
+			if bbox_collision_function(x, y + 1) and vely >= 0{
 				if input_check_pressed(inputs.k_M, wich_player, 3) and !input_check(inputs.k_up, wich_player){
 					if state != states.run{
 						run_framedata = 0;
@@ -3509,7 +3509,7 @@ function block_near(){
 
 	function heavy_attack(){
 		if cancel == true {
-			if bbox_collision_function(x, y + 1){
+			if bbox_collision_function(x, y + 1) and vely >= 0{
 				if input_check_pressed(inputs.k_H, wich_player, 3) and !input_check(inputs.k_up, wich_player){
 					if state != states.run{
 						run_framedata = 0;
@@ -3541,7 +3541,7 @@ function block_near(){
 
 	function special_attack(){
 		if cancel == true {
-			if bbox_collision_function(x, y + 1, false){
+			if bbox_collision_function(x, y + 1, false) and vely >= 0{
 				if input_check_pressed(inputs.k_S1, wich_player, 3){
 					functionAttackStart(attacks.n_S_one, states.special_atack);
 				}
@@ -3568,7 +3568,7 @@ function block_near(){
 
 	function grab_attack(){
 		if input_check_pressed(inputs.k_L, wich_player, 3) and input_check_pressed(inputs.k_M, wich_player, 3) {
-			if bbox_collision_function(x, y + 1){
+			if bbox_collision_function(x, y + 1) and vely >= 0{
 				functionAttackStart(attacks.grab, states.m_attack);
 			}
 			else{
@@ -3580,7 +3580,7 @@ function block_near(){
 	function parry_function(){
 		if input_check_pressed(inputs.k_M, wich_player, 3)
 			and input_check_pressed(inputs.k_H, wich_player, 3) {
-			if bbox_collision_function(self.x, self.y+1, false) {
+			if bbox_collision_function(self.x, self.y+1, false) and vely >= 0 {
 				if input_check(inputs.k_down, wich_player, 3) {
 					sprite_index = extras.parry.animations.low;
 					image_index = 0;

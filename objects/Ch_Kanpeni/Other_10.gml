@@ -24,7 +24,7 @@ bars = {
 
 
 pallete = {
-	sprite: Crinsom_color_palette,
+	sprite: Perfection_color_palette,
 	i : 0,
 };
 
@@ -395,7 +395,7 @@ attacks = {
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
-						burn : 1,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -441,14 +441,14 @@ attacks = {
 	},
 	
 	d_L:{
-		animation: Crinsom_2L,
+		animation: Perfection_2L,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
 				create : 5,
 				hbox: { hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1,
+					scale_x : 0.75,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
 					dmg : 15, // -6 pnts
@@ -460,7 +460,7 @@ attacks = {
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
+						posx : +30,
 						posy : 0,
 					},
 					kback : {
@@ -514,35 +514,35 @@ attacks = {
 	},
 	
 	f_L:{
-		animation: Crinsom_6L,
+		animation: Perfection_6L,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 7,
+				create : 6,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 1,
+					scale_x : 0.5,
+					scale_y : 64/48,
 					duration : 4, // -2 pnts
 					dmg : 25, // -6 pnts
 					kdwn: false,
 					hts : 13+10,
-					bls : 13-7,
+					bls : 13-5,
 					bloc : blc_types.mid,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +48,
-						posy : -48,
+						posx : +12,
+						posy : -36,
 					},
 					kback : {
 						strength : 12,
-						angle : 45, //counter-clock
+						angle : 60, //counter-clock
 					},
 					stt_effects : {
-						burn : 1,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
