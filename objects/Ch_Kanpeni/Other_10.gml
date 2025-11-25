@@ -170,72 +170,6 @@ explosion_s1 = {
 	},
 };
 
-n_M_charge = {
-	animation: Crinsom_5chargeM,
-	lnd_strng: -1,
-	hboxs: [
-		//hit 1
-		{
-			create : 27,
-			hbox: {
-				hitspark: hitspark_fire,
-				spr : hitbox_spr,
-				scale_x : 1.5,
-				scale_y : 1,
-				duration : 4,
-				dmg : 30+5,
-				kdwn: false,
-				hts : 17+40,
-				bls : 17+10,
-				bloc : blc_types.ovh,
-				strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-				reflect : false,
-				grb_script : function (_graber,_victim){},
-				rel_pos : {
-					posx : +36,
-					posy : -48,
-				},
-				kback : {
-					strength : 20,
-					angle : -80, //counter-clock
-				},
-				stt_effects : {
-					burn : 2,
-					paralysis : 0,
-					cold : 0,
-					poison : 0,
-					curse : 0,
-					water : false,
-				},
-				pry_properties : {
-					velx : 0,
-					vely : 0,
-					bmrng : false,
-					activation : {
-						delay: -1,
-						contact: false,
-						summon: noone
-					},
-					physics : {
-						grav : 0,
-						air_frict : 0,
-						bounce : false, collision : false,magnet : false,
-						grnd_frict : 0,
-					},
-				},
-			},
-		}
-	],
-	prots : [
-	],
-	movements: [
-	],
-	cost : 0,
-	scrpt : function(_self){
-			}
-	
-}
-
 S_three_followup = {
 		animation: Crinsom_s2_2, //18 frames total
 		lnd_strng: 3,
@@ -588,17 +522,17 @@ attacks = {
 	},
 	
 	j_L:{
-		animation: Crinsom_8L,
+		animation: Perfection_8L,
 		lnd_strng: 1,
 		hboxs: [
 			//hit 1
 			{
 				create : 4,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 0.5,
-					scale_y : 1,
+					scale_y : 0.25,
 					duration : 4,
 					dmg : 15,
 					kdwn: false,
@@ -609,15 +543,15 @@ attacks = {
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
-						posy : 0,
+						posx : +36,
+						posy : -36,
 					},
 					kback : {
 						strength :  6,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
-						burn : 1,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -663,19 +597,19 @@ attacks = {
 	},
 		
 	n_M:{
-		animation: Crinsom_5M,
+		animation: Perfection_5M,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
 				create : 6,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
 					scale_x : 1.5,
-					scale_y : 1,
+					scale_y : 2/3,
 					duration : 4,
-					dmg : 30,
+					dmg : 32,
 					kdwn: false,
 					hts : 13+3,
 					bls : 13+3,
@@ -684,15 +618,15 @@ attacks = {
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +36,
-						posy : -48,
+						posx : +44,
+						posy : -44,
 					},
 					kback : {
 						strength : 6,
 						angle : -20, //counter-clock
 					},
 					stt_effects : {
-						burn : 2,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -733,25 +667,21 @@ attacks = {
 			}*/
 		],
 		cost : 0,
-		scrpt : function(_self) {
-			if input_check(_self.inputs.k_M, _self.wich_player) and
-			 	_self.image_index == 5 {
-				_self.functionAttackStart(_self.n_M_charge, states.m_attack);
-			}
-		}
+		scrpt : function(_self) {}
 		
 	},
 	
 	d_M:{
-		animation: Crinsom_2M,
+		animation: Perfection_2M,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
 				create : 7,
-				hbox: { hitspark: hitspark_normal,
+				hbox: { 
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
-					scale_x : 1.5,
-					scale_y : 0.5,
+					scale_x : 1,
+					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: false,
@@ -762,7 +692,7 @@ attacks = {
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +36,
+						posx : +56,
 						posy : 0,
 					},
 					kback : {
@@ -816,15 +746,16 @@ attacks = {
 	},
 	
 	j_M:{
-		animation: Crinsom_8M,
+		animation: Perfection_8M,
 		lnd_strng: 2,
 		hboxs: [//hit 1
 			{
-				create : 5,
-				hbox: { hitspark: hitspark_normal,
+				create : 6,
+				hbox: {
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2,
-					scale_y : 1,
+					scale_x : 5/3,
+					scale_y : 0.5,
 					duration : 12, // -2 pnts
 					dmg : 35, // -6 pnts
 					kdwn: false,
@@ -836,7 +767,7 @@ attacks = {
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
 						posx : 0,
-						posy : 0,
+						posy : -16,
 					},
 					kback : {
 						strength : 6,
