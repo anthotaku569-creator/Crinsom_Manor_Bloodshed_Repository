@@ -30,7 +30,7 @@ pallete = {
 
 extras = {
 	float : {
-		can : true,
+		can : false,
 		time : 120,
 		animation : Father_walk,		
 	},

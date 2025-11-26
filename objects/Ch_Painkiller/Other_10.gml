@@ -30,7 +30,7 @@ pallete = {
 
 extras = {
 	float : {
-		can : true,
+		can : false,
 		time : 120,
 		animation : Father_walk,		
 	},
@@ -126,12 +126,12 @@ hitextra_3_s2 = {
 	scale_x : 1,
 	scale_y : 1,
 	duration : 10,
-	dmg : 15,
+	dmg : 20,
 	kdwn: false,
 	hts : 30,
 	bls : 12 ,
 	bloc : blc_types.pry,
-	strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+	strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 	reflect : false,
 	grb_script : function (_graber,_victim){},
 	rel_pos : {
@@ -181,7 +181,7 @@ hitextra_2_s2 = {
 	hts : 30,
 	bls : 8 ,
 	bloc : blc_types.pry,
-	strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+	strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 	reflect : false,
 	grb_script : function (_graber,_victim){},
 	rel_pos : {
@@ -281,7 +281,7 @@ explosion_s1 = {
 	hts : 40,
 	bls : 24 ,
 	bloc : blc_types.pry,
-	strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+	strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 	reflect : false,
 	grb_script : function (_graber,_victim){},
 	rel_pos : {
@@ -2044,6 +2044,57 @@ attacks = {
 		animation: Painkiller_s3,
 		lnd_strng: -1,
 		hboxs: [
+			//hit 0
+			{
+				create : 2,
+				hbox: {
+					hitspark: hitspark_normal,
+					spr : hitbox_spr,
+					scale_x : 2,
+					scale_y : 1,
+					duration : 4,
+					dmg : 0,
+					kdwn: false,
+					hts : 0,
+					bls : 0,
+					bloc : blc_types.push,
+					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +84,
+						posy : +48,
+					},
+					kback : {
+						strength : 2, // +1 pnts
+						angle : 90, //counter-clock
+					},
+					stt_effects : {
+						burn : 0,
+						paralysis : 0,
+						cold : 0,
+						poison : 0,
+						curse : 0,
+						water : false,
+					},
+					pry_properties : {
+						velx : 0,
+						vely : 0,
+						bmrng : false,
+						activation : {
+							delay: -1,
+							contact: false,
+							summon: noone
+						},
+						physics : {
+							grav : 0,
+							air_frict : 0,
+							bounce : false, collision : false,magnet : false,
+							grnd_frict : 0,
+						},
+					},
+				},
+			},
 			//hit 1
 			{
 				create : 6,
@@ -2051,7 +2102,7 @@ attacks = {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 2,
-					scale_y : 2,
+					scale_y : 1,
 					duration : 2,
 					dmg : 0,
 					kdwn: false,
@@ -2162,7 +2213,7 @@ attacks = {
 					},
 					rel_pos : {
 						posx : +84,
-						posy : +48,
+						posy : +0,
 					},
 					kback : {
 						strength : 0, // +1 pnts

@@ -30,7 +30,7 @@ pallete = {
 
 extras = {
 	float : {
-		can : true,
+		can : false,
 		time : 120,
 		animation : Father_walk,		
 	},
@@ -669,7 +669,7 @@ attacks = {
 		hboxs: [
 			//hit 1
 			{
-				create : 6,
+				create : 7,
 				hbox: {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
@@ -736,7 +736,7 @@ attacks = {
 		cost : 0,
 		scrpt : function(_self) {
 			if input_check(_self.inputs.k_M, _self.wich_player) and
-			 	_self.image_index == 5 {
+			 	_self.image_index == 6 {
 				_self.functionAttackStart(_self.n_M_charge, states.m_attack);
 			}
 		}
@@ -748,7 +748,7 @@ attacks = {
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 7,
+				create : 8,
 				hbox: { hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 1.5,
@@ -1695,10 +1695,63 @@ attacks = {
 		}
 	},
 	
-	n_S_three:{
+	n_S_three: {
 		animation: Crinsom_s3, //18 frames total
 		lnd_strng: 4,
 		hboxs: [
+			//hit 0
+			{
+				create : 5,
+				hbox: {
+					hitspark: noone,
+					spr : hitbox_spr,
+					scale_x : 2,
+					scale_y : 1,
+					duration : 4, // -2 pnts
+					dmg : 0, // -6 pnts
+					kdwn: false,
+					hts : 0, // -6 pnts
+					bls : 0,
+					bloc : blc_types.push,
+					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +40,
+						posy : +24,
+					},
+					kback : {
+						strength : 8, // +1 pnts
+						angle : 90, //counter-clock
+					},
+					stt_effects : {
+						burn : 2,
+						paralysis : 0,
+						cold : 0,
+						poison : 0,
+						curse : 0,
+						water : false,
+					},
+					pry_properties : {
+						velx : 0,
+						vely : 0,
+						bmrng : false,
+						activation : {
+							delay: -1,
+							contact: false,
+							summon: noone
+						},
+						physics : {
+							grav : 0,
+							air_frict : 0,
+							bounce : false,
+							collision : false,
+							magnet : false,
+							grnd_frict : 0,
+						},
+					},
+				},
+			},
 			//hit 1
 			{
 				create : 9,
@@ -1706,7 +1759,7 @@ attacks = {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
 					scale_x : 1,
-					scale_y : 1,
+					scale_y : 0.5,
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: true,
@@ -1718,7 +1771,7 @@ attacks = {
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
 						posx : +40,
-						posy : -32,
+						posy : -48,
 					},
 					kback : {
 						strength : 20, // +1 pnts
@@ -2046,10 +2099,63 @@ attacks = {
 		}
 	},
 	
-	a_S_three:{
+	a_S_three: {
 		animation: Crinsom_s3, //18 frames total
 		lnd_strng: 4,
 		hboxs: [
+			//hit 0
+			{
+				create : 5,
+				hbox: {
+					hitspark: noone,
+					spr : hitbox_spr,
+					scale_x : 2,
+					scale_y : 1,
+					duration : 4, // -2 pnts
+					dmg : 0, // -6 pnts
+					kdwn: false,
+					hts : 0, // -6 pnts
+					bls : 0,
+					bloc : blc_types.push,
+					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
+					grb_script : function (_graber,_victim){},
+					rel_pos : {
+						posx : +40,
+						posy : +24,
+					},
+					kback : {
+						strength : 8, // +1 pnts
+						angle : 90, //counter-clock
+					},
+					stt_effects : {
+						burn : 2,
+						paralysis : 0,
+						cold : 0,
+						poison : 0,
+						curse : 0,
+						water : false,
+					},
+					pry_properties : {
+						velx : 0,
+						vely : 0,
+						bmrng : false,
+						activation : {
+							delay: -1,
+							contact: false,
+							summon: noone
+						},
+						physics : {
+							grav : 0,
+							air_frict : 0,
+							bounce : false,
+							collision : false,
+							magnet : false,
+							grnd_frict : 0,
+						},
+					},
+				},
+			},
 			//hit 1
 			{
 				create : 9,
@@ -2057,7 +2163,7 @@ attacks = {
 					hitspark: hitspark_fire,
 					spr : hitbox_spr,
 					scale_x : 1,
-					scale_y : 1,
+					scale_y : 0.5,
 					duration : 4, // -2 pnts
 					dmg : 30, // -6 pnts
 					kdwn: true,
@@ -2069,7 +2175,7 @@ attacks = {
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
 						posx : +40,
-						posy : -32,
+						posy : -48,
 					},
 					kback : {
 						strength : 20, // +1 pnts
@@ -2233,7 +2339,7 @@ attacks = {
 			if _self.image_index > 13
 				and _self.image_index < 16
 				and _self.cancel == true
-				and !_self.bbox_collision_function(_self.x, _self.y +1, false){
+				and !_self.bbox_collision_function(_self.x, _self.y +1, false) {
 					if input_check_pressed(_self.inputs.k_S2, _self.wich_player, 5){
 						_self.velx = 0;
 						_self.vely = 0;

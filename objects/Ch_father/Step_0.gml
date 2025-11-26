@@ -150,9 +150,19 @@ switch(state){
 			if input_check_pressed(inputs.k_up, wich_player, 3){
 				if (extras.d_jmp.has == true and extras.d_jmp.can == true and vely > 0){
 					jumpFunction(stats.jump.j_heigh);
+					jump_cancel = false;
 					extras.d_jmp.can = false;						
 				}
 			}
+			
+			// jump cancel
+			if input_check_released(inputs.k_up, wich_player, 3){
+				if jump_cancel == true and vely < 0 {
+					vely = vely * 0.8;
+					jump_cancel = false;
+				}
+			}
+			
 			
 			//AIR DASHING
 			if extras.air_dash.able == true and vely > (stats.jump.j_heigh *-1)*3/4 {
