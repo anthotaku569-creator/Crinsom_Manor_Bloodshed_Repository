@@ -820,36 +820,36 @@ attacks = {
 	},
 	
 	n_H:{
-		animation: Crinsom_5H,
+		animation: Perfection_5H,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 9,
+				create : 23,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2,
-					scale_y : 1,
+					scale_x : 1,
+					scale_y : 1.5,
 					duration : 4,
-					dmg : 45,
+					dmg : 50,
 					kdwn: false,
-					hts : 17+4,
-					bls : 17+0,
-					bloc : blc_types.mid,
+					hts : 26+12,
+					bls : 26+12,
+					bloc : blc_types.ovh,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +72,
+						posx : +24,
 						posy : -24,
 					},
 					kback : {
-						strength : 12, // +1 pnts
-						angle : 0, //counter-clock
+						strength : 22, // +1 pnts
+						angle : -60, //counter-clock
 					},
 					stt_effects : {
-						burn : 3,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -876,18 +876,18 @@ attacks = {
 			},
 		],
 		prots : [
-			/*{
-				start: 0,
-				type: protections.nothing
-				finish: 0,
-			}*/
+			{
+				start: 10,
+				type: protections.low_invul,
+				finish: 27,
+			}
 		],
 		movements: [
-			/*{
-				start: 0,
-				x_speed: 0,
+			{
+				start: 19,
+				x_speed: 10,
 				y_speed: 0,
-			}*/
+			}
 		],
 		cost : 0,
 		scrpt : function(_self){}
@@ -895,7 +895,7 @@ attacks = {
 	},
 	
 	d_H:{
-		animation: Crinsom_2H,
+		animation: Perfection_2H,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
@@ -903,13 +903,13 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1.5,
+					scale_x : 1,
 					scale_y : 0.5,
 					duration : 4, // -2 pnts
 					dmg : 45, // -6 pnts
 					kdwn: true,
-					hts : 27+12,
-					bls : 27-8,
+					hts : 19+12,
+					bls : 19-8,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -919,8 +919,8 @@ attacks = {
 						posy : 0,
 					},
 					kback : {
-						strength : 8,
-						angle : 20, //counter-clock
+						strength : 12,
+						angle : 30, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -957,6 +957,11 @@ attacks = {
 			}*/
 		],
 		movements: [
+			{
+				start: 11,
+				x_speed: 4,
+				y_speed: 0,
+			}
 		],
 		cost : 0,
 		scrpt : function(_self){}
@@ -964,7 +969,7 @@ attacks = {
 	},
 	
 	b_H:{
-		animation: Crinsom_4H,
+		animation: Perfection_4H,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
@@ -973,9 +978,9 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 2,
-					duration : 4,
+					scale_x : 2,
+					scale_y : 1,
+					duration : 6,
 					dmg : 45,
 					kdwn: true,
 					hts : 27+24,
@@ -985,8 +990,8 @@ attacks = {
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
-						posy : 0,
+						posx : 0,
+						posy : -48,
 					},
 					kback : {
 						strength : 20, // +1 pnts
@@ -1027,11 +1032,11 @@ attacks = {
 			}*/
 		],
 		movements: [
-			/*{
-				start: 0,
-				x_speed: 0,
+			{
+				start: 15,
+				x_speed: 4,
 				y_speed: 0,
-			}*/
+			}
 		],
 		cost : 0,
 		scrpt : function(_self){}
@@ -1039,7 +1044,7 @@ attacks = {
 	},
 	
 	j_H:{
-		animation: Crinsom_8H,
+		animation: Perfection_8H,
 		lnd_strng: 3,
 		hboxs: [//hit 1
 			{
@@ -1047,10 +1052,10 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 2.5,
-					duration : 4, // -2 pnts
-					dmg : 70, // -6 pnts
+					scale_x : 2,
+					scale_y : 1,
+					duration : 6,
+					dmg : 60, // -6 pnts
 					kdwn: true,
 					hts : 20+22,
 					bls : 20-18,
@@ -1059,12 +1064,12 @@ attacks = {
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +48,
-						posy : +24,
+						posx : +0,
+						posy : -45,
 					},
 					kback : {
-						strength : 25, // +1 pnts
-						angle : -60, //counter-clock
+						strength : 20, // +1 pnts
+						angle : 60, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
