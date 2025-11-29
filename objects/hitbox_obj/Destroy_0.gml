@@ -68,6 +68,6 @@ if (bloc = blc_types.pry and pry_properties.activation.summon != noone){
 	personal_hitbox_function(master, pry_properties.activation.summon);
 }
 
-if (ds_map_exists(master.active_prys, string(master_atk))){
+if (ds_map_exists(master.active_prys, string(master_atk))) {
 	master.active_prys[? string(master_atk)] -= 1
 }

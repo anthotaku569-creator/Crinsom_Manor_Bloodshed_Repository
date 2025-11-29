@@ -298,6 +298,29 @@ S_three_followup = {
 		}
 }
 
+S_one_followup = {
+		animation: Perfection_s1_2,
+		lnd_strng: 1,
+		hboxs: [],
+		prots : [
+			/*{
+				start: 0,
+				type: protections.nothing
+				finish: 0,
+			}*/
+		],
+		movements: [
+			/*{
+				start: 0,
+				x_speed: 0,
+				y_speed: 0,
+			}*/
+		],
+		cost : 0,
+		scrpt : function(_self){}
+		
+	};
+
 attacks = {
 	n_L:{
 		animation: Perfection_5L,
@@ -1441,32 +1464,32 @@ attacks = {
 	},
 	
 	n_S_one:{
-		animation: Crinsom_s1,
-		lnd_strng: -1,
+		animation: Perfection_s1_1,
+		lnd_strng: 4,
 		hboxs: [
 			//hit 1
 			{
-				create : 7,
+				create : 11,
 				hbox: {
-					hitspark: hitspark_fire,
-					spr : Crinsom_s1_pry1,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 120,
-					dmg : 0,
-					kdwn: false,
-					hts : 0,
-					bls : 0 ,
-					bloc : blc_types.pry,
-					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					hitspark: hitspark_normal,
+					spr : hitbox_spr,
+					scale_x : 1.2,
+					scale_y : 1.2,
+					duration : 14, // -2 pnts
+					dmg : 45, // -6 pnts
+					kdwn: true,
+					hts : 10, // -6 pnts
+					bls : 16+12,
+					bloc : blc_types.mid,
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
-						posy : 0,
+						posx : +0,
+						posy : -0,
 					},
 					kback : {
-						strength : 0, // +1 pnts
+						strength : 16, // +3 pnts
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -1475,23 +1498,21 @@ attacks = {
 						cold : 0,
 						poison : 0,
 						curse : 0,
-						water : false,
+						water : true,
 					},
 					pry_properties : {
-						velx : 4,
+						velx : 0,
 						vely : 0,
 						bmrng : false,
 						activation : {
-							delay: 2,
-							contact: true,
-							summon: explosion_s1
+							delay: -1,
+							contact: false,
+							summon: noone
 						},
 						physics : {
 							grav : 0,
 							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : true,
+							bounce : false, collision : false,magnet : false,
 							grnd_frict : 0,
 						},
 					},
@@ -1499,11 +1520,11 @@ attacks = {
 			},
 		],
 		prots : [
-			/*{
-				start: 0,
-				type: protections.nothing
-				finish: 0,
-			}*/
+			{
+				start: 2,
+				type: protections.proy_invul,
+				finish: 26,
+			}
 		],
 		movements: [
 			/*{
@@ -1513,7 +1534,51 @@ attacks = {
 			}*/
 		],
 		cost : 10,
-		scrpt : function(_self){}
+		scrpt : function(_self){
+			if _self.image_index < 11 {
+				_self.vely = 0;
+				_self.velx = 0;
+				if _self.image_index == 1 {
+					_self.y = _self.y - 12
+				}
+			}
+			if _self.image_index == 11 {
+				with (_self){
+					var base_v = 16;
+					var _vx = 16;
+					var _vy = 0;
+					if instance_exists(match_controller){
+						var _target = match_controller.player_two;
+						
+						if wich_player == 2 {
+							_target = match_controller.player_one;
+						}
+						
+						var _dx = (_target.x - x);//distance_to_point(_target.x, y);
+						var _dy = (_target.y - 48 - y);//distance_to_point(x, _target.y - 12);
+						if abs(_dx)> 320 {
+							_dx = sign(_dx)*320
+						}
+						if abs(_dy)> 320 {
+							_dy = sign(_dy)*320
+						}
+						_vx = velocity_calculator(_dx, air_fric_1, sign(_dx));
+						_vy = velocity_calculator(_dy, stats.jump.grav, 1);
+						_vx = _vx*1.75;
+						if abs(_vx) < 1 {
+							_vy = _vy*1.5;
+						}
+					}
+					velx = _vx;
+					vely = _vy;
+				}
+			}
+			if _self.cancel == true {
+				_self.velx = -8*_self.image_xscale;
+				_self.vely = -8;
+				_self.functionAttackStart(_self.S_one_followup, states.special_atack);
+			}
+		}
 		
 	},
 	
@@ -1828,32 +1893,32 @@ attacks = {
 	},
 	
 	a_S_one:{
-		animation: Crinsom_s1,
-		lnd_strng: -1,
+		animation: Perfection_s1_1,
+		lnd_strng: 4,
 		hboxs: [
 			//hit 1
 			{
-				create : 7,
+				create : 14,
 				hbox: {
-					hitspark: hitspark_fire,
-					spr : Crinsom_s1_pry1,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 120,
-					dmg : 0,
-					kdwn: false,
-					hts : 0,
-					bls : 0 ,
-					bloc : blc_types.pry,
-					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					hitspark: hitspark_normal,
+					spr : hitbox_spr,
+					scale_x : 1.2,
+					scale_y : 1.2,
+					duration : 4, // -2 pnts
+					dmg : 45, // -6 pnts
+					kdwn: true,
+					hts : 10, // -6 pnts
+					bls : 16+12,
+					bloc : blc_types.mid,
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
-						posy : 0,
+						posx : +0,
+						posy : -0,
 					},
 					kback : {
-						strength : 0, // +1 pnts
+						strength : 16, // +3 pnts
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -1862,23 +1927,21 @@ attacks = {
 						cold : 0,
 						poison : 0,
 						curse : 0,
-						water : false,
+						water : true,
 					},
 					pry_properties : {
-						velx : 4,
+						velx : 0,
 						vely : 0,
 						bmrng : false,
 						activation : {
-							delay: 2,
-							contact: true,
-							summon: explosion_s1
+							delay: -1,
+							contact: false,
+							summon: noone
 						},
 						physics : {
 							grav : 0,
 							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : true,
+							bounce : false, collision : false,magnet : false,
 							grnd_frict : 0,
 						},
 					},
@@ -1886,11 +1949,11 @@ attacks = {
 			},
 		],
 		prots : [
-			/*{
-				start: 0,
-				type: protections.nothing
-				finish: 0,
-			}*/
+			{
+				start: 2,
+				type: protections.proy_invul,
+				finish: 26,
+			}
 		],
 		movements: [
 			/*{
@@ -1900,7 +1963,52 @@ attacks = {
 			}*/
 		],
 		cost : 10,
-		scrpt : function(_self){}
+		scrpt : function(_self){
+			if _self.image_index < 11 {
+				_self.vely = 0;
+				_self.velx = 0;
+				if _self.image_index == 1 {
+					_self.y = _self.y - 12
+				}
+			}
+			if _self.image_index == 11 {
+				with (_self){
+					var base_v = 16;
+					var _vx = 16;
+					var _vy = 0;
+					if instance_exists(match_controller){
+					var _target = match_controller.player_two;
+					
+					if wich_player == 2 {
+						_target = match_controller.player_one;
+					}
+					
+						var _dx = (_target.x - x);//distance_to_point(_target.x, y);
+						var _dy = (_target.y - y);//distance_to_point(x, _target.y - 12);
+						if abs(_dx)> 320 {
+							_dx = sign(_dx)*320
+						}
+						if abs(_dy)> 320 {
+							_dy = sign(_dy)*320
+						}
+						_vx = velocity_calculator(_dx, air_fric_1, sign(_dx));
+						_vy = velocity_calculator(_dy, stats.jump.grav, 1);
+						_vx = _vx*2;
+						if abs(_vx) < 1 {
+							_vy = _vy*1.5;
+						}
+					}
+					
+					velx = _vx;
+					vely = _vy;
+				}
+			}
+			if _self.cancel == true {
+				_self.velx = -8*_self.image_xscale;
+				_self.vely = -8;
+				_self.functionAttackStart(_self.S_one_followup, states.special_atack);
+			}
+		}
 		
 	},
 	
