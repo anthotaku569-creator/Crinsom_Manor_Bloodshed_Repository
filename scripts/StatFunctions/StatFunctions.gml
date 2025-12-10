@@ -8,7 +8,7 @@ function StatFunctions(W, G, A, J){
 			HealthPoint: (W * 30) + 300,//(W * 30) + 150,
 			DI_Tap: 0,
 			DI_hold: 0,
-			hit_red: floor(W / 15)
+			hit_red: round(W / 10) - 1
 		},
 		ground : {
 			ground_speed: gnd_fric_1 + (G * (2/5)) ,

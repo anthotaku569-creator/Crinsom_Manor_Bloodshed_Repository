@@ -11,7 +11,7 @@ with(char_bounded){
 		}
 	}
 	else{
-		if !_other_bounded.bbox_collision_function(_other_bounded.x - 1, _other_bounded.y){
+		if !_other_bounded.bbox_collision_function(_other_bounded.x + 1, _other_bounded.y){
 			x -= (abs(velx)) ;
 			_other_bounded.x += (abs(velx)) ;
 		}

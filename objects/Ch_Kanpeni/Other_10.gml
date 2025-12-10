@@ -536,7 +536,7 @@ attacks = {
 					duration : 4,
 					dmg : 15,
 					kdwn: false,
-					hts : 9,
+					hts : 9+4,
 					bls : 9-3,
 					bloc : blc_types.ovh,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -1518,36 +1518,36 @@ attacks = {
 	},
 	
 	n_S_two:{
-		animation: Crinsom_s2_1, //18 frames total
+		animation: Perfection_s2, //18 frames total
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 13,
+				create : 9,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
 					scale_x : 2,
 					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 45, // -6 pnts
-					kdwn: true,
-					hts : 82, // -6 pnts
+					kdwn: false,
+					hts : 27, // -6 pnts
 					bls : 20,
-					bloc : blc_types.mid,
-					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-					reflect : true,
+					bloc : blc_types.low,
+					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +72,
-						posy : -24,
+						posx : +24,
+						posy : 0,
 					},
 					kback : {
-						strength : 20, // +3 pnts
-						angle : 20, //counter-clock
+						strength : 16, // +3 pnts
+						angle : 30, //counter-clock
 					},
 					stt_effects : {
-						burn : 4,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -1580,140 +1580,53 @@ attacks = {
 		prots : [
 			{
 				start: 4,
-				type: protections.proy_invul,
+				type: protections.low_invul,
 				finish: 16,
 			}
 		],
 		movements: [
 			{
-				start: 6,
-				x_speed: 20,
-				y_speed: 0,
-			},
-			{
-				start: 7,
-				x_speed: 20,
-				y_speed: 0,
-			},
-			{
-				start: 8,
-				x_speed: 20,
-				y_speed: 0,
-			},
-			{
 				start: 9,
-				x_speed: 20,
+				x_speed: 32,
 				y_speed: 0,
-			},
-			{
-				start: 10,
-				x_speed: 20,
-				y_speed: 0,
-			},
-			{
-				start: 11,
-				x_speed: 20,
-				y_speed: 0,
-			},
+			}
 		],
 		cost : 10,
-		scrpt : function(_self){
-			if _self.image_index > 7
-				and _self.image_index < 12 {					
-					if !input_check(_self.inputs.k_S2, _self.wich_player){
-						_self.image_index = 12
-					}
-					else if _self.image_index == 11 {
-						_self.image_index = 8
-					}
-			}
+		scrpt : function(_self) {
 		}
 	},
 	
-	n_S_three:{
-		animation: Crinsom_s3, //18 frames total
+	n_S_three: {
+		animation: Perfection_s3, //18 frames total
 		lnd_strng: 4,
 		hboxs: [
 			//hit 1
 			{
 				create : 9,
 				hbox: {
-					hitspark: hitspark_fire,
-					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
-					kdwn: true,
-					hts : 80, // -6 pnts
-					bls : 10,
-					bloc : blc_types.mid,
-					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +40,
-						posy : -32,
-					},
-					kback : {
-						strength : 20, // +1 pnts
-						angle : 60, //counter-clock
-					},
-					stt_effects : {
-						burn : 2,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: noone
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
-			//hit 2
-			{
-				create : 13,
-				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
 					scale_x : 1,
 					scale_y : 2,
-					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
+					duration : 6, // -2 pnts
+					dmg : 55, // -6 pnts
 					kdwn: true,
 					hts : 80, // -6 pnts
 					bls : 10,
-					bloc : blc_types.mid,
+					bloc : blc_types.ovh,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +40,
-						posy : 0,
+						posx : +48,
+						posy : +16,
 					},
 					kback : {
 						strength : 20, // +1 pnts
-						angle : 60, //counter-clock
+						angle : -60, //counter-clock
 					},
 					stt_effects : {
-						burn : 2,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -1739,60 +1652,7 @@ attacks = {
 						},
 					},
 				},
-			},
-			//hit 3
-			{
-				create : 17,
-				hbox: {
-					hitspark: hitspark_fire,
-					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 2,
-					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
-					kdwn: true,
-					hts : 80, // -6 pnts
-					bls : 10,
-					bloc : blc_types.mid,
-					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +40,
-						posy : -16,
-					},
-					kback : {
-						strength : 20, // +1 pnts
-						angle : 30, //counter-clock
-					},
-					stt_effects : {
-						burn : 2,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: noone
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
+			}
 		],
 		helper: {
 			frame: -1,
@@ -1800,30 +1660,20 @@ attacks = {
 		},
 		prots : [
 			{
-				start: 0,
-				type: protections.full,
-				finish: 12,
+				start: 4,
+				type: protections.low_invul,
+				finish: 15,
 			}
 		],
 		movements: [
 			{
-				start: 9,
+				start: 4,
 				x_speed: 6.9,
-				y_speed: -15.2,
+				y_speed: -7.6,
 			}
 		],
 		cost : 10,
 		scrpt : function(_self){
-			if _self.image_index > 13
-				and _self.image_index < 16
-				and _self.cancel == true
-				and !_self.bbox_collision_function(_self.x, _self.y +1, false) {
-					if input_check_pressed(_self.inputs.k_S2, _self.wich_player, 5){
-						_self.velx = 0;
-						_self.vely = 0;
-						_self.functionAttackStart(_self.S_three_followup, states.special_atack);
-					}
-			}
 		}
 	},
 	
@@ -1905,36 +1755,36 @@ attacks = {
 	},
 	
 	a_S_two:{
-		animation: Crinsom_s2_2, //18 frames total
-		lnd_strng: 3,
+		animation: Perfection_s2, //18 frames total
+		lnd_strng: 1,
 		hboxs: [
 			//hit 1
 			{
-				create : 6,
+				create : 9,
 				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 2,
-					duration : 58, // -2 pnts
+					scale_x : 2,
+					scale_y : 1,
+					duration : 4, // -2 pnts
 					dmg : 45, // -6 pnts
 					kdwn: false,
-					hts : 80, // -6 pnts
-					bls : 14,
-					bloc : blc_types.ovh,
+					hts : 90, // -6 pnts
+					bls : 10,
+					bloc : blc_types.mid,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +32,
-						posy : +24,
+						posx : +24,
+						posy : 0,
 					},
 					kback : {
-						strength : 20,//5, // +3 pnts
-						angle : 20, //counter-clock
+						strength : 16, // +3 pnts
+						angle : 10, //counter-clock
 					},
 					stt_effects : {
-						burn : 5,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -1964,107 +1814,60 @@ attacks = {
 			frame: -1,
 			object: noone
 		},
-		prots : [],
+		prots : [
+			{
+				start: 4,
+				type: protections.low_invul,
+				finish: 16,
+			}
+		],
 		movements: [
 			{
-				start: 7,
-				x_speed: 8,
+				start: 9,
+				x_speed: 12,
 				y_speed: 12,
-			},
+			}
 		],
 		cost : 10,
-		scrpt : function(_self){
-			if _self.image_index < 7 {
+		scrpt : function(_self) {
+			if _self.image_index < 9 {
 				_self.velx = 0;
 				_self.vely = 0;
 			}
 		}
 	},
 	
-	a_S_three:{
-		animation: Crinsom_s3, //18 frames total
+	a_S_three: {
+		animation: Perfection_s3, //18 frames total
 		lnd_strng: 4,
 		hboxs: [
 			//hit 1
 			{
 				create : 9,
 				hbox: {
-					hitspark: hitspark_fire,
-					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
-					kdwn: true,
-					hts : 80, // -6 pnts
-					bls : 10,
-					bloc : blc_types.mid,
-					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +40,
-						posy : -32,
-					},
-					kback : {
-						strength : 20, // +1 pnts
-						angle : 60, //counter-clock
-					},
-					stt_effects : {
-						burn : 2,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: noone
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
-			//hit 2
-			{
-				create : 13,
-				hbox: {
-					hitspark: hitspark_fire,
+					hitspark: hitspark_slash,
 					spr : hitbox_spr,
 					scale_x : 1,
 					scale_y : 2,
-					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
+					duration : 6, // -2 pnts
+					dmg : 55, // -6 pnts
 					kdwn: true,
 					hts : 80, // -6 pnts
 					bls : 10,
-					bloc : blc_types.mid,
+					bloc : blc_types.ovh,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +40,
-						posy : 0,
+						posx : +48,
+						posy : +16,
 					},
 					kback : {
 						strength : 20, // +1 pnts
-						angle : 60, //counter-clock
+						angle : -60, //counter-clock
 					},
 					stt_effects : {
-						burn : 2,
+						burn : 0,
 						paralysis : 0,
 						cold : 0,
 						poison : 0,
@@ -2090,60 +1893,7 @@ attacks = {
 						},
 					},
 				},
-			},
-			//hit 3
-			{
-				create : 17,
-				hbox: {
-					hitspark: hitspark_fire,
-					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 2,
-					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
-					kdwn: true,
-					hts : 80, // -6 pnts
-					bls : 10,
-					bloc : blc_types.mid,
-					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +40,
-						posy : -16,
-					},
-					kback : {
-						strength : 20, // +1 pnts
-						angle : 30, //counter-clock
-					},
-					stt_effects : {
-						burn : 2,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: noone
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
+			}
 		],
 		helper: {
 			frame: -1,
@@ -2151,30 +1901,20 @@ attacks = {
 		},
 		prots : [
 			{
-				start: 0,
-				type: protections.full,
-				finish: 12,
+				start: 4,
+				type: protections.low_invul,
+				finish: 15,
 			}
 		],
 		movements: [
 			{
-				start: 9,
+				start: 4,
 				x_speed: 6.9,
-				y_speed: -15.2,
+				y_speed: -7.6,
 			}
 		],
 		cost : 10,
 		scrpt : function(_self){
-			if _self.image_index > 13
-				and _self.image_index < 16
-				and _self.cancel == true
-				and !_self.bbox_collision_function(_self.x, _self.y +1, false){
-					if input_check_pressed(_self.inputs.k_S2, _self.wich_player, 5){
-						_self.velx = 0;
-						_self.vely = 0;
-						_self.functionAttackStart(_self.S_three_followup, states.special_atack);
-					}
-			}
 		}
 	},
 	

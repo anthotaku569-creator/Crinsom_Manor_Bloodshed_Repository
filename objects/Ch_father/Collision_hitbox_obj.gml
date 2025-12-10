@@ -258,7 +258,7 @@ function perfectbloc_function(){
 	//hit stop
 	match_controller.hit_pause(_hbox.strg)
 	//blocstun
-		var _blocstun = calc_hitstun(ceil(_hbox.bls - 2)) + _hbox.stt_effects.paralysis;
+		var _blocstun = calc_hitstun(ceil(_hbox.bls - 6)) + _hbox.stt_effects.paralysis;
 		bars.HitstunBar.actual = _blocstun;
 	//kckback
 	//delay_kback.other_dir = _hbox.master.image_xscale;
@@ -279,6 +279,14 @@ function perfectbloc_function(){
 	//!!!!
 	stun_data = _blocstun;
 	should_reverse = true;
+	// hitspark
+	match_controller.hitspark_create(
+		hitspark_perfect_block,
+		_hbox.x,
+		_hbox.y - (24* _hbox.image_yscale),
+		self.x,
+		self.y
+	)
 }
 
 function did_he_blocked(){
@@ -353,9 +361,9 @@ function did_he_blocked(){
 						match_controller.modify_blodlust(25, wich_player);
 						match_controller.hit_pause(4);
 						//kckback
-						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
+						_hbox.master.velx = (ceil(_hbox.kback.strength/2) + 8)* image_xscale;
 						image_index = 1;
-						bars.HitstunBar.actual = calc_hitstun(ceil(_hbox.bls)/2) + (_hbox.stt_effects.paralysis/2);
+						bars.HitstunBar.actual = calc_hitstun(_hbox.bls) + (_hbox.stt_effects.paralysis);
 						//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
 					 }
 					 else{
@@ -372,10 +380,10 @@ function did_he_blocked(){
 						match_controller.modify_blodlust(25, wich_player);
 						match_controller.hit_pause(4);
 						//kckback
-						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
+						_hbox.master.velx = (ceil(_hbox.kback.strength/2) + 8)* image_xscale;
 						image_index = 1;
 						//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
-						bars.HitstunBar.actual = calc_hitstun(ceil(_hbox.bls)/2) + (_hbox.stt_effects.paralysis/2);
+						bars.HitstunBar.actual = calc_hitstun(_hbox.bls) + (_hbox.stt_effects.paralysis);
 					 }
 					 else{
 						match_controller.modify_blodlust(-10, wich_player);
@@ -389,10 +397,10 @@ function did_he_blocked(){
 						match_controller.modify_blodlust(25, wich_player);
 						match_controller.hit_pause(4);
 						//kckback
-						_hbox.master.velx = ((_hbox.kback.strength + 20)* image_xscale);
+						_hbox.master.velx = (ceil(_hbox.kback.strength/2) + 8)* image_xscale;
 						image_index = 1;
 						//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
-						bars.HitstunBar.actual = calc_hitstun(ceil(_hbox.bls)/2) + (_hbox.stt_effects.paralysis/2);
+						bars.HitstunBar.actual = calc_hitstun(_hbox.bls) + (_hbox.stt_effects.paralysis);
 					 }
 					 else{
 						match_controller.modify_blodlust(-10, wich_player);

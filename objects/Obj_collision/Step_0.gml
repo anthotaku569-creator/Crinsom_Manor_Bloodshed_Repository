@@ -9,8 +9,10 @@ image_xscale = 0.5;
 
 
 if place_meeting(x - 1, y, Collision_father) {
-	x += 8;
+	x += 24;
+	velx = 0;
 }
 if place_meeting(x + 1, y, Collision_father) {
-	x -= 8;
+	x -= 24;
+	velx = 0;
 }
