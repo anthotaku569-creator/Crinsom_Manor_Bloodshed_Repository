@@ -36,6 +36,9 @@ if stt_effects.water{
 
 if bloc== blc_types.pry{
 	if other.reflect == true{
+		
+		master.active_prys[? string(master_atk)] = 0;
+		
 		if (pry_properties.physics.collision != true){
 			pry_properties.velx = pry_properties.velx * -1
 			pry_properties.vely = pry_properties.vely * -1
