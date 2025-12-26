@@ -3,9 +3,9 @@
 
 //characters
 char = Ch_Kanpeni;
-banner = Crinsom_Banner;
+banner = Perfection_Banner;
 idle = Perfection_idle;
-smol = Crinsom_Portrait_small;
+smol = Perfection_Portrait_small;
 name = "Kanpeni"
 //supers
 

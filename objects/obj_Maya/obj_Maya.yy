@@ -35,10 +35,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":true,
-  "spriteId":{
-    "name":"SweepGirl_idle_1",
-    "path":"sprites/SweepGirl_idle_1/SweepGirl_idle_1.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

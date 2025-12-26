@@ -66,7 +66,7 @@ extras = {
 }
 
 animations = {
-	enter: Crinsom_entrance,
+	enter: Perfection_entrance,
 	idle: Perfection_idle,
 	walk: Perfection_f_walk,
 	walkback: Perfection_b_walk,
@@ -99,10 +99,10 @@ animations = {
 		air: Perfection_blcstn_air,
 	},
 	redeye:{
-		dash: Crinsom_curseeye_dash,
-		redpause: Crinsom_curseeye
+		dash: Perfection_curseeye_dash,
+		redpause: Perfection_curseeye
 	},
-	entrance : Crinsom_entrance,
+	entrance : Perfection_entrance,
 	death : Perfection_hard_kdown,
 	/*
 	run : Father_walk,
@@ -1167,12 +1167,12 @@ attacks = {
 	},
 	
 	grab : {
-		animation: Crinsom_ngrab,
+		animation: Perfection_ngrab,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 3,
+				create : 4,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
@@ -1189,13 +1189,13 @@ attacks = {
 					grb_script : function (_graber,_victim){
 						_victim.vely = _graber.vely;
 						switch(_graber.sprite_index){
-							case Crinsom_ngrab:
+							case Perfection_ngrab:
 								//victima
 								_victim.image_speed=0
 								_victim.sprite_index = _victim.animations.hitstun
 								_victim.bars.HitstunBar.actual += 10
 								_victim.image_xscale = _graber.image_xscale*-1
-								_victim.x = _graber.x + 24 * _graber.image_xscale
+								_victim.x = _graber.x + 16 * _graber.image_xscale
 								_victim.y = _graber.y
 								_victim.depth = 0
 								_victim.image_index=0
@@ -1218,26 +1218,26 @@ attacks = {
 									_graber.image_xscale = -1;
 								}
 								
-								_graber.sprite_index = Crinsom_nthrow;
+								_graber.sprite_index = Perfection_nthrow;
 								
 								break;
-							case Crinsom_nthrow:
-								var dmg = _victim.calc_damage(40);
-								var hts = 60 - _victim.stats.weight.hit_red;
-								var kbck = 18;
-								var angle = 45;
+							case Perfection_nthrow:
+								var dmg = _victim.calc_damage(0);
+								var hts = 120 - _victim.stats.weight.hit_red;
+								var kbck = 20;
+								var angle = 80;
 								var kdwn = true;
-								if (_graber.image_index >= 0 and _graber.image_index <= 12){
+								if (_graber.image_index >= 0 and _graber.image_index <= 6){
 									//move
 									_victim.depth = 1;
 									_victim.sprite_index = _victim.animations.hitstun
-									_victim.x = _graber.x + 32 * _graber.image_xscale
-									_victim.y = _graber.y - 24;
+									_victim.x = _graber.x + 16 * _graber.image_xscale
+									_victim.y = _graber.y + 24;
 								}
-								if (_graber.image_index >= 13){
-									particle_function(hitspark_fire,
+								if (_graber.image_index >= 6){
+									particle_function(hitspark_normal,
 										_graber.x + (32 * _graber.image_xscale),
-										_graber.y - 48,
+										_graber.y - 32,
 										0, 0,
 										)
 									//current_attack = attacks.empty
@@ -1253,13 +1253,13 @@ attacks = {
 									_victim.delay_kback.strength = kbck;
 									_victim.delay_kback.other_dir = _graber.image_xscale;
 									_victim.alarm[0] = 1;
-									_victim.scaling.dmg = _victim.scaling.dmg*0.8
+									_victim.scaling.dmg = _victim.scaling.dmg*0.9
 									_victim.scaling.kbck = _victim.scaling.kbck*1.2
 									_victim.scaling.combo ++;
 									_victim.scaling.enemy = _graber
 									_victim.bars.HitstunBar.kdwn = 1;
 									//victim got out, now is grabber's turn
-									_graber.attacks.empty.animation = Crinsom_nthrow;
+									_graber.attacks.empty.animation = Perfection_nthrow;
 									_graber.current_attack = _graber.attacks.empty;
 									_victim.state = states.hitstun
 									_graber.state = states.m_attack;
@@ -1271,8 +1271,8 @@ attacks = {
 						}
 					},
 					rel_pos : {
-						posx : +24,
-						posy : -48,
+						posx : +16,
+						posy : -32,
 					},
 					kback : {
 						strength : 0, // +1 pnts
@@ -1315,12 +1315,12 @@ attacks = {
 	},
 	
 	a_grab : {
-		animation: Crinsom_agrab,
+		animation: Perfection_agrab,
 		lnd_strng: 2,
 		hboxs: [
 			//hit 1
 			{
-				create : 3,
+				create : 4,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
@@ -1337,13 +1337,13 @@ attacks = {
 					grb_script : function (_graber,_victim){
 						_victim.vely = _graber.vely;
 						switch(_graber.sprite_index){
-							case Crinsom_agrab:
+							case Perfection_agrab:
 								//victima
 								_victim.image_speed=0
 								_victim.sprite_index = _victim.animations.hitstun
 								_victim.bars.HitstunBar.actual += 10
 								_victim.image_xscale = _graber.image_xscale*-1
-								_victim.x = _graber.x + 24 * _graber.image_xscale
+								_victim.x = _graber.x + 16 * _graber.image_xscale
 								_victim.y = _graber.y
 								_victim.depth = 0
 								_victim.image_index=0
@@ -1367,15 +1367,15 @@ attacks = {
 									_graber.image_xscale = -1;
 								}
 								
-								_graber.sprite_index = Crinsom_athrow;
+								_graber.sprite_index = Perfection_athrow;
 								
 								break;
-							case Crinsom_athrow:
-								var dmg = 40*_victim.scaling.dmg;
+							case Perfection_athrow:
+								var dmg = 50*_victim.scaling.dmg;
 								var hts = 45 - _victim.stats.weight.hit_red;
 								var kbck = 18; var angle = -45;
 								var kdwn = true;
-								if (_graber.image_index >= 0 and _graber.image_index <= 10){
+								if (_graber.image_index >= 0 and _graber.image_index <= 16){
 									//move
 									_victim.sprite_index = _victim.animations.crouch
 									_victim.x = _graber.x - 48 * _graber.image_xscale;
@@ -1383,7 +1383,7 @@ attacks = {
 									_graber.velx = 0;
 									_graber.vely = 0;									
 								}
-								if (_graber.image_index == 11){
+								if (_graber.image_index == 16){
 									_graber.velx = -8 * _graber.image_xscale;
 									_graber.vely = -8;	
 									//current_attack = attacks.empty
@@ -1405,7 +1405,7 @@ attacks = {
 									_victim.scaling.enemy = _graber
 									_victim.bars.HitstunBar.kdwn = 1;
 									//victim got out, now is grabber's turn
-									_graber.attacks.empty.animation = Crinsom_athrow;
+									_graber.attacks.empty.animation = Perfection_athrow;
 									_graber.current_attack = _graber.attacks.empty;
 									_victim.state = states.hitstun
 									_graber.state = states.m_attack;
@@ -1413,15 +1413,15 @@ attacks = {
 								break;
 							default:
 								
-								_graber.sprite_index = Crinsom_athrow;
+								_graber.sprite_index = Perfection_athrow;
 								_graber.y -= 48;
 								break;
 						}
 						
 					},
 					rel_pos : {
-						posx : +24,
-						posy : -48,
+						posx : +16,
+						posy : -32,
 					},
 					kback : {
 						strength : 0, // +1 pnts

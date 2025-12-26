@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Crinsom_Portrait_small",
-    "path":"sprites/Crinsom_Portrait_small/Crinsom_Portrait_small.yy",
+    "name":"Perfection_Portrait_small",
+    "path":"sprites/Perfection_Portrait_small/Perfection_Portrait_small.yy",
   },
   "spriteMaskId":null,
   "visible":true,
