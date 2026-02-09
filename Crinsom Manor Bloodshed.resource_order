@@ -17,5 +17,8 @@
     {"name":"Perfection_ngrab","order":2,"path":"sprites/Perfection_ngrab/Perfection_ngrab.yy",},
     {"name":"Perfection_nthrow","order":3,"path":"sprites/Perfection_nthrow/Perfection_nthrow.yy",},
     {"name":"Perfection_Portrait_small","order":11,"path":"sprites/Perfection_Portrait_small/Perfection_Portrait_small.yy",},
+    {"name":"Perfection_s1_2","order":2,"path":"sprites/Perfection_s1_2/Perfection_s1_2.yy",},
+    {"name":"Perfection_s2","order":3,"path":"sprites/Perfection_s2/Perfection_s2.yy",},
+    {"name":"Perfection_s3","order":1,"path":"sprites/Perfection_s3/Perfection_s3.yy",},
   ],
 }
