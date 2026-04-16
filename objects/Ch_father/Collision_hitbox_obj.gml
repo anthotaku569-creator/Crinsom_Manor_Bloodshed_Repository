@@ -67,7 +67,9 @@ function calc_hitstun(_hts){
 }
 
 function cleanhit_function(){
-	if state == states.special_atack or state == states.h_attack or state == states.m_attack or state == states.parry or state == states.dodge{
+	if state == states.special_atack or state == states.h_attack
+		or state == states.m_attack or state == states.parry or state == states.dodge
+		or state == states.burst {
 		scaling.dmg = scaling.dmg*(1 + (0.1*_hbox.strg))
 		//scaling.kbck = scaling.kbck*(0.8 + (0.01*_hbox.strg))
 	}
@@ -304,6 +306,7 @@ function did_he_blocked(){
 					 if input_check(inputs.k_down, wich_player){
 						if p_bloc.active {
 							match_controller.modify_blodlust(4, wich_player);
+							bars.Humanity.actual += 4;
 							perfectbloc_function()
 						}
 						else{
@@ -314,7 +317,7 @@ function did_he_blocked(){
 					 else{
 						match_controller.modify_blodlust(-8, wich_player);
 						bars.HitstunBar.actual = 0
-						scaling.dmg = scaling.dmg*1.01
+						scaling.dmg = scaling.dmg*1.1
 						//match_controller.sophie_dialoge_action(sophie_states.overhead, wich_player);
 						cleanhit_function()
 					 }
@@ -323,6 +326,7 @@ function did_he_blocked(){
 					 if !input_check(inputs.k_down, wich_player){
 						if p_bloc.active{
 							match_controller.modify_blodlust(4, wich_player);
+							bars.Humanity.actual += 4;
 							perfectbloc_function()
 						}
 						else{
@@ -333,7 +337,7 @@ function did_he_blocked(){
 					 else{
 						match_controller.modify_blodlust(-8, wich_player);
 						bars.HitstunBar.actual = 0
-						scaling.dmg = scaling.dmg*1.01
+						scaling.dmg = scaling.dmg*1.1
 						//match_controller.sophie_dialoge_action(sophie_states.low, wich_player);
 						cleanhit_function()
 					 }
@@ -341,6 +345,7 @@ function did_he_blocked(){
 				default:
 					if p_bloc.active{
 						match_controller.modify_blodlust(2, wich_player);
+						bars.Humanity.actual += 4;
 						perfectbloc_function()
 					}
 					else{
@@ -389,7 +394,7 @@ function did_he_blocked(){
 					 else{
 						match_controller.modify_blodlust(-10, wich_player);
 						bars.HitstunBar.actual = 0
-						scaling.dmg = scaling.dmg*1.01
+						scaling.dmg = scaling.dmg*1.1
 						cleanhit_function()
 					 }
 					 break;
@@ -406,23 +411,24 @@ function did_he_blocked(){
 					 else{
 						match_controller.modify_blodlust(-10, wich_player);
 						bars.HitstunBar.actual = 0
-						scaling.dmg = scaling.dmg*1.01
+						scaling.dmg = scaling.dmg*1.1
 						cleanhit_function()
 					 }
 					break;
 			}
 	}
-	else if state == states.burst and image_index <= 8 {
+	else if state == states.burst and image_index <= 16 {
 		match_controller.hit_pause(4);
 		//kckback
 		image_index = 1;
 		_hbox.master.image_xscale = image_xscale*-1;
 		self.velx = 12* _hbox.master.image_xscale;
-		_hbox.master.velx = -12* _hbox.master.image_xscale;
+		_hbox.master.velx = -18* _hbox.master.image_xscale;
 		self.sprite_index = self.animations.landing.heavy;
 		_hbox.master.sprite_index = _hbox.master.animations.landing.heavy;
 		self.state = states.kdown_recovery;
 		_hbox.master.state = states.kdown_recovery;
+		bars.Humanity.actual += 25
 	}
 	else{
 		cleanhit_function()

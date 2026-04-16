@@ -27,7 +27,7 @@ super_function = function (select, _obj){
 			}
 			#region SUPER I
 uninstall_super = {
-	stats : StatFunctions(10, 10, 10),
+	stats : StatFunctions(10, 10, 10, 10),
 	extras : {
 		float : {
 			can : true,
@@ -1408,7 +1408,7 @@ uninstall_super = {
 								//when the hit actually hits
 								if (_graber.image_index == 8){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1458,7 +1458,7 @@ uninstall_super = {
 								//when the hit actually hits
 								if (_graber.image_index == 11){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1500,7 +1500,7 @@ uninstall_super = {
 								}
 								if (_graber.image_index == 11){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1544,7 +1544,7 @@ uninstall_super = {
 								}
 								if (_graber.image_index == 6){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1668,7 +1668,7 @@ uninstall_super = {
 								//when the hit actually hits
 								if (_victim.vely == 0){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -2880,7 +2880,7 @@ uninstall_super = {
 },
 }
 install_super = {
-	stats : StatFunctions(15, 15, 15),
+	stats : StatFunctions(15, 15, 15, 10),
 	extras : {
 		float : {
 			can : true,
@@ -4261,7 +4261,7 @@ install_super = {
 								//when the hit actually hits
 								if (_graber.image_index == 8){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -4311,7 +4311,7 @@ install_super = {
 								//when the hit actually hits
 								if (_graber.image_index == 11){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -4353,7 +4353,7 @@ install_super = {
 								}
 								if (_graber.image_index == 11){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -4397,7 +4397,7 @@ install_super = {
 								}
 								if (_graber.image_index == 6){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -4521,7 +4521,7 @@ install_super = {
 								//when the hit actually hits
 								if (_victim.vely == 0){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -6134,7 +6134,7 @@ attacks.super_n = {
 								//when the hit actually hits
 								if (_graber.image_index == _graber.image_number - 2){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}

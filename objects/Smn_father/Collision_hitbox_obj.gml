@@ -25,7 +25,7 @@ function calc_hitstun(_hts){
 
 function cleanhit_function(){
 	//hit stop
-	match_controller.hit_pause(calc_damage(other.dmg), other.hts + other.stt_effects.paralysis, other.kback.strength)
+	match_controller.hit_pause(1)
 	//hitstun
 	bars.HitstunBar.actual += calc_hitstun(other.hts);
 	//if state!= states.hitstun{
@@ -100,7 +100,7 @@ function grab_function(){
 	}
 	other.master.grabing._victim = self;
 	grabing._victim = self;
-	match_controller.hit_pause(10, 10, 10);
+	match_controller.hit_pause(1);
 	//estado grab
 	other.master.state = states.grab;
 	state = states.grab;
@@ -153,7 +153,7 @@ if (other.master.wich_player != wich_player and state != states.grab){
 					//damage
 					bars.HealthBar.actual -= calc_damage(other.dmg*0.8)
 					//hit stop
-					match_controller.hit_pause(calc_damage(other.dmg), other.hts + other.stt_effects.paralysis, other.kback.strength);
+					match_controller.hit_pause(1);
 				}
 			}
 			else{

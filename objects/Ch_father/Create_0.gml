@@ -1241,7 +1241,7 @@ attacks = {
 								//when the hit actually hits
 								if (_graber.image_index == 8){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1292,7 +1292,7 @@ attacks = {
 								//when the hit actually hits
 								if (_graber.image_index == 11){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1440,7 +1440,7 @@ attacks = {
 								//when the hit actually hits
 								if (_graber.image_index == 8){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -1491,7 +1491,7 @@ attacks = {
 								//when the hit actually hits
 								if (_graber.image_index == 11){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(dmg, hts, kbck)
+									match_controller.hit_pause(1)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
@@ -2123,7 +2123,7 @@ function bbox_place_meeting(posx, posy, obj_col){
 	}
 }
 
-function bbox_collision_function(posx, posy, _pass){
+function bbox_collision_function(posx, posy, _pass = false){
 	with(bounding_box){
 		return collision_function(posx,posy, _pass);
 	}

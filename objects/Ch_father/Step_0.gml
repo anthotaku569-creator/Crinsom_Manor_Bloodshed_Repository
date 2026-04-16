@@ -571,11 +571,15 @@ switch(state){
 		image_speed=1;
 		prot = protections.nothing;
 		
-		if input_check_pressed(inputs.k_M, wich_player, 3)
+		if (input_check_pressed(inputs.k_M, wich_player, 3)
 			and input_check_pressed(inputs.k_H, wich_player, 3) 
-			and bars.Humanity.actual >= 100 {
-			state = states.burst;
+			and bars.Humanity.actual >= 100) {
+			bars.HitstunBar.actual = 30;
 			image_index = 0;
+			sprite_index = animations.burst;
+			state = states.burst;
+			vely = -0.5;
+			bars.Humanity.actual -= 100
 		}
 		
 		if scaling.enemy!= noone{
@@ -902,15 +906,22 @@ switch(state){
 		#endregion
 	case states.burst:
 		techable = false;
-		if image_index <= 8 {
+				
+		if image_index <= 16 {
 			vely = -1;
 			velx = 0;
-			sprite_index = animations.burst;
+			if (input_check(inputs.k_M, wich_player, 3)
+				and input_check(inputs.k_H, wich_player, 3)
+				and bars.HitstunBar.actual > 0) {
+				image_index = 1;
+				bars.HitstunBar.actual --;
+			}
 		}
 		else {
-			if image_index < 16 {
+			if image_index < 24 {
 				vely = 0;
 			}
+			
 			if (bbox_collision_function(self.x, self.y+1, pass)) {
 				sprite_index = animations.landing.heavy;
 				image_index = 0;

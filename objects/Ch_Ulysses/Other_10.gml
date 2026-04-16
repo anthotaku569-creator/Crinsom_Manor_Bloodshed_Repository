@@ -1239,7 +1239,7 @@ attacks = {
 									particle_function(hitspark_normal,
 										_graber.x + (24 * _graber.image_xscale),
 										_graber.y - 12,
-										0, 0,
+										0, 0
 										)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)
@@ -1392,7 +1392,7 @@ attacks = {
 									particle_function(hitspark_normal,
 										_graber.x + (24 * _graber.image_xscale),
 										_graber.y - 12,
-										0, 0,
+										0, 0
 										)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)

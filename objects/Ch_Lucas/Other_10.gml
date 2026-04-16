@@ -1285,7 +1285,7 @@ attacks = {
 									particle_function(hitspark_fire,
 										_graber.x + (32 * _graber.image_xscale),
 										_graber.y - 48,
-										0, 0,
+										0, 0
 										)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)

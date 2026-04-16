@@ -1,5 +1,5 @@
 
-function collision_function(posx, posy, _pass){
+function collision_function(posx, posy, _pass = false){
 	if place_meeting(posx, posy ,Collision_normal){
 		return true;
 	}

@@ -240,6 +240,7 @@ function actual_respawn (_ply){
 		player_one.erasing_sprite = 0;
 		player_one.bars.HealthBar.actual = player_one.bars.HealthBar.maximum;
 		player_one.bars.HitstunBar.actual = 0;
+		player_one.bars.Humanity.actual += 25;
 		player_one.x = room_width/2;
 		player_one.y = room_height - 48;
 		player_one.stt_effects = {
@@ -258,6 +259,7 @@ function actual_respawn (_ply){
 		player_two.erasing_sprite = 0;
 		player_two.bars.HealthBar.actual = player_two.bars.HealthBar.maximum;
 		player_two.bars.HitstunBar.actual = 0;
+		player_two.bars.Humanity.actual += 25;
 		player_two.sprite_index = player_two.animations.idle;
 		player_two.bars.HealthBar.actual = player_two.bars.HealthBar.maximum;
 		player_two.x = room_width/2;
