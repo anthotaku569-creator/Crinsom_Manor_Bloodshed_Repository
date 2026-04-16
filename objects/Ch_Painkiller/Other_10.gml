@@ -16,6 +16,10 @@ bars = {
 		actual : 25,
 		maximum : 100,
 	},
+	Humanity: {
+		actual : 100,
+		maximum : 100,
+	},
 	Charge : {
 		actual : 60,
 		maximum: 80,
@@ -72,6 +76,7 @@ animations = {
 	walkback: Painkiller_b_walk,
 	step: Painkiller_f_walk,
 	crouch: Painkiller_crouch,
+	burst: Painkiller_burst,
 	air: {
 		rising: Painkiller_jmp_rising,
 		falling: Painkiller_jmp_falling

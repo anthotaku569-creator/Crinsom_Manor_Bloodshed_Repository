@@ -142,6 +142,10 @@ bars = {
 		actual : 25,
 		maximum : 100,
 	},
+	Humanity: {
+		actual : 100,
+		maximum : 100,
+	},
 	Charge : {
 		actual : 60,
 		maximum: 80,
@@ -174,6 +178,7 @@ animations = {
 	walkback: Father_walk,
 	step: Father_step,
 	crouch: Father_crouch,
+	burst: Father_parry_high,
 	air: {
 		rising: Father_jmp_rising,
 		falling: Father_jmp_falling
@@ -1396,7 +1401,7 @@ attacks = {
 								
 								if input_check(_victim.inputs.k_L, _victim.wich_player , 5)
 									and input_check(_victim.inputs.k_M, _victim.wich_player, 5)
-									and _victim.techable == true{
+									and _victim.techable == true {
 									_victim.velx = 8* _graber.image_xscale;
 									_graber.velx = -8* _graber.image_xscale;
 									_victim.sprite_index = _victim.animations.landing.heavy;
@@ -2095,347 +2100,10 @@ attacks = {
 		cost : 10,
 		scrpt : function(_self){}
 	},
-	
+		
 }
 
 super_func = function (){}
-/*
-
-
-	n_d_spe : {
-		animation: Father_ndspecial, //13 frames total
-		lnd_strng: -1,
-		hboxs: [
-			//hit 1
-			{
-				create : 16,
-				hbox: { hitspark: hitspark_normal,
-					spr : Father_pry_dspecial1,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 120, // -2 pnts
-					dmg : 0, // -6 pnts
-					hts : 0, // -6 pnts
-					bloc : blc_types.pry,//0
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +48,
-						posy : -48,
-					},
-					kback : {
-						strength : 0, // +1 pnts
-						angle : 0, //counter-clock
-					},
-					stt_effects : {
-						burn : 0,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: 8,
-							contact: true,
-							summon: summon_dspecial
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
-		],
-		helper: {
-			frame: -1, 
-			object: noone
-		},
-		install: noone,
-		prots : [
-		],
-		movements: [
-		],
-		follow_ups: [
-		],
-		effects : [
-		],
-		cost :{
-			inspiration: 0,
-			charge: true,
-		}
-	},
-	
-	a_d_spe : {
-		animation: Father_ndspecial, //13 frames total
-		lnd_strng: -1,
-		hboxs: [
-			//hit 1
-			{
-				create : 16,
-				hbox: { hitspark: hitspark_normal,
-					spr : Father_pry_dspecial1,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 120, // -2 pnts
-					dmg : 0, // -6 pnts
-					hts : 0, // -6 pnts
-					bloc : blc_types.pry,//0
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +48,
-						posy : -48,
-					},
-					kback : {
-						strength : 0, // +1 pnts
-						angle : 0, //counter-clock
-					},
-					stt_effects : {
-						burn : 0,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: 8,
-							contact: true,
-							summon: summon_dspecial
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
-		],
-		helper: {
-			frame: -1,
-			object: noone
-		},
-		install: noone,
-		prots : [
-		],
-		movements: [
-		],
-		follow_ups: [
-		],
-		effects : [
-		],
-		cost :{
-			inspiration: 0,
-			charge: true,
-		}
-	},
-	
-	bloc_spe : {
-		animation: Father_nfu_special, //18 frames total
-		lnd_strng: 4,
-		hboxs: [
-			//hit 1
-			{
-				create : 19,
-				hbox: { hitspark: hitspark_normal,
-					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 2.5,
-					duration : 4, // -2 pnts
-					dmg : (7*2), // -6 pnts
-					hts : 9 + (30*2), // -6 pnts
-					bloc : blc_types.ovh,//0
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +24,
-						posy : 0,
-					},
-					kback : {
-						strength : (4*4)*2, // +1 pnts
-						angle : -45, //counter-clock
-					},
-					stt_effects : {
-						burn : 10,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: noone
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false, collision : false,magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
-		],
-		helper: {
-			frame: -1,
-			object: noone
-		},
-		install: noone,
-		prots : [
-			{
-				start: 1,
-				type: protections.armor,
-				finish: 25,
-			}
-		],
-		movements: [
-			{
-				start: 7,
-				x_speed: 3.5,
-				y_speed: -10.7,
-			},
-		],
-		follow_ups: [
-		],
-		effects : [
-		],
-		cost :{
-			inspiration: 15,
-			charge: false,
-		}
-	},
-
-
-attacks.d_spe2 = {
-		animation: Father_ndspecial2, //13 frames total
-		lnd_strng: -1,
-		hboxs: [
-			//hit 1
-			{
-				create : 16,
-				hbox: { hitspark: hitspark_normal,
-					spr : Father_pry_dspecial2,
-					scale_x : 1,
-					scale_y : 1,
-					duration : 90, // -2 pnts
-					dmg : 0, // -6 pnts
-					hts : 0, // -6 pnts
-					bloc : blc_types.pry,//0
-					reflect : false,
-					grb_script : function (_graber,_victim){},
-					rel_pos : {
-						posx : +48,
-						posy : -48,
-					},
-					kback : {
-						strength : 0, // +1 pnts
-						angle : 0, //counter-clock
-					},
-					stt_effects : {
-						burn : 0,
-						paralysis : 0,
-						cold : 0,
-						poison : 0,
-						curse : 0,
-						water : false,
-					},
-					pry_properties : {
-						velx : 0,
-						vely : 0,
-						bmrng : false,
-						activation : {
-							delay: -1,
-							contact: false,
-							summon: summon_dspecial
-						},
-						physics : {
-							grav : 0,
-							air_frict : 0,
-							bounce : false,
-							collision : false,
-							magnet : false,
-							grnd_frict : 0,
-						},
-					},
-				},
-			},
-		],
-		helper: {
-			frame: -1,
-			object: noone
-		},
-		install: noone,
-		prots : [
-		],
-		movements: [
-		],
-		follow_ups: [
-		],
-		effects : [
-		],
-		cost :{
-			inspiration: 0,
-			charge: false,
-		}
-}
-
-attacks.u_tilt.follow_ups[0] = {
-	frame : 9,
-	action : inputs.k_L, // dejar presionado L
-	follow: attacks.fu_tilt,
-}
-attacks.n_f_spe.follow_ups = [
-{
-	frame : 22,
-	action : inputs.k_down, // dejar presionado L
-	follow: attacks.n_fd_spe,
-},
-{
-	frame : 22,
-	action : inputs.k_up, // dejar presionado L
-	follow: attacks.n_fu_spe,
-}
-]
-attacks.n_d_spe.follow_ups[0] = {
-	frame : 10,
-	action : inputs.k_spe, // dejar presionado L
-	follow: attacks.d_spe2,
-}
-attacks.a_d_spe.follow_ups[0] = {
-	frame : 10,
-	action : inputs.k_spe, // dejar presionado spe
-	follow: attacks.d_spe2,
-}
-
-attacks.dash_attack = attacks.f_tilt;
-
-attacks.dash_attack = attacks.f_tilt;
-*/
-
 
 //create bounding box
 
@@ -3453,6 +3121,7 @@ function block_near(){
 
 	function light_attack(){
 		if cancel == true {
+			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1) and vely >= 0{
 				if input_check_pressed(inputs.k_L, wich_player, 3) and !input_check(inputs.k_up, wich_player){
 					if state != states.run{
@@ -3485,6 +3154,7 @@ function block_near(){
 
 	function medium_attack(){
 		if cancel == true {
+			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1) and vely >= 0{
 				if input_check_pressed(inputs.k_M, wich_player, 3) and !input_check(inputs.k_up, wich_player){
 					if state != states.run{
@@ -3509,6 +3179,7 @@ function block_near(){
 
 	function heavy_attack(){
 		if cancel == true {
+			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1) and vely >= 0{
 				if input_check_pressed(inputs.k_H, wich_player, 3) and !input_check(inputs.k_up, wich_player){
 					if state != states.run{
@@ -3541,6 +3212,7 @@ function block_near(){
 
 	function special_attack(){
 		if cancel == true {
+			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1, false) and vely >= 0{
 				if input_check_pressed(inputs.k_S1, wich_player, 3){
 					functionAttackStart(attacks.n_S_one, states.special_atack);
@@ -3567,7 +3239,8 @@ function block_near(){
 	}
 
 	function grab_attack(){
-		if input_check_pressed(inputs.k_L, wich_player, 3) and input_check_pressed(inputs.k_M, wich_player, 3) {
+		if input_check_pressed(inputs.k_L, wich_player, 3) and input_check_pressed(inputs.k_M, wich_player, 3)
+			and !input_check_pressed(inputs.k_H, wich_player, 3) {
 			if bbox_collision_function(x, y + 1) and vely >= 0{
 				functionAttackStart(attacks.grab, states.m_attack);
 			}
@@ -3579,7 +3252,10 @@ function block_near(){
 
 	function parry_function(){
 		if input_check_pressed(inputs.k_M, wich_player, 3)
-			and input_check_pressed(inputs.k_H, wich_player, 3) {
+			and input_check_pressed(inputs.k_H, wich_player, 3) 
+			and !input_check_pressed(inputs.k_L, wich_player, 3)
+			and bars.Humanity.actual > 0 {
+						
 			if bbox_collision_function(self.x, self.y+1, false) and vely >= 0 {
 				if input_check(inputs.k_down, wich_player, 3) {
 					sprite_index = extras.parry.animations.low;
@@ -3595,6 +3271,7 @@ function block_near(){
 				image_index = 0;
 			}
 			state = states.parry;
+			bars.Humanity.actual--;
 		}
 	}
 
@@ -3677,14 +3354,7 @@ function redeye_activation(){
 		and input_check_released(inputs.k_H, wich_player, 1)
 		) {
 		if (25 <= match_controller.get_bloodlust(wich_player)){
-			
-			if image_index < 2 and (
-				state = states.l_attack or
-				state = states.m_attack or
-				state = states.h_attack){
-				cancel = true;
-			}
-			
+						
 			match_controller.modify_blodlust(-25, wich_player);
 			image_index = 0;
 			state = states.curse_eye;

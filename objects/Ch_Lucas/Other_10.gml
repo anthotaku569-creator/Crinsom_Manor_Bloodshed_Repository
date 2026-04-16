@@ -16,6 +16,10 @@ bars = {
 		actual : 25,
 		maximum : 100,
 	},
+	Humanity: {
+		actual : 100,
+		maximum : 100,
+	},
 	Charge : {
 		actual : 60,
 		maximum: 80,
@@ -72,6 +76,7 @@ animations = {
 	walkback: Crinsom_b_walk,
 	step: Crinsom_f_walk,
 	crouch: Crinsom_crouch,
+	burst: Crinsom_burst,
 	air: {
 		rising: Crinsom_jmp_rising,
 		falling: Crinsom_jmp_falling

@@ -16,6 +16,10 @@ bars = {
 		actual : 25,
 		maximum : 100,
 	},
+	Humanity: {
+		actual : 100,
+		maximum : 100,
+	},
 	Charge : {
 		actual : 60,
 		maximum: 80,
@@ -72,6 +76,7 @@ animations = {
 	walkback: Perfection_b_walk,
 	step: Perfection_f_walk,
 	crouch: Perfection_crouch,
+	burst: Perfection_burst,
 	air: {
 		rising: Perfection_jmp_rising,
 		falling: Perfection_jmp_falling

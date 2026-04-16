@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"08d77a55-fe19-49c6-89e3-a5f855d97aa7","name":"08d77a55-fe19-49c6-89e3-a5f855d97aa7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"77101bab-cdc0-4566-824f-12977682c4f5","name":"77101bab-cdc0-4566-824f-12977682c4f5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":48,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"fbbce271-ca97-469f-85d1-c7d94be52073","blendMode":0,"displayName":"default","isLocked":false,"name":"fbbce271-ca97-469f-85d1-c7d94be52073","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"4c8eaa3e-15af-4b84-b0d5-6422be4de05a","blendMode":0,"displayName":"default","isLocked":false,"name":"4c8eaa3e-15af-4b84-b0d5-6422be4de05a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Painkiller_Portrait_small",
   "nineSlice":null,
@@ -70,7 +70,9 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"08d77a55-fe19-49c6-89e3-a5f855d97aa7","path":"sprites/Painkiller_Portrait_small/Painkiller_Portrait_small.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"f40ce53a-cde7-4847-bc62-7343179ef0db","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"77101bab-cdc0-4566-824f-12977682c4f5","path":"sprites/Painkiller_Portrait_small/Painkiller_Portrait_small.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f31f7041-0a5a-4522-9555-3a802b28b8c8","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

@@ -24,7 +24,8 @@ enum states{
 	curse_eye,
 	super_atack,
 	enter_match,
-	round_finish
+	round_finish,
+	burst
 }
 
 enum blc_types{

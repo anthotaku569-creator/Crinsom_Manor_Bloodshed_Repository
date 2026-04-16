@@ -16,6 +16,10 @@ bars = {
 		actual : 25,
 		maximum : 100,
 	},
+	Humanity: {
+		actual : 100,
+		maximum : 100,
+	},
 	Charge : {
 		actual : 60,
 		maximum: 80,
@@ -71,6 +75,7 @@ animations = {
 	walkback: ulysses_b_walk,
 	step: ulysses_f_walk,
 	crouch: ulysses_crouch,
+	burst: ulysses_burst,
 	air: {
 		rising: ulysses_jmp_rising,
 		falling: ulysses_jmp_falling

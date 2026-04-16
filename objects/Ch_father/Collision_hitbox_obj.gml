@@ -172,9 +172,10 @@ function cleanhit_function(){
 	
 	bars.HealthBar.actual -= calc_damage(_hbox.dmg)
 	scaling.cum_dmg += calc_damage(_hbox.dmg)
-	if match_controller.get_bloodlust(wich_player) > 50{
+	//if match_controller.get_bloodlust(wich_player) > 50{
 		match_controller.modify_blodlust(-2, wich_player);
-	}
+	//}
+	bars.Humanity.actual +=1;
 	//status effects
 	stt_effects.poison += _hbox.stt_effects.poison * 60
 	stt_effects.curse += _hbox.stt_effects.curse * 60
@@ -253,7 +254,7 @@ function blockedhit_function(){
 	_hbox.master.cancel = true;
 }
 
-function perfectbloc_function(){
+function perfectbloc_function() {
 	//match_controller.sophie_dialoge_action(sophie_states.inst_blc, wich_player);
 	//hit stop
 	match_controller.hit_pause(_hbox.strg)
@@ -301,7 +302,7 @@ function did_he_blocked(){
 			switch(_hbox.bloc){
 				case blc_types.low:
 					 if input_check(inputs.k_down, wich_player){
-						if p_bloc.active{
+						if p_bloc.active {
 							match_controller.modify_blodlust(4, wich_player);
 							perfectbloc_function()
 						}
@@ -353,7 +354,7 @@ function did_he_blocked(){
 			blockedhit_function()
 		}
 	}
-	else if state == states.parry{
+	else if state == states.parry {
 		switch(_hbox.bloc){
 				case blc_types.low:
 					 if sprite_index == extras.parry.animations.low
@@ -410,6 +411,18 @@ function did_he_blocked(){
 					 }
 					break;
 			}
+	}
+	else if state == states.burst and image_index <= 8 {
+		match_controller.hit_pause(4);
+		//kckback
+		image_index = 1;
+		_hbox.master.image_xscale = image_xscale*-1;
+		self.velx = 12* _hbox.master.image_xscale;
+		_hbox.master.velx = -12* _hbox.master.image_xscale;
+		self.sprite_index = self.animations.landing.heavy;
+		_hbox.master.sprite_index = _hbox.master.animations.landing.heavy;
+		self.state = states.kdown_recovery;
+		_hbox.master.state = states.kdown_recovery;
 	}
 	else{
 		cleanhit_function()

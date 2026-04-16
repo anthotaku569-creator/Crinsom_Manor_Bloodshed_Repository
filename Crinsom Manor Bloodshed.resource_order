@@ -10,8 +10,12 @@
     {"name":"specials","order":6,"path":"folders/Sprites/Characters/Kanpeni/specials.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"Crinsom_burst","order":1,"path":"sprites/Crinsom_burst/Crinsom_burst.yy",},
+    {"name":"HUD_fighting_1","order":1,"path":"sprites/HUD_fighting_1/HUD_fighting_1.yy",},
+    {"name":"Painkiller_burst","order":1,"path":"sprites/Painkiller_burst/Painkiller_burst.yy",},
     {"name":"Perfection_agrab","order":1,"path":"sprites/Perfection_agrab/Perfection_agrab.yy",},
     {"name":"Perfection_Banner","order":10,"path":"sprites/Perfection_Banner/Perfection_Banner.yy",},
+    {"name":"Perfection_burst","order":1,"path":"sprites/Perfection_burst/Perfection_burst.yy",},
     {"name":"Perfection_curseeye","order":1,"path":"sprites/Perfection_curseeye/Perfection_curseeye.yy",},
     {"name":"Perfection_entrance","order":8,"path":"sprites/Perfection_entrance/Perfection_entrance.yy",},
     {"name":"Perfection_ngrab","order":2,"path":"sprites/Perfection_ngrab/Perfection_ngrab.yy",},
@@ -20,5 +24,7 @@
     {"name":"Perfection_s1_2","order":2,"path":"sprites/Perfection_s1_2/Perfection_s1_2.yy",},
     {"name":"Perfection_s2","order":3,"path":"sprites/Perfection_s2/Perfection_s2.yy",},
     {"name":"Perfection_s3","order":1,"path":"sprites/Perfection_s3/Perfection_s3.yy",},
+    {"name":"Spr_HumanBar","order":2,"path":"sprites/Spr_HumanBar/Spr_HumanBar.yy",},
+    {"name":"ulysses_burst","order":1,"path":"sprites/ulysses_burst/ulysses_burst.yy",},
   ],
 }

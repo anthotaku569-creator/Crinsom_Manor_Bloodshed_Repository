@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"HUD_fighting",
   "bboxMode":0,
-  "bbox_bottom":63,
+  "bbox_bottom":100,
   "bbox_left":0,
   "bbox_right":639,
   "bbox_top":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"21c47e56-4477-4169-b006-14fd69d48642","name":"21c47e56-4477-4169-b006-14fd69d48642","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3b4f7696-2776-4362-8e0a-b80f3d42f9c3","name":"3b4f7696-2776-4362-8e0a-b80f3d42f9c3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":480,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ebfdf682-6723-4150-98b8-7c699d9b79eb","blendMode":0,"displayName":"default","isLocked":false,"name":"ebfdf682-6723-4150-98b8-7c699d9b79eb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"cf12c150-8207-4e22-887d-6ce3d4266764","blendMode":0,"displayName":"default","isLocked":false,"name":"cf12c150-8207-4e22-887d-6ce3d4266764","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"HUD_fighting",
   "nineSlice":null,
@@ -70,7 +70,9 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"21c47e56-4477-4169-b006-14fd69d48642","path":"sprites/HUD_fighting/HUD_fighting.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"60d878a7-e14f-4b9d-92bd-b3b14c580f4c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3b4f7696-2776-4362-8e0a-b80f3d42f9c3","path":"sprites/HUD_fighting/HUD_fighting.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"9740675b-6549-47e2-8353-cea299796ca1","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

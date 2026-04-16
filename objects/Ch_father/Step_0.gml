@@ -32,6 +32,10 @@ if bars.HealthBar.actual > bars.HealthBar.maximum{
 
 guts = (bars.HealthBar.actual)/(bars.HealthBar.maximum); //!!!!!!
 
+if bars.Humanity.maximum > bars.Humanity.actual {
+	bars.Humanity.actual +=0.02;
+}
+
 //When on top of a moving platform
 /*
 _floormovement = instance_place(x, y + 1 , Collision_movin)
@@ -74,12 +78,13 @@ switch(state){
 		scaling.attack = noone;
 		run_framedata = 0;
 		//scaling.cum_dmg = 0;
-		InspirationGain()
+		InspirationGain();
 		bars.Charge.actual += 1
 		cancel = true;
 		//Infinite in training mode
 		if global.training_mode == true{
 			match_controller.modify_blodlust(50 - match_controller.get_bloodlust(wich_player), wich_player);
+			bars.Humanity.actual = 100;
 		}
 		
 		///Horizontal movement
@@ -560,12 +565,18 @@ switch(state){
 		#endregion
 	case states.hitstun:
 		#region hitstun
-		redeye_activation();
 		run_framedata = 0;
 		pass = false;
 		techable = false;
 		image_speed=1;
 		prot = protections.nothing;
+		
+		if input_check_pressed(inputs.k_M, wich_player, 3)
+			and input_check_pressed(inputs.k_H, wich_player, 3) 
+			and bars.Humanity.actual >= 100 {
+			state = states.burst;
+			image_index = 0;
+		}
 		
 		if scaling.enemy!= noone{
 			if scaling.enemy.state == states.idle{
@@ -889,6 +900,24 @@ switch(state){
 		}
 		break;
 		#endregion
+	case states.burst:
+		techable = false;
+		if image_index <= 8 {
+			vely = -1;
+			velx = 0;
+			sprite_index = animations.burst;
+		}
+		else {
+			if image_index < 16 {
+				vely = 0;
+			}
+			if (bbox_collision_function(self.x, self.y+1, pass)) {
+				sprite_index = animations.landing.heavy;
+				image_index = 0;
+				state = states.landing;
+			}
+		}
+		break;
 	case states.parry:
 		techable = false;
 		if check_collision and sprite_index == extras.parry.animations.air {
@@ -899,12 +928,14 @@ switch(state){
 			input_check(inputs.k_M, wich_player) and
 			input_check(inputs.k_H, wich_player) {
 			image_index = 1;
+			
 		}
 		
 		if image_index <= 8 {
 			if (bars.HitstunBar.actual <= 0) {
+			bars.Humanity.actual-=0.2;
 			if !input_check(inputs.k_M, wich_player) or
-				!input_check(inputs.k_H, wich_player) {
+				!input_check(inputs.k_H, wich_player)  or bars.Humanity.actual <= 0{
 				image_index = 9;
 			}
 			cancel = true;
@@ -919,6 +950,7 @@ switch(state){
 	case states.air_dash:
 		#region air dashing
 		redeye_activation();
+		InspirationGain();
 		if (check_collision) {
 			velx = velx * 1/2;
 			sprite_index = animations.landing.light;
@@ -944,7 +976,8 @@ switch(state){
 		#endregion
 	case states.run:
 		#region running
-		redeye_activation();	
+		redeye_activation();
+		InspirationGain();
 		if (bbox_collision_function(self.x, self.y+1, pass)) {
 		
 			if sprite_index == extras.run.animation {
@@ -1005,13 +1038,14 @@ switch(state){
 	case states.curse_eye:
 		techable = false;
 		#region RED EYE
+			cancel = true;
 			if sprite_index = animations.redeye.redpause {
 				if image_index < 15 {
 					velx = 0;
 					vely = 0;
 					match_controller.slowdown();
 					prot = protections.full;
-					if input_check_pressed(inputs.k_up, wich_player, 3){
+					if input_check_pressed(inputs.k_up, wich_player, 3) {
 						image_index = 0;
 						if input_check_pressed(inputs.k_left, wich_player, 3){
 							image_xscale = -1;
@@ -1063,14 +1097,13 @@ switch(state){
 						y-= 4;
 						sprite_index = animations.redeye.dash;
 					}
-					else if cancel == true and image_index >= 8{
+					
+					if image_index >= 4 {
 						light_attack();
 						medium_attack();
 						heavy_attack();
 						special_attack();
 					}
-					
-					
 				}
 				else{
 					prot = protections.nothing;
@@ -1115,21 +1148,13 @@ switch(state){
 					}
 					else {
 						prot = protections.nothing;
-						if cancel == true {
-							light_attack();
-							medium_attack();
-							heavy_attack();
-							special_attack();
-						}
 					}
+					light_attack();
+					medium_attack();
+					heavy_attack();
+					special_attack();
 				}
 				else {
-					if cancel == true {
-						light_attack();
-						medium_attack();
-						heavy_attack();
-						special_attack();
-					}
 					prot = protections.nothing;
 					if (check_collision) {
 						velx = velx * 1/2;
