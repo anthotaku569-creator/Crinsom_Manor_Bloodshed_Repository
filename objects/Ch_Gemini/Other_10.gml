@@ -328,32 +328,32 @@ S_one_followup = {
 
 attacks = {
 	n_L:{
-		animation: Perfection_5L,
+		animation: Gemini_5L,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 5,
+				create : 4,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 0.5,
+					scale_x : 1,
 					scale_y : 1,
 					duration : 4,
-					dmg : 15,
+					dmg : 22,
 					kdwn: false,
-					hts : 9+1,
-					bls : 9+3,
+					hts : 6+1,
+					bls : 6+4,
 					bloc : blc_types.low,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
+						posx : +48,
 						posy : -0,
 					},
 					kback : {
-						strength : 4,
+						strength : 6,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -403,30 +403,30 @@ attacks = {
 	},
 	
 	d_L:{
-		animation: Perfection_2L,
+		animation: Gemini_2L,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 5,
+				create : 4,
 				hbox: { hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 0.75,
-					scale_y : 0.5,
+					scale_x : 1.5,
+					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 15, // -6 pnts
+					dmg : 22, // -6 pnts
 					kdwn: false,
-					hts : 11+0,
-					bls : 11+1,
+					hts : 10+1,
+					bls : 10+1,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +30,
+						posx : +60,
 						posy : 0,
 					},
 					kback : {
-						strength : 4,
+						strength : 6,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -476,32 +476,32 @@ attacks = {
 	},
 	
 	f_L:{
-		animation: Perfection_6L,
+		animation: Gemini_6L,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 6,
+				create : 7,
 				hbox: {
-					hitspark: hitspark_slash,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 0.5,
-					scale_y : 64/48,
+					scale_x : 1.5,
+					scale_y : 2,
 					duration : 4, // -2 pnts
-					dmg : 25, // -6 pnts
+					dmg : 38, // -6 pnts
 					kdwn: false,
-					hts : 13+10,
-					bls : 13-5,
-					bloc : blc_types.mid,
+					hts : 21+2,
+					bls : 21-10,
+					bloc : blc_types.ovh,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +12,
-						posy : -36,
+						posx : +60,
+						posy : -48,
 					},
 					kback : {
-						strength : 12,
-						angle : 60, //counter-clock
+						strength : 30,
+						angle : -60, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -550,29 +550,29 @@ attacks = {
 	},
 	
 	j_L:{
-		animation: Perfection_8L,
+		animation: Gemini_8L,
 		lnd_strng: 1,
 		hboxs: [
 			//hit 1
 			{
-				create : 4,
+				create : 3,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 0.5,
-					scale_y : 0.25,
-					duration : 4,
-					dmg : 15,
+					scale_x : 1,
+					scale_y : 1,
+					duration : 6,
+					dmg : 22,
 					kdwn: false,
-					hts : 9+4,
-					bls : 9-3,
+					hts : 9+8,
+					bls : 9-1,
 					bloc : blc_types.ovh,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +36,
-						posy : -36,
+						posx : +48,
+						posy : -32,
 					},
 					kback : {
 						strength :  6,
@@ -625,33 +625,33 @@ attacks = {
 	},
 		
 	n_M:{
-		animation: Perfection_5M,
+		animation: Gemini_5M,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 6,
+				create : 7,
 				hbox: {
-					hitspark: hitspark_slash,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 1.5,
-					scale_y : 2/3,
+					scale_y : 1,
 					duration : 4,
-					dmg : 32,
+					dmg : 48,
 					kdwn: false,
-					hts : 13+3,
-					bls : 13+3,
+					hts : 15+5,
+					bls : 15+3,
 					bloc : blc_types.mid,
-					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +44,
-						posy : -44,
+						posx : +72,
+						posy : -48,
 					},
 					kback : {
-						strength : 6,
-						angle : -20, //counter-clock
+						strength : 8,
+						angle : 0, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -688,11 +688,11 @@ attacks = {
 			}*/
 		],
 		movements: [
-			/*{
-				start: 0,
-				x_speed: 0,
+			{
+				start: 8,
+				x_speed: 9.2,
 				y_speed: 0,
-			}*/
+			}
 		],
 		cost : 0,
 		scrpt : function(_self) {}
@@ -700,31 +700,31 @@ attacks = {
 	},
 	
 	d_M:{
-		animation: Perfection_2M,
+		animation: Gemini_2M,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 7,
+				create : 8,
 				hbox: { 
-					hitspark: hitspark_slash,
+					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1,
+					scale_x : 2,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 30, // -6 pnts
+					dmg : 45, // -6 pnts
 					kdwn: false,
-					hts : 15+2,
-					bls : 15+3,
+					hts : 16+4,
+					bls : 16+4,
 					bloc : blc_types.low,
 					reflect : false,
-					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +56,
-						posy : 0,
+						posx : +96,
+						posy : -24,
 					},
 					kback : {
-						strength : 6,
+						strength : 4,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -774,31 +774,31 @@ attacks = {
 	},
 	
 	j_M:{
-		animation: Perfection_8M,
+		animation: Gemini_8M,
 		lnd_strng: 2,
 		hboxs: [//hit 1
 			{
-				create : 6,
+				create : 4,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 5/3,
-					scale_y : 0.5,
+					scale_x : 3,
+					scale_y : 1.5,
 					duration : 12, // -2 pnts
-					dmg : 35, // -6 pnts
+					dmg : 52, // -6 pnts
 					kdwn: false,
-					hts : 19+3,
-					bls : 19-3,
+					hts : 19+12,
+					bls : 19,
 					bloc : blc_types.ovh,
 					reflect : false,
-					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : 0,
-						posy : -16,
+						posx : 48,
+						posy : -24,
 					},
 					kback : {
-						strength : 6,
+						strength : 4,
 						angle : 0, //counter-clock
 					},
 					stt_effects : {
@@ -848,32 +848,32 @@ attacks = {
 	},
 	
 	n_H:{
-		animation: Perfection_5H,
+		animation: Gemini_5H,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 23,
+				create : 21,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 1.5,
+					scale_x : 2,
+					scale_y : 2,
 					duration : 4,
-					dmg : 50,
+					dmg : 75,
 					kdwn: false,
 					hts : 26+12,
 					bls : 26+12,
 					bloc : blc_types.ovh,
-					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +24,
-						posy : -24,
+						posx : +48,
+						posy : -48,
 					},
 					kback : {
-						strength : 22, // +1 pnts
+						strength : 32, // +1 pnts
 						angle : -60, //counter-clock
 					},
 					stt_effects : {
@@ -904,18 +904,8 @@ attacks = {
 			},
 		],
 		prots : [
-			{
-				start: 10,
-				type: protections.low_invul,
-				finish: 27,
-			}
 		],
 		movements: [
-			{
-				start: 19,
-				x_speed: 10,
-				y_speed: 0,
-			}
 		],
 		cost : 0,
 		scrpt : function(_self){}
@@ -923,7 +913,7 @@ attacks = {
 	},
 	
 	d_H:{
-		animation: Perfection_2H,
+		animation: Gemini_2H,
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
@@ -931,23 +921,23 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1,
-					scale_y : 0.5,
-					duration : 4, // -2 pnts
-					dmg : 45, // -6 pnts
+					scale_x : 2,
+					scale_y : 1,
+					duration : 6, // -2 pnts
+					dmg : 68, // -6 pnts
 					kdwn: true,
-					hts : 19+12,
-					bls : 19-8,
+					hts : 23+12,
+					bls : 23-12,
 					bloc : blc_types.low,
 					reflect : false,
-					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +44,
+						posx : +120,
 						posy : 0,
 					},
 					kback : {
-						strength : 12,
+						strength : 20,
 						angle : 30, //counter-clock
 					},
 					stt_effects : {
@@ -987,7 +977,7 @@ attacks = {
 		movements: [
 			{
 				start: 11,
-				x_speed: 4,
+				x_speed: 9.2,
 				y_speed: 0,
 			}
 		],
@@ -997,7 +987,7 @@ attacks = {
 	},
 	
 	b_H:{
-		animation: Perfection_4H,
+		animation: Gemini_4H,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
@@ -1006,19 +996,19 @@ attacks = {
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2,
-					scale_y : 1,
-					duration : 6,
-					dmg : 45,
+					scale_x :1.5,
+					scale_y : 1.5,
+					duration : 4,
+					dmg : 68,
 					kdwn: true,
-					hts : 27+24,
-					bls : 27-20,
+					hts : 27+60,
+					bls : 27-32,
 					bloc : blc_types.mid,
-					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : 0,
+						posx : 36,
 						posy : -48,
 					},
 					kback : {
@@ -1053,18 +1043,13 @@ attacks = {
 			},
 		],
 		prots : [
-			/*{
-				start: 0,
-				type: protections.nothing
-				finish: 0,
-			}*/
+			{
+				start: 12,
+				type: protections.armor,
+				finish: 19
+			}
 		],
 		movements: [
-			{
-				start: 15,
-				x_speed: 4,
-				y_speed: 0,
-			}
 		],
 		cost : 0,
 		scrpt : function(_self){}
@@ -1072,32 +1057,32 @@ attacks = {
 	},
 	
 	j_H:{
-		animation: Perfection_8H,
+		animation: Gemini_8H,
 		lnd_strng: 3,
 		hboxs: [//hit 1
 			{
-				create : 6,
+				create : 10,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 2,
-					scale_y : 1,
-					duration : 6,
-					dmg : 60, // -6 pnts
+					scale_y : 2,
+					duration : 26,
+					dmg : 90,
 					kdwn: true,
 					hts : 20+22,
 					bls : 20-18,
 					bloc : blc_types.ovh,
 					reflect : false,
-					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
+					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +0,
-						posy : -45,
+						posx : +24,
+						posy : 0,
 					},
 					kback : {
-						strength : 20, // +1 pnts
-						angle : 60, //counter-clock
+						strength : 40, // +1 pnts
+						angle : -30, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1127,21 +1112,20 @@ attacks = {
 			},
 		],
 		prots : [
-			/*{
-				start: 0,
-				type: protections.nothing
-				finish: 0,
-			}*/
 		],
 		movements: [
-			/*{
-				start: 0,
-				x_speed: 0,
-				y_speed: 0,
-			}*/
 		],
 		cost : 0,
-		scrpt : function(_self){}
+		scrpt : function(_self){
+			if _self.image_index < 12 {
+				_self.vely = 0;
+				_self.velx = 0;
+			}
+			else {
+				_self.vely = 6;
+				_self.velx = 10.4 * _self.image_xscale;
+			}
+		}
 		
 	},
 	
