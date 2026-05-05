@@ -342,8 +342,8 @@ attacks = {
 					duration : 4,
 					dmg : 22,
 					kdwn: false,
-					hts : 6+1,
-					bls : 6+4,
+					hts : 6+8,
+					bls : 6+2,
 					bloc : blc_types.low,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -415,8 +415,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 22, // -6 pnts
 					kdwn: false,
-					hts : 10+1,
-					bls : 10+1,
+					hts : 10+3,
+					bls : 10+3,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -489,8 +489,8 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 38, // -6 pnts
 					kdwn: false,
-					hts : 21+2,
-					bls : 21-10,
+					hts : 21+6,
+					bls : 21-15,
 					bloc : blc_types.ovh,
 					reflect : false,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -564,7 +564,7 @@ attacks = {
 					duration : 6,
 					dmg : 22,
 					kdwn: false,
-					hts : 9+8,
+					hts : 9+10,
 					bls : 9-1,
 					bloc : blc_types.ovh,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -630,23 +630,23 @@ attacks = {
 		hboxs: [
 			//hit 1
 			{
-				create : 7,
+				create : 8,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 1.5,
+					scale_x : 2.5,
 					scale_y : 1,
 					duration : 4,
 					dmg : 48,
 					kdwn: false,
-					hts : 15+5,
-					bls : 15+3,
+					hts : 15+7,
+					bls : 15+5,
 					bloc : blc_types.mid,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +72,
+						posx : +72 - 24,
 						posy : -48,
 					},
 					kback : {
@@ -704,23 +704,23 @@ attacks = {
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 8,
+				create : 9,
 				hbox: { 
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2,
+					scale_x : 3,
 					scale_y : 1,
 					duration : 4, // -2 pnts
 					dmg : 45, // -6 pnts
 					kdwn: false,
-					hts : 16+4,
-					bls : 16+4,
+					hts : 16+5,
+					bls : 16+5,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 3, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +96,
+						posx : +96 - 24,
 						posy : -24,
 					},
 					kback : {
@@ -787,7 +787,7 @@ attacks = {
 					duration : 12, // -2 pnts
 					dmg : 52, // -6 pnts
 					kdwn: false,
-					hts : 19+12,
+					hts : 19+24,
 					bls : 19,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -863,7 +863,7 @@ attacks = {
 					dmg : 75,
 					kdwn: false,
 					hts : 26+12,
-					bls : 26+12,
+					bls : 26,
 					bloc : blc_types.ovh,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					reflect : false,
@@ -917,28 +917,28 @@ attacks = {
 		lnd_strng: -1,
 		hboxs: [//hit 1
 			{
-				create : 11,
+				create : 12,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 2,
+					scale_x : 3,
 					scale_y : 1,
 					duration : 6, // -2 pnts
 					dmg : 68, // -6 pnts
 					kdwn: true,
-					hts : 23+12,
+					hts : 23+30,
 					bls : 23-12,
 					bloc : blc_types.low,
 					reflect : false,
 					strg: 4, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
 					grb_script : function (_graber,_victim){},
 					rel_pos : {
-						posx : +120,
+						posx : +120 - 24,
 						posy : 0,
 					},
 					kback : {
 						strength : 20,
-						angle : 30, //counter-clock
+						angle : 15, //counter-clock
 					},
 					stt_effects : {
 						burn : 0,
@@ -1044,7 +1044,7 @@ attacks = {
 		],
 		prots : [
 			{
-				start: 12,
+				start: 10,
 				type: protections.armor,
 				finish: 19
 			}
@@ -1121,9 +1121,12 @@ attacks = {
 				_self.vely = 0;
 				_self.velx = 0;
 			}
-			else {
-				_self.vely = 6;
-				_self.velx = 10.4 * _self.image_xscale;
+			else if _self.image_index == 13{
+				_self.vely = 2;
+				_self.velx = 6.9 * _self.image_xscale;
+			}
+			else{
+				_self.vely++;
 			}
 		}
 		
@@ -1156,16 +1159,16 @@ attacks = {
 	},
 	
 	grab : {
-		animation: Perfection_ngrab,
+		animation: Gemini_ngrab,
 		lnd_strng: -1,
 		hboxs: [
 			//hit 1
 			{
-				create : 4,
+				create : 3,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
-					scale_x : 0.5,
+					scale_x : 1,
 					scale_y : 1,
 					duration : 2,
 					dmg : 0,
@@ -1178,13 +1181,13 @@ attacks = {
 					grb_script : function (_graber,_victim){
 						_victim.vely = _graber.vely;
 						switch(_graber.sprite_index){
-							case Perfection_ngrab:
+							case Gemini_ngrab:
 								//victima
 								_victim.image_speed=0
 								_victim.sprite_index = _victim.animations.hitstun
 								_victim.bars.HitstunBar.actual += 10
 								_victim.image_xscale = _graber.image_xscale*-1
-								_victim.x = _graber.x + 16 * _graber.image_xscale
+								_victim.x = _graber.x + 48 * _graber.image_xscale
 								_victim.y = _graber.y
 								_victim.depth = 0
 								_victim.image_index=0
@@ -1207,36 +1210,48 @@ attacks = {
 									_graber.image_xscale = -1;
 								}
 								
-								_graber.sprite_index = Perfection_nthrow;
+								_graber.sprite_index = Gemini_nthrow;
 								
 								break;
-							case Perfection_nthrow:
-								var dmg = _victim.calc_damage(0);
+							case Gemini_nthrow:
+								var dmg = _victim.calc_damage(3);
 								var hts = 120 - _victim.stats.weight.hit_red;
-								var kbck = 20;
-								var angle = 80;
+								var kbck = 0;
+								var angle = 0;
 								var kdwn = true;
-								if (_graber.image_index >= 0 and _graber.image_index <= 6){
+								if (_graber.image_index >= 0 and _graber.image_index <= 4){
 									//move
 									_victim.depth = 1;
 									_victim.sprite_index = _victim.animations.hitstun
-									_victim.x = _graber.x + 16 * _graber.image_xscale
-									_victim.y = _graber.y + 24;
+									_victim.x = _graber.x + 48 * _graber.image_xscale
+									_victim.y = _graber.y;
 								}
-								if (_graber.image_index >= 6){
+								else if (_graber.image_index >= 5 and _graber.image_index <= 26){
+									//move
+									_victim.depth = -1;
+									_victim.sprite_index = _victim.animations.hitstun
+									_victim.x = _graber.x + 12 * _graber.image_xscale;
+									_victim.y = _graber.y - 72;
+									if (_graber.image_index == 7 or _graber.image_index == 11
+										or _graber.image_index == 15 or _graber.image_index == 19) {
+										match_controller.hit_pause(1);
+										particle_function(hitspark_normal,
+											_graber.x + 12 * _graber.image_xscale,
+											_graber.y - 72,
+											0, 0
+											)
+										_victim.bars.HealthBar.actual -= dmg;
+										
+									}
+								}
+								if (_graber.image_index >= 27){
 									particle_function(hitspark_normal,
-										_graber.x + (32 * _graber.image_xscale),
-										_graber.y - 32,
-										0, 0
-										)
+									_graber.x + 12 * _graber.image_xscale,
+									_graber.y - 72,
+									0, 0
+									)
 									//current_attack = attacks.empty
 									match_controller.hit_pause(2)
-									if (hts >= 0 ){
-										_victim.bars.HitstunBar.actual += hts
-									}
-									_victim.bars.HealthBar.actual -= dmg
-									_victim.x = _graber.x + 32 * _graber.image_xscale
-									_victim.y = _graber.y - 24;
 									_victim.sprite_index = _victim.animations.hitstun;
 									_victim.delay_kback.angle = angle;
 									_victim.delay_kback.strength = kbck;
@@ -1246,9 +1261,10 @@ attacks = {
 									_victim.scaling.kbck = _victim.scaling.kbck*1.2
 									_victim.scaling.combo ++;
 									_victim.scaling.enemy = _graber
+									_victim.bars.HitstunBar.actual = hts;
 									_victim.bars.HitstunBar.kdwn = 1;
 									//victim got out, now is grabber's turn
-									_graber.attacks.empty.animation = Perfection_nthrow;
+									_graber.attacks.empty.animation = Gemini_nthrow;
 									_graber.current_attack = _graber.attacks.empty;
 									_victim.state = states.hitstun
 									_graber.state = states.m_attack;
@@ -1260,7 +1276,7 @@ attacks = {
 						}
 					},
 					rel_pos : {
-						posx : +16,
+						posx : +32,
 						posy : -32,
 					},
 					kback : {
@@ -1304,12 +1320,12 @@ attacks = {
 	},
 	
 	a_grab : {
-		animation: Perfection_agrab,
+		animation: Gemini_agrab,
 		lnd_strng: 2,
 		hboxs: [
 			//hit 1
 			{
-				create : 4,
+				create : 3,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
@@ -1326,13 +1342,13 @@ attacks = {
 					grb_script : function (_graber,_victim){
 						_victim.vely = _graber.vely;
 						switch(_graber.sprite_index){
-							case Perfection_agrab:
+							case Gemini_agrab:
 								//victima
 								_victim.image_speed=0
 								_victim.sprite_index = _victim.animations.hitstun
 								_victim.bars.HitstunBar.actual += 10
 								_victim.image_xscale = _graber.image_xscale*-1
-								_victim.x = _graber.x + 16 * _graber.image_xscale
+								_victim.x = _graber.x + 48 * _graber.image_xscale
 								_victim.y = _graber.y
 								_victim.depth = 0
 								_victim.image_index=0
@@ -1356,33 +1372,34 @@ attacks = {
 									_graber.image_xscale = -1;
 								}
 								
-								_graber.sprite_index = Perfection_athrow;
+								_graber.vely = 1;
+								_graber.sprite_index = Gemini_athrow;
 								
 								break;
-							case Perfection_athrow:
-								var dmg = 50*_victim.scaling.dmg;
-								var hts = 45 - _victim.stats.weight.hit_red;
-								var kbck = 18; var angle = -45;
+							case Gemini_athrow:
+									_victim.sprite_index = _victim.animations.kdown.heavy
+									_victim.x = _graber.x + 48 * _graber.image_xscale;
+									_victim.y = _graber.y - 96;
+									
+									if _graber.vely == 0 {
+										_graber.sprite_index = Gemini_landing_3;
+									}
+									
+								break;
+							case Gemini_landing_3:
+								var dmg = 60*_victim.scaling.dmg;
+								var hts = 120 - _victim.stats.weight.hit_red;
+								var kbck = 0; var angle = -90;
 								var kdwn = true;
-								if (_graber.image_index >= 0 and _graber.image_index <= 16){
-									//move
-									_victim.sprite_index = _victim.animations.crouch
-									_victim.x = _graber.x - 48 * _graber.image_xscale;
-									_victim.y = _graber.y - 48;
-									_graber.velx = 0;
-									_graber.vely = 0;									
-								}
-								if (_graber.image_index == 16){
-									_graber.velx = -8 * _graber.image_xscale;
-									_graber.vely = -8;	
+								if (_graber.image_index == 1){
 									//current_attack = attacks.empty
-									match_controller.hit_pause(2)
+									match_controller.hit_pause(3)
 									if (hts >= 0 ){
 										_victim.bars.HitstunBar.actual += hts
 									}
 									_victim.bars.HealthBar.actual -= dmg
 									_victim.x = _graber.x + 48 * _graber.image_xscale
-									_victim.y = _graber.y + 48
+									_victim.y = _graber.y - 8
 									_victim.sprite_index = _victim.animations.hitstun;
 									_victim.delay_kback.angle = angle;
 									_victim.delay_kback.strength = kbck;
@@ -1392,24 +1409,23 @@ attacks = {
 									_victim.scaling.kbck = _victim.scaling.kbck*1.2
 									_victim.scaling.combo ++;
 									_victim.scaling.enemy = _graber
-									_victim.bars.HitstunBar.kdwn = 1;
+									_victim.bars.HitstunBar.kdwn = 2;
 									//victim got out, now is grabber's turn
-									_graber.attacks.empty.animation = Perfection_athrow;
+									_graber.attacks.empty.animation = Gemini_landing_3;
 									_graber.current_attack = _graber.attacks.empty;
 									_victim.state = states.hitstun
 									_graber.state = states.m_attack;
 								}
 								break;
 							default:
-								
-								_graber.sprite_index = Perfection_athrow;
+								_graber.sprite_index = Gemini_landing_3;
 								_graber.y -= 48;
 								break;
 						}
 						
 					},
 					rel_pos : {
-						posx : +16,
+						posx : +32,
 						posy : -32,
 					},
 					kback : {
