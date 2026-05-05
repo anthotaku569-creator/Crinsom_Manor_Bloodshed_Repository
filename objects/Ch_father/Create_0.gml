@@ -127,6 +127,61 @@ inputs = {
 	k_S3: "S3_p1",
 }
 
+input_checkers = {
+			tap: {
+				left: false,
+				right: false,
+				up: false,
+				down: false,
+				l: false,
+				m: false,
+				h: false,
+				s1: false,
+				s2: false,
+				s3: false,
+				_pause: false
+			},
+			hold: {
+				left: false,
+				right: false,
+				up: false,
+				down: false,
+				l: false,
+				m: false,
+				h: false,
+				s1: false,
+				s2: false,
+				s3: false,
+				_pause: false
+			},
+			release: {
+				left: false,
+				right: false,
+				up: false,
+				down: false,
+				l: false,
+				m: false,
+				h: false,
+				s1: false,
+				s2: false,
+				s3: false,
+				_pause: false
+			},
+			double: {
+				left: false,
+				right: false,
+				up: false,
+				down: false,
+				l: false,
+				m: false,
+				h: false,
+				s1: false,
+				s2: false,
+				s3: false,
+				_pause: false
+			}
+		}
+
 bars = {
 	HealthBar : {
 		actual : stats.weight.HealthPoint,
@@ -168,8 +223,8 @@ p_bloc = {
 check_floor = bbox_place_meeting(self.x,self.y,Collision_normal);
 check_collision = bbox_collision_function(self.x, self.y+1, false);
 
-press_hold_right = input_check(inputs.k_right, wich_player);
-press_hold_left = input_check(inputs.k_left, wich_player);
+press_hold_right = input_checkers.hold.right;
+press_hold_left = input_checkers.hold.left;
 
 animations = {
 	enter: FatherHat_Super_I,
@@ -2105,6 +2160,61 @@ attacks = {
 
 super_func = function (){}
 
+/// @function					input_reader
+/// @description				Reads the necesary inputs for the charater object to work, enemy or otherwise.
+function input_reader() {
+			//var _dt = delta_time / 20;
+			var _dt = room_speed/20;
+			//taps
+			input_checkers.tap.left			= input_check_pressed(inputs.k_left		, wich_player, _dt);
+			input_checkers.tap.right		= input_check_pressed(inputs.k_right	, wich_player, _dt);
+			input_checkers.tap.up			= input_check_pressed(inputs.k_up		, wich_player, _dt);
+			input_checkers.tap.down			= input_check_pressed(inputs.k_down		, wich_player, _dt);
+			input_checkers.tap.l			= input_check_pressed(inputs.k_L		, wich_player, _dt);
+			input_checkers.tap.m			= input_check_pressed(inputs.k_M		, wich_player, _dt);
+			input_checkers.tap.h			= input_check_pressed(inputs.k_H		, wich_player, _dt);
+			input_checkers.tap.s1			= input_check_pressed(inputs.k_S1		, wich_player, _dt);
+			input_checkers.tap.s2			= input_check_pressed(inputs.k_S2		, wich_player, _dt);
+			input_checkers.tap.s3			= input_check_pressed(inputs.k_S3		, wich_player, _dt);
+			input_checkers.tap._pause		= input_check_pressed(inputs.k_pause	, wich_player);
+			//holds
+			input_checkers.hold.left		= input_check(inputs.k_left		, wich_player);
+			input_checkers.hold.right		= input_check(inputs.k_right	, wich_player);
+			input_checkers.hold.up			= input_check(inputs.k_up		, wich_player);
+			input_checkers.hold.down		= input_check(inputs.k_down		, wich_player);
+			input_checkers.hold.l			= input_check(inputs.k_L		, wich_player);
+			input_checkers.hold.m			= input_check(inputs.k_M		, wich_player);
+			input_checkers.hold.h			= input_check(inputs.k_H		, wich_player);
+			input_checkers.hold.s1			= input_check(inputs.k_S1		, wich_player);
+			input_checkers.hold.s2			= input_check(inputs.k_S2		, wich_player);
+			input_checkers.hold.s3			= input_check(inputs.k_S3		, wich_player);
+			input_checkers.hold._pause		= input_check(inputs.k_pause	, wich_player);
+			//release
+			input_checkers.release.left			= input_check_released(inputs.k_left	, wich_player);
+			input_checkers.release.right		= input_check_released(inputs.k_right	, wich_player);
+			input_checkers.release.up			= input_check_released(inputs.k_up		, wich_player);
+			input_checkers.release.down			= input_check_released(inputs.k_down	, wich_player);
+			input_checkers.release.l			= input_check_released(inputs.k_L		, wich_player);
+			input_checkers.release.m			= input_check_released(inputs.k_M		, wich_player);
+			input_checkers.release.h			= input_check_released(inputs.k_H		, wich_player);
+			input_checkers.release.s1			= input_check_released(inputs.k_S1		, wich_player);
+			input_checkers.release.s2			= input_check_released(inputs.k_S2		, wich_player);
+			input_checkers.release.s3			= input_check_released(inputs.k_S3		, wich_player);
+			input_checkers.release._pause		= input_check_released(inputs.k_pause	, wich_player);
+			//double
+			input_checkers.double.left			= input_check_double_pressed(inputs.k_left		, wich_player, _dt + 1);
+			input_checkers.double.right			= input_check_double_pressed(inputs.k_right		, wich_player, _dt + 1);
+			input_checkers.double.up			= input_check_double_pressed(inputs.k_up		, wich_player, _dt + 1);
+			input_checkers.double.down			= input_check_double_pressed(inputs.k_down		, wich_player, _dt + 1);
+			input_checkers.double.l				= input_check_double_pressed(inputs.k_L			, wich_player, _dt + 1);
+			input_checkers.double.m				= input_check_double_pressed(inputs.k_M			, wich_player, _dt + 1);
+			input_checkers.double.h				= input_check_double_pressed(inputs.k_H			, wich_player, _dt + 1);
+			input_checkers.double.s1			= input_check_double_pressed(inputs.k_S1		, wich_player, _dt + 1);
+			input_checkers.double.s2			= input_check_double_pressed(inputs.k_S2		, wich_player, _dt + 1);
+			input_checkers.double.s3			= input_check_double_pressed(inputs.k_S3		, wich_player, _dt + 1);
+			input_checkers.double._pause		= input_check_double_pressed(inputs.k_pause		, wich_player);	
+}
+
 //create bounding box
 
 function assign_boundingbox(){
@@ -2527,11 +2637,11 @@ function jumpFunction(jump_height){
 	
 	
 	//right
-	if input_check(inputs.k_right, wich_player) and velx < stats.ground.ground_speed{
+	if input_checkers.hold.right and velx < stats.ground.ground_speed{
 		velx = stats.ground.ground_speed;
 	}
 	//left
-	if input_check(inputs.k_left, wich_player) and velx > -stats.ground.ground_speed{
+	if input_checkers.hold.left and velx > -stats.ground.ground_speed{
 		velx = -1*stats.ground.ground_speed;
 	}
 }
@@ -2830,7 +2940,7 @@ function velocityInfluence(){
 					}
 					break;
 				case 6:
-					if scaling.enemy!= noone {//velx != 0 and input_check(inputs.k_right, wich_player){
+					if scaling.enemy!= noone {//velx != 0 and input_checkers.hold.right{
 						if scaling.enemy.x > x{
 							if velx != 0 {
 								x += stats.weight.DI_hold;
@@ -2860,7 +2970,7 @@ function velocityInfluence(){
 					}
 					break;
 				case 7:
-					if scaling.enemy!= noone{//velx != 0 and input_check(inputs.k_right, wich_player){
+					if scaling.enemy!= noone{//velx != 0 and input_checkers.hold.right{
 						if scaling.enemy.x < x{
 							if velx != 0 {
 								x += stats.weight.DI_hold;
@@ -2894,7 +3004,7 @@ function velocityInfluence(){
 		}
 	}
 	else{
-		if input_check(inputs.k_right, wich_player){//velx != 0 and input_check(inputs.k_right, wich_player){
+		if input_checkers.hold.right{//velx != 0 and input_checkers.hold.right{
 			if velx != 0 {
 				x += stats.weight.DI_hold;
 			}
@@ -2902,7 +3012,7 @@ function velocityInfluence(){
 				velx = stats.weight.DI_hold;
 			}
 		}
-		if input_check(inputs.k_left, wich_player){// velx != 0 and input_check(inputs.k_left, wich_player){
+		if input_checkers.hold.left{// velx != 0 and input_checkers.hold.left{
 			if velx != 0 {
 				x -= stats.weight.DI_hold;
 			}
@@ -3096,10 +3206,10 @@ function berserker_state(){
 }
 
 function blocking_function() {
-	if !(input_check(inputs.k_right, wich_player) and input_check(inputs.k_left, wich_player)){
+	if !(input_checkers.hold.right and input_checkers.hold.left){
 		if state == states.idle or state == states.block or state == states.run or state == states.air_dash{
-			if (input_check(inputs.k_left, wich_player, 3) and image_xscale == 1)
-				or (input_check(inputs.k_right, wich_player, 3) and image_xscale == -1){
+			if (input_checkers.hold.left and image_xscale == 1)
+				or (input_checkers.hold.right and image_xscale == -1){
 				return true;
 			}
 		}
@@ -3109,7 +3219,7 @@ function blocking_function() {
 
 function block_near(){
 	var _enemy_hit = instance_place(x + 24*image_xscale, y, hitbox_obj )
-	if !(input_check(inputs.k_right, wich_player) and input_check(inputs.k_left, wich_player)){
+	if !(input_checkers.hold.right and input_checkers.hold.left){
 		if blocking_function() and _enemy_hit!= noone and _enemy_hit.master != self {
 			return true;
 		}
@@ -3123,17 +3233,17 @@ function block_near(){
 		if cancel == true {
 			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1) and vely >= 0{
-				if input_check_pressed(inputs.k_L, wich_player, 3) and !input_check(inputs.k_up, wich_player){
+				if input_checkers.tap.l and !input_checkers.hold.up{
 					if state != states.run{
 						run_framedata = 0;
 					}
-					if input_check(inputs.k_down, wich_player){
+					if input_checkers.hold.down{
 						functionAttackStart(attacks.d_L, states.l_attack)
 					}
-					else if input_check(inputs.k_left, wich_player) and image_xscale == -1{
+					else if input_checkers.hold.left and image_xscale == -1{
 						functionAttackStart(attacks.f_L, states.l_attack)
 					}
-					else if input_check(inputs.k_right, wich_player) and image_xscale == 1{
+					else if input_checkers.hold.right and image_xscale == 1{
 						functionAttackStart(attacks.f_L, states.l_attack)
 					}
 					else{
@@ -3142,7 +3252,7 @@ function block_near(){
 				}
 			}
 			else{
-				if input_check_pressed(inputs.k_L, wich_player, 3){
+				if input_checkers.tap.l{
 					if state != states.run{
 						run_framedata = 0;
 					}
@@ -3156,11 +3266,11 @@ function block_near(){
 		if cancel == true {
 			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1) and vely >= 0{
-				if input_check_pressed(inputs.k_M, wich_player, 3) and !input_check(inputs.k_up, wich_player){
+				if input_checkers.tap.m and !input_checkers.hold.up{
 					if state != states.run{
 						run_framedata = 0;
 					}
-					if input_check(inputs.k_down, wich_player){
+					if input_checkers.hold.down{
 						
 						functionAttackStart(attacks.d_M, states.m_attack)
 					}
@@ -3170,7 +3280,7 @@ function block_near(){
 				}
 			}
 			else{
-				if input_check_pressed(inputs.k_M, wich_player, 3){
+				if input_checkers.tap.m{
 						functionAttackStart(attacks.j_M, states.m_attack)
 				}
 			}
@@ -3181,17 +3291,17 @@ function block_near(){
 		if cancel == true {
 			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1) and vely >= 0{
-				if input_check_pressed(inputs.k_H, wich_player, 3) and !input_check(inputs.k_up, wich_player){
+				if input_checkers.tap.h and !input_checkers.hold.up{
 					if state != states.run{
 						run_framedata = 0;
 					}
-					if input_check(inputs.k_left, wich_player) and image_xscale == 1{
+					if input_checkers.hold.left and image_xscale == 1{
 						functionAttackStart(attacks.b_H, states.h_attack)
 					}
-					else if input_check(inputs.k_right, wich_player) and image_xscale == -1{
+					else if input_checkers.hold.right and image_xscale == -1{
 						functionAttackStart(attacks.b_H, states.h_attack)
 					}
-					else if input_check(inputs.k_down, wich_player){
+					else if input_checkers.hold.down {
 						functionAttackStart(attacks.d_H, states.h_attack)
 					}
 					else{
@@ -3200,7 +3310,7 @@ function block_near(){
 				}
 			}
 			else{
-				if input_check_pressed(inputs.k_H, wich_player, 3){
+				if input_checkers.tap.h{
 					if state != states.run{
 						run_framedata = 0;
 					}
@@ -3214,24 +3324,24 @@ function block_near(){
 		if cancel == true {
 			prot = protections.nothing;
 			if bbox_collision_function(x, y + 1, false) and vely >= 0{
-				if input_check_pressed(inputs.k_S1, wich_player, 3){
+				if input_checkers.tap.s1{
 					functionAttackStart(attacks.n_S_one, states.special_atack);
 				}
-				else if input_check_pressed(inputs.k_S2, wich_player, 3){
+				else if input_checkers.tap.s2{
 					functionAttackStart(attacks.n_S_two, states.special_atack);
 				}
-				else if input_check_pressed(inputs.k_S3, wich_player, 3){
+				else if input_checkers.tap.s3{
 					functionAttackStart(attacks.n_S_three, states.special_atack);
 				}
 			}
 			else{
-				if input_check_pressed(inputs.k_S1, wich_player, 3){
+				if input_checkers.tap.s1{
 					functionAttackStart(attacks.a_S_one, states.special_atack);
 				}
-				else if input_check_pressed(inputs.k_S2, wich_player, 3){
+				else if input_checkers.tap.s2{
 					functionAttackStart(attacks.a_S_two, states.special_atack);
 				}
-				else if input_check_pressed(inputs.k_S3, wich_player, 3){
+				else if input_checkers.tap.s3{
 					functionAttackStart(attacks.a_S_three, states.special_atack);
 				}
 			}
@@ -3239,8 +3349,8 @@ function block_near(){
 	}
 
 	function grab_attack(){
-		if input_check_pressed(inputs.k_L, wich_player, 3) and input_check_pressed(inputs.k_M, wich_player, 3)
-			and !input_check_pressed(inputs.k_H, wich_player, 3) {
+		if input_checkers.tap.l and input_checkers.tap.m
+			and !input_checkers.tap.h {
 			if bbox_collision_function(x, y + 1) and vely >= 0{
 				functionAttackStart(attacks.grab, states.m_attack);
 			}
@@ -3251,13 +3361,13 @@ function block_near(){
 	}
 
 	function parry_function(){
-		if input_check_pressed(inputs.k_M, wich_player, 3)
-			and input_check_pressed(inputs.k_H, wich_player, 3) 
-			and !input_check_pressed(inputs.k_L, wich_player, 3)
+		if input_checkers.tap.m
+			and input_checkers.tap.h 
+			and !input_checkers.tap.l
 			and bars.Humanity.actual > 0 {
 						
 			if bbox_collision_function(self.x, self.y+1, false) and vely >= 0 {
-				if input_check(inputs.k_down, wich_player, 3) {
+				if input_checkers.hold.down {
 					sprite_index = extras.parry.animations.low;
 					image_index = 0;
 				}
@@ -3287,10 +3397,10 @@ function floating(){
 	}
 	if !bbox_collision_function(self.x, self.y+1, true){
 		if extras.float.can and extras.float.time > 0 and vely >= 0 {
-			if (input_check(inputs.k_up, wich_player) 
+			if (input_checkers.hold.up 
 				and !input_check(inputs.k_up, wich_player, 3))
-				or (input_check(inputs.k_up, wich_player) 
-				and input_check(inputs.k_down, wich_player)){
+				or (input_checkers.hold.up 
+				and input_checkers.hold.down){
 				extras.float.time--;
 				vely = 0;
 				image_speed = 1;
@@ -3301,13 +3411,13 @@ function floating(){
 }
 
 function dodge_function(){
-	if input_check_double_pressed(inputs.k_right, wich_player, 3) and image_xscale == -1{
+	if input_checkers.double.right and image_xscale == -1{
 		image_index = 0;
 		cancel = false;
 		sprite_index = dodge_properties.animation;
 		state = states.dodge;
 	}
-	else if input_check_double_pressed(inputs.k_left, wich_player, 3) and image_xscale == 1 {
+	else if input_checkers.double.left and image_xscale == 1 {
 		image_index = 0;
 		cancel = false;
 		sprite_index = dodge_properties.animation;
@@ -3317,7 +3427,7 @@ function dodge_function(){
 
 function run_function(){
 	if (extras.run.can == true){
-		if input_check_double_pressed(inputs.k_right, wich_player, 3) and image_xscale == 1{
+		if input_checkers.double.right and image_xscale == 1{
 			/*if (velx <  extras.run.velx){
 				velx +=  extras.run.velx - velx;
 			}
@@ -3329,7 +3439,7 @@ function run_function(){
 			run_framedata++;
 			state = states.run;
 		}
-		else if input_check_double_pressed(inputs.k_left, wich_player, 3) and image_xscale == -1 {
+		else if input_checkers.double.left and image_xscale == -1 {
 			/*if (velx > -extras.run.velx){
 				velx += -extras.run.velx - velx;
 			}
@@ -3346,15 +3456,17 @@ function run_function(){
 }
 
 function redeye_activation(){
-	if (input_check_pressed(inputs.k_L, wich_player, 3)
-		and input_check_pressed(inputs.k_M, wich_player, 3)
-		and input_check_pressed(inputs.k_H, wich_player, 3)) or (
-		input_check_released(inputs.k_L, wich_player, 1)
-		and input_check_released(inputs.k_M, wich_player, 1)
-		and input_check_released(inputs.k_H, wich_player, 1)
+	if (input_checkers.tap.l
+		and input_checkers.tap.m
+		and input_checkers.tap.h) or (
+		input_checkers.release.l
+		and input_checkers.release.m
+		and input_checkers.release.h
 		) {
 		if (25 <= match_controller.get_bloodlust(wich_player)){
-						
+			input_checkers.tap.l = false;
+			input_checkers.tap.m = false;
+			input_checkers.tap.h = false;
 			match_controller.modify_blodlust(-25, wich_player);
 			image_index = 0;
 			state = states.curse_eye;

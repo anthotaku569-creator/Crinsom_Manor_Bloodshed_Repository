@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+input_reader();
+
 event_user(1);
 
 //gravity
@@ -8,8 +10,8 @@ event_user(1);
 check_floor = bbox_place_meeting(self.x,self.y,Collision_normal);
 check_collision = bbox_collision_function(self.x, self.y+1, false);
 
-press_hold_right = input_check(inputs.k_right, wich_player);
-press_hold_left = input_check(inputs.k_left, wich_player);
+press_hold_right = input_checkers.hold.right;
+press_hold_left = input_checkers.hold.left;
 
 if !check_floor{
 	if state == states.hitstun or state == states.knockdown or state == states.kdown_recovery{
@@ -104,20 +106,20 @@ switch(state){
 			extras.air_dash.able = true;
 			extras.float.time++;
 			//crouch
-			if input_check(inputs.k_down, wich_player){
+			if input_checkers.hold.down{
 				sprite_index = animations.crouch;
 			}
 			else {
 				//full stop
-				if input_check_released(inputs.k_right, wich_player)
-					or input_check_released(inputs.k_left, wich_player)
-					or input_check_released(inputs.k_down, wich_player){
+				if input_checkers.release.right
+					or input_checkers.release.left	
+					or input_checkers.release.down	{
 					velx = 0
 					sprite_index=animations.idle;
 				}
 			}
 			//jump
-			if input_check(inputs.k_up, wich_player, 3){
+			if input_checkers.hold.up{
 				jumpFunction(stats.jump.j_heigh);
 			}
 			
@@ -152,7 +154,7 @@ switch(state){
 				floating();
 			}
 			//jump
-			if input_check_pressed(inputs.k_up, wich_player, 3){
+			if input_checkers.tap.up{
 				if (extras.d_jmp.has == true and extras.d_jmp.can == true and vely > 0){
 					jumpFunction(stats.jump.j_heigh);
 					jump_cancel = false;
@@ -171,7 +173,7 @@ switch(state){
 			
 			//AIR DASHING
 			if extras.air_dash.able == true and vely > (stats.jump.j_heigh *-1)*3/4 {
-				if input_check_double_pressed(inputs.k_right, wich_player, 3) {
+				if input_checkers.double.right {
 					sprite_index = extras.air_dash.animation;
 					image_index = 0;
 					image_xscale = 1;
@@ -188,7 +190,7 @@ switch(state){
 						scrpt : function(_self){}
 					};
 				}
-				else if input_check_double_pressed(inputs.k_left, wich_player, 3) {
+				else if input_checkers.double.left {
 					sprite_index = extras.air_dash.animation;
 					image_index = 0;
 					image_xscale = -1;
@@ -230,7 +232,7 @@ switch(state){
 		InspirationGain();
 		reduceVelocity();
 		if (bbox_collision_function(self.x, self.y+1, pass)) {
-			if  input_check(inputs.k_up, wich_player, 3) and cancel == true{
+			if  input_checkers.hold.up and cancel == true{
 				jumpFunction(stats.jump.j_heigh);
 				state = states.idle;
 			}
@@ -290,7 +292,7 @@ switch(state){
 		}
 		else{
 			//jump
-			if input_check(inputs.k_up, wich_player, 3)  and cancel == true{
+			if input_checkers.hold.up  and cancel == true{
 				if (extras.d_jmp.has == true and extras.d_jmp.can == true and vely > 0){
 					jumpFunction(stats.jump.j_heigh);
 					extras.d_jmp.can = false;
@@ -303,7 +305,7 @@ switch(state){
 			state = states.idle;
 	
 			if check_collision{
-				if input_check(inputs.k_down, wich_player){
+				if input_checkers.hold.down{
 					sprite_index = animations.crouch;
 				}
 				else{sprite_index = animations.idle;}
@@ -385,10 +387,10 @@ switch(state){
 					break;
 			}
 		}
-		else if cancel == true{
+		else {
 			//AIR DASHING
-			if extras.air_dash.able == true and vely > (stats.jump.j_heigh *-1)*3/4 {
-				if input_check_double(inputs.k_right, wich_player, 3) {
+			if extras.air_dash.able == true and cancel == true {
+				if input_checkers.tap.right {
 					sprite_index = extras.air_dash.animation;
 					image_index = 0;
 					image_xscale = 1;
@@ -405,7 +407,7 @@ switch(state){
 						scrpt : function(_self){}
 					};
 				}
-				else if input_check_double(inputs.k_left, wich_player, 3) {
+				else if input_checkers.tap.left {
 					sprite_index = extras.air_dash.animation;
 					image_index = 0;
 					image_xscale = -1;
@@ -430,7 +432,7 @@ switch(state){
 			state = states.idle;
 	
 			if check_collision{
-				if input_check(inputs.k_down, wich_player){
+				if input_checkers.hold.down{
 					sprite_index = animations.crouch;
 				}
 				else{sprite_index = animations.idle;}
@@ -516,7 +518,7 @@ switch(state){
 			state = states.idle;
 	
 			if check_collision{
-				if input_check(inputs.k_down, wich_player){
+				if input_checkers.hold.down{
 					sprite_index = animations.crouch;
 				}
 				else{sprite_index = animations.idle;}
@@ -749,7 +751,7 @@ switch(state){
 			grab_attack();
 			bars.HitstunBar.actual = 0;
 			if bbox_collision_function(self.x, self.y+1, pass){
-				if input_check(inputs.k_down, wich_player){
+				if input_checkers.hold.down{
 					sprite_index = animations.bloc.low
 				}
 				else{
@@ -770,7 +772,7 @@ switch(state){
 			reduceVelocity()
 			bars.HitstunBar.actual--;
 			if check_collision{
-				if input_check(inputs.k_down, wich_player){
+				if input_checkers.hold.down{
 					sprite_index = animations.blocstun.low
 				}
 				else{
@@ -879,7 +881,7 @@ switch(state){
 			state = states.idle;
 	
 		if check_collision{
-			if input_check(inputs.k_down, wich_player){
+			if input_checkers.hold.down{
 				sprite_index = animations.crouch;
 			}
 			else{sprite_index = animations.idle;}
@@ -910,8 +912,8 @@ switch(state){
 		if image_index <= 16 {
 			vely = -1;
 			velx = 0;
-			if (input_check(inputs.k_M, wich_player, 3)
-				and input_check(inputs.k_H, wich_player, 3)
+			if (input_checkers.hold.m
+				and input_checkers.hold.h
 				and bars.HitstunBar.actual > 0) {
 				image_index = 1;
 				bars.HitstunBar.actual --;
@@ -936,8 +938,8 @@ switch(state){
 		}
 		
 		if image_index == 8 and
-			input_check(inputs.k_M, wich_player) and
-			input_check(inputs.k_H, wich_player) {
+			input_checkers.hold.m and
+			input_checkers.hold.h {
 			image_index = 1;
 			
 		}
@@ -945,8 +947,8 @@ switch(state){
 		if image_index <= 8 {
 			if (bars.HitstunBar.actual <= 0) {
 			bars.Humanity.actual-=0.2;
-			if !input_check(inputs.k_M, wich_player) or
-				!input_check(inputs.k_H, wich_player)  or bars.Humanity.actual <= 0{
+			if !input_checkers.hold.m or
+				!input_checkers.hold.h  or bars.Humanity.actual <= 0{
 				image_index = 9;
 			}
 			cancel = true;
@@ -1024,7 +1026,7 @@ switch(state){
 			
 				//RUNNING ACTIONS!! WOOO!!!
 				//jump
-				if  input_check(inputs.k_up, wich_player, 3){
+				if  input_checkers.hold.up{
 					jumpFunction(stats.jump.j_heigh);
 					state = states.idle;
 				}
@@ -1056,14 +1058,14 @@ switch(state){
 					vely = 0;
 					match_controller.slowdown();
 					prot = protections.full;
-					if input_check_pressed(inputs.k_up, wich_player, 3) {
+					if input_checkers.tap.up {
 						image_index = 0;
-						if input_check_pressed(inputs.k_left, wich_player, 3){
+						if input_checkers.tap.left	{
 							image_xscale = -1;
 							velx = -10;
 							vely = -10;
 						}
-						else if input_check_pressed(inputs.k_right, wich_player, 3){
+						else if input_checkers.tap.right{
 							image_xscale = 1;
 							velx = 10;
 							vely = -10;
@@ -1076,12 +1078,12 @@ switch(state){
 					}
 					else if input_check_pressed(inputs.k_down, wich_player, 3){
 						image_index = 0;
-						if input_check_pressed(inputs.k_left, wich_player, 3){
+						if input_checkers.tap.left	{
 							image_xscale = -1;
 							velx = -10;
 							vely = 10;
 						}
-						else if input_check_pressed(inputs.k_right, wich_player, 3){
+						else if input_checkers.tap.right{
 							image_xscale = 1;
 							velx = 10;
 							vely = 10;
@@ -1092,7 +1094,7 @@ switch(state){
 						}
 						sprite_index = animations.redeye.dash;
 					}
-					else if input_check_pressed(inputs.k_left, wich_player, 3){
+					else if input_checkers.tap.left	{
 						image_xscale = -1;
 						image_index = 0;
 						velx = -15;
@@ -1100,7 +1102,7 @@ switch(state){
 						y-= 4;
 						sprite_index = animations.redeye.dash;
 					}
-					else if input_check_pressed(inputs.k_right, wich_player, 3){
+					else if input_checkers.tap.right {
 						image_xscale = 1;
 						image_index = 0;
 						velx = 15;
