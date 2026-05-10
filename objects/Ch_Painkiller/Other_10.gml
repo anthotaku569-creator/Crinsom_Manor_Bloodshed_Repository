@@ -1,6 +1,8 @@
 
 stats  = StatFunctions(6, 12, 8, 14);
 
+stats.jump.j_heigh = stats.jump.j_heigh*0.9;
+
 bars = {
 	HealthBar : {
 		actual : stats.weight.HealthPoint,
@@ -1804,6 +1806,7 @@ attacks = {
 										_graber.y - 48,
 										0, 0
 										);
+										_graber.image_index++;
 									}
 								}
 								if (_graber.image_index >= 11){

@@ -386,7 +386,7 @@ attacks = {
 					duration : 4,
 					dmg : 15,
 					kdwn: false,
-					hts : 9+0,
+					hts : 9+3,
 					bls : 9+2,
 					bloc : blc_types.mid,
 					strg: 1, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -459,7 +459,7 @@ attacks = {
 					duration : 4, // -2 pnts
 					dmg : 15, // -6 pnts
 					kdwn: false,
-					hts : 11+0,
+					hts : 11+3,
 					bls : 11+1,
 					bloc : blc_types.low,
 					reflect : false,

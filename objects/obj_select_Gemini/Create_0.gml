@@ -3,7 +3,7 @@
 
 //characters
 char = Ch_Gemini;
-banner = Crinsom_Banner;
+banner = Gemini_Banner;
 idle = Gemini_idle;
 smol = Gemini_Portrait_small;
 name = "Mathilde\n&\nClothilde"

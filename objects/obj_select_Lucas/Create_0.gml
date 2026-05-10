@@ -6,7 +6,7 @@ char = Ch_Lucas;
 banner = Crinsom_Banner;
 idle = Crinsom_idle;
 smol = Crinsom_Portrait_small;
-name = "Lucas"
+name = "Suli"
 //supers
 
 super_names = [

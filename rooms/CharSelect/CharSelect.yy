@@ -13,6 +13,7 @@
     {"name":"inst_22E88F49","path":"rooms/CharSelect/CharSelect.yy",},
     {"name":"inst_1EBDFBCE","path":"rooms/CharSelect/CharSelect.yy",},
     {"name":"inst_6D5E482E","path":"rooms/CharSelect/CharSelect.yy",},
+    {"name":"inst_4452B266","path":"rooms/CharSelect/CharSelect.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -28,6 +29,7 @@
         {"$GMRInstance":"v4","%Name":"inst_22E88F49","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22E88F49","objectId":{"name":"obj_select_Ulysses","path":"objects/obj_select_Ulysses/obj_select_Ulysses.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":392.0,"y":104.0,},
         {"$GMRInstance":"v4","%Name":"inst_1EBDFBCE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EBDFBCE","objectId":{"name":"obj_select_Painkiller","path":"objects/obj_select_Painkiller/obj_select_Painkiller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":392.0,"y":200.0,},
         {"$GMRInstance":"v4","%Name":"inst_6D5E482E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6D5E482E","objectId":{"name":"obj_select_Kanpeni","path":"objects/obj_select_Kanpeni/obj_select_Kanpeni.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":392.0,"y":296.0,},
+        {"$GMRInstance":"v4","%Name":"inst_4452B266","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4452B266","objectId":{"name":"obj_select_Gemini","path":"objects/obj_select_Gemini/obj_select_Gemini.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":200.0,"y":296.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"THEGRID","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_414D5251","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_414D5251","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"CharacterGrid","path":"sprites/CharacterGrid/CharacterGrid.yy",},"x":128.0,"y":64.0,},

@@ -1,5 +1,7 @@
 
-stats  = StatFunctions(1, 15, 15, 10);
+stats  = StatFunctions(1, 15, 15, 14);
+
+stats.jump.j_heigh = stats.jump.j_heigh*1.1;
 
 bars = {
 	HealthBar : {

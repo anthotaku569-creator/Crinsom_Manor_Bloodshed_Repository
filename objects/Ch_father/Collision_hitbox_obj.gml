@@ -4,6 +4,7 @@
 _hbox = other;
 
 function calc_damage(_dmg){
+	show_debug_message("_dmg: " + string(_dmg) + ";");
 	var actual_dmg = _dmg
 	if (guts) > 0 {
 		var actual_dmg = _dmg * scaling.dmg * sqrt(guts);
@@ -44,6 +45,7 @@ function calc_damage(_dmg){
 		actual_dmg = 0.2
 	}
 	
+	show_debug_message("actual_dmg: " + string(actual_dmg));
 	return actual_dmg;
 }
 
