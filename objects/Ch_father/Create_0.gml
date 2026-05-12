@@ -3295,14 +3295,14 @@ function block_near(){
 					if state != states.run{
 						run_framedata = 0;
 					}
-					if input_checkers.hold.left and image_xscale == 1{
+					if input_checkers.hold.down {
+						functionAttackStart(attacks.d_H, states.h_attack)
+					}
+					else if input_checkers.hold.left and image_xscale == 1{
 						functionAttackStart(attacks.b_H, states.h_attack)
 					}
 					else if input_checkers.hold.right and image_xscale == -1{
 						functionAttackStart(attacks.b_H, states.h_attack)
-					}
-					else if input_checkers.hold.down {
-						functionAttackStart(attacks.d_H, states.h_attack)
 					}
 					else{
 						functionAttackStart(attacks.n_H, states.h_attack)

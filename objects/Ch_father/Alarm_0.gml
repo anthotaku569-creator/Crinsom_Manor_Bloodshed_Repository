@@ -222,7 +222,7 @@ function calc_kback(angle, kcbk, other_dir){
 	vely = ver_kb;
 	last_velx = velx;
 	last_vely = vely;
-	if bbox_collision_function(x + (velx), y, false) and scaling.enemy != noone{
+	if bbox_collision_function(x + (velx), y, false) and scaling.enemy != noone {
 		scaling.enemy.velx = abs(kcbk)*sign(velx)*-0.5;
 	}
 }

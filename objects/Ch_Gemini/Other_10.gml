@@ -1,5 +1,5 @@
  
-stats  = StatFunctions(20, 3, 1, 18);
+stats  = StatFunctions(20, 2, 1, 18);
 
 stats.jump.j_heigh = stats.jump.j_heigh*0.9;
 
@@ -1583,7 +1583,7 @@ attacks = {
 			{
 				start: 0,
 				type: protections.full,
-				finish: 12,
+				finish: 16,
 			}
 		],
 		movements: [
@@ -1673,6 +1673,13 @@ attacks = {
 									_victim.y = _graber.y - 64;
 								}
 								else if (_graber.image_index >= 26){
+									
+									with(_graber) {
+										bbox_collision_function(x + 256, y, false) {
+											x -= 128*image_xscale;
+										}
+									}
+									
 									particle_function(hitspark_slash,
 										_graber.x + (48 * _graber.image_xscale),
 										_graber.y - 48,
@@ -1695,6 +1702,7 @@ attacks = {
 									_victim.scaling.combo ++;
 									_victim.scaling.enemy = _graber
 									_victim.bars.HitstunBar.kdwn = 1;
+									
 									//victim got out, now is grabber's turn
 									_graber.attacks.empty.animation = Gemini_s3_2;
 									_graber.current_attack = _graber.attacks.empty;
@@ -1754,6 +1762,7 @@ attacks = {
 		],
 		cost : 20,
 		scrpt : function(_self){
+			
 		}
 	},
 	
@@ -2066,7 +2075,7 @@ attacks = {
 			{
 				start: 0,
 				type: protections.full,
-				finish: 12,
+				finish: 16,
 			}
 		],
 		movements: [

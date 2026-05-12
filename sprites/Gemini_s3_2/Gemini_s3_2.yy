@@ -68,8 +68,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"grab",
-    "path":"folders/Sprites/Characters/Gemini/grab.yy",
+    "name":"specials",
+    "path":"folders/Sprites/Characters/Gemini/specials.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

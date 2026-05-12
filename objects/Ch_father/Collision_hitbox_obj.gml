@@ -69,6 +69,10 @@ function calc_hitstun(_hts){
 }
 
 function cleanhit_function(){
+	
+	depth = 1;
+	_hbox.master.depth = 0;
+	
 	if state == states.special_atack or state == states.h_attack
 		or state == states.m_attack or state == states.parry or state == states.dodge
 		or state == states.burst {
@@ -423,14 +427,7 @@ function did_he_blocked(){
 		match_controller.hit_pause(4);
 		//kckback
 		image_index = 1;
-		_hbox.master.image_xscale = image_xscale*-1;
-		self.velx = 12* _hbox.master.image_xscale;
-		_hbox.master.velx = -18* _hbox.master.image_xscale;
-		self.sprite_index = self.animations.landing.heavy;
-		_hbox.master.sprite_index = _hbox.master.animations.landing.heavy;
-		self.state = states.kdown_recovery;
-		_hbox.master.state = states.kdown_recovery;
-		bars.Humanity.actual += 25
+		alarm[3] = 1;
 	}
 	else{
 		cleanhit_function()

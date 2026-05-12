@@ -567,6 +567,12 @@ switch(state){
 		#endregion
 	case states.hitstun:
 		#region hitstun
+		
+		if bbox_collision_function(x + (velx), y, false) and scaling.enemy != noone {
+			scaling.enemy.x += (velx)*-1;
+			x += sign(velx)*-1;
+		}
+		
 		run_framedata = 0;
 		pass = false;
 		techable = false;
