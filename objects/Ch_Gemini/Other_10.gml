@@ -439,7 +439,7 @@ attacks = {
 					scale_x : 2.5,
 					scale_y : 1,
 					duration : 4,
-					dmg : 48,
+					dmg : 38,
 					kdwn: false,
 					hts : 15+7,
 					bls : 15+5,
@@ -513,7 +513,7 @@ attacks = {
 					scale_x : 3,
 					scale_y : 1,
 					duration : 4, // -2 pnts
-					dmg : 45, // -6 pnts
+					dmg : 36, // -6 pnts
 					kdwn: false,
 					hts : 16+5,
 					bls : 16+5,
@@ -587,7 +587,7 @@ attacks = {
 					scale_x : 3,
 					scale_y : 1.5,
 					duration : 12, // -2 pnts
-					dmg : 52, // -6 pnts
+					dmg : 34, // -6 pnts
 					kdwn: false,
 					hts : 19+24,
 					bls : 19,
@@ -662,7 +662,7 @@ attacks = {
 					scale_x : 2,
 					scale_y : 2,
 					duration : 4,
-					dmg : 75,
+					dmg : 50,
 					kdwn: false,
 					hts : 26+12,
 					bls : 26,
@@ -726,7 +726,7 @@ attacks = {
 					scale_x : 3,
 					scale_y : 1,
 					duration : 6, // -2 pnts
-					dmg : 68, // -6 pnts
+					dmg : 48, // -6 pnts
 					kdwn: true,
 					hts : 23+30,
 					bls : 23-12,
@@ -801,7 +801,7 @@ attacks = {
 					scale_x :1.5,
 					scale_y : 1.5,
 					duration : 4,
-					dmg : 68,
+					dmg : 56,
 					kdwn: true,
 					hts : 27+60,
 					bls : 27-32,
@@ -870,7 +870,7 @@ attacks = {
 					scale_x : 2,
 					scale_y : 2,
 					duration : 26,
-					dmg : 90,
+					dmg : 62,
 					kdwn: true,
 					hts : 20+22,
 					bls : 20-18,
@@ -994,9 +994,7 @@ attacks = {
 								_victim.depth = 0
 								_victim.image_index=0
 								
-								if input_check(_victim.inputs.k_L, _victim.wich_player , 5)
-									and input_check(_victim.inputs.k_M, _victim.wich_player, 5)
-									and _victim.techable == true{
+								if _victim.input_checkers.tap.l and _victim.input_checkers.tap.m and _victim.techable == true{
 									_victim.velx = 8* _graber.image_xscale;
 									_graber.velx = -8* _graber.image_xscale;
 									_victim.sprite_index = _victim.animations.landing.heavy;

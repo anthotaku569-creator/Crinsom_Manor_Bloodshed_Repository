@@ -16,6 +16,8 @@
     {"name":"movement","order":4,"path":"folders/Sprites/Characters/Kanpeni/movement.yy",},
     {"name":"normals","order":5,"path":"folders/Sprites/Characters/Kanpeni/normals.yy",},
     {"name":"specials","order":6,"path":"folders/Sprites/Characters/Kanpeni/specials.yy",},
+    {"name":"CharSelect","order":1,"path":"folders/Sprites/Menu/CharSelect.yy",},
+    {"name":"HUDplay","order":2,"path":"folders/Sprites/Menu/HUDplay.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"Ch_Gemini","order":1,"path":"objects/Ch_Gemini/Ch_Gemini.yy",},
@@ -78,6 +80,7 @@
     {"name":"Perfection_s2","order":3,"path":"sprites/Perfection_s2/Perfection_s2.yy",},
     {"name":"Perfection_s3","order":1,"path":"sprites/Perfection_s3/Perfection_s3.yy",},
     {"name":"Spr_HumanBar","order":2,"path":"sprites/Spr_HumanBar/Spr_HumanBar.yy",},
+    {"name":"TITLE","order":3,"path":"sprites/TITLE/TITLE.yy",},
     {"name":"ulysses_burst","order":1,"path":"sprites/ulysses_burst/ulysses_burst.yy",},
   ],
 }

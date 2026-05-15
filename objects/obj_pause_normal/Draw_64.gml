@@ -30,5 +30,5 @@ else{
 
 
 //test
-draw_text_ext_transformed(48,48,string(selection_p1.cursor),4,240,1.5,1.5,0);
-draw_text_ext_transformed(48,96,string(selection_p2.cursor),4,240,1.5,1.5,0);
+//draw_text_ext_transformed(48,48,string(selection_p1.cursor),4,240,1.5,1.5,0);
+//draw_text_ext_transformed(48,96,string(selection_p2.cursor),4,240,1.5,1.5,0);

@@ -231,6 +231,7 @@ switch(state){
 		functionCurrentAttack();
 		InspirationGain();
 		reduceVelocity();
+		should_reverse = false;
 		if (bbox_collision_function(self.x, self.y+1, pass)) {
 			if  input_checkers.hold.up and cancel == true{
 				jumpFunction(stats.jump.j_heigh);
@@ -331,6 +332,7 @@ switch(state){
 		functionCurrentAttack();
 		InspirationGain();
 		reduceVelocity();
+		should_reverse = false;
 		if (bbox_collision_function(self.x, self.y+1, pass)) {
 			if cancel == true and run_framedata < 4{
 				run_function();
@@ -460,6 +462,7 @@ switch(state){
 		functionCurrentAttack();
 		InspirationGain();
 		reduceVelocity();
+		should_reverse = false;
 		if (bbox_collision_function(self.x, self.y+1, pass)) {
 			switch(current_attack.lnd_strng){
 				case 1:
@@ -579,8 +582,8 @@ switch(state){
 		image_speed=1;
 		prot = protections.nothing;
 		
-		if (input_check_pressed(inputs.k_M, wich_player, 3)
-			and input_check_pressed(inputs.k_H, wich_player, 3) 
+		if (input_checkers.tap.m
+			and input_checkers.tap.h
 			and bars.Humanity.actual >= 100) {
 			bars.HitstunBar.actual = 30;
 			image_index = 0;
@@ -676,7 +679,6 @@ switch(state){
 		#endregion
 	case states.knockdown:
 		#region knockdown
-		redeye_activation();
 		run_framedata = 0;
 		pass = false;
 		
@@ -696,9 +698,9 @@ switch(state){
 		if (bars.HitstunBar.kdwn == 1){
 			sprite_index = animations.kdown.light
 			if (image_index <= 6
-				and (input_check_pressed(inputs.k_L, wich_player, 3)
-					or input_check_pressed(inputs.k_M, wich_player, 3)
-					or input_check_pressed(inputs.k_H, wich_player, 3)
+				and (input_checkers.tap.l
+					or input_checkers.tap.m
+					or input_checkers.tap.h
 				)
 				and  bars.HealthBar.actual > 0){
 				prot = protections.full;
@@ -735,7 +737,6 @@ switch(state){
 		#endregion
 	case states.kdown_recovery:
 		#region techs and kdown
-		redeye_activation();
 		run_framedata = 0;
 		pass = false;
 		prot = protections.full;
@@ -825,6 +826,7 @@ switch(state){
 	case states.special_atack:
 		#region special attacks
 		pass = false;
+		should_reverse = false;
 		functionCurrentAttack();
 		if state != states.run{
 			run_framedata = 0;
@@ -902,14 +904,7 @@ switch(state){
 		}
 		}
 		
-		if array_length(current_attack.prots) > 0{
-			if !current_attack.prots[0].start == 1 {
-				redeye_activation();
-			}
-		}
-		else{
-			redeye_activation();
-		}
+		redeye_activation();
 		break;
 		#endregion
 	case states.burst:

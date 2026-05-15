@@ -900,6 +900,7 @@
     {"id":{"name":"Str4w_u_throw","path":"sprites/Str4w_u_throw/Str4w_u_throw.yy",},},
     {"id":{"name":"Str4w_u_tilt","path":"sprites/Str4w_u_tilt/Str4w_u_tilt.yy",},},
     {"id":{"name":"Str4w_walk","path":"sprites/Str4w_walk/Str4w_walk.yy",},},
+    {"id":{"name":"TITLE","path":"sprites/TITLE/TITLE.yy",},},
     {"id":{"name":"ulysses_2H","path":"sprites/ulysses_2H/ulysses_2H.yy",},},
     {"id":{"name":"ulysses_2L","path":"sprites/ulysses_2L/ulysses_2L.yy",},},
     {"id":{"name":"ulysses_2M","path":"sprites/ulysses_2M/ulysses_2M.yy",},},

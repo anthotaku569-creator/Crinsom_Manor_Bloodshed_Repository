@@ -1,7 +1,7 @@
 
 stats  = StatFunctions(1, 15, 15, 14);
 
-stats.jump.j_heigh = stats.jump.j_heigh*1.1;
+//stats.jump.j_heigh = stats.jump.j_heigh*1.1;
 
 bars = {
 	HealthBar : {
@@ -641,7 +641,7 @@ attacks = {
 					duration : 4,
 					dmg : 32,
 					kdwn: false,
-					hts : 13+3,
+					hts : 13+5,
 					bls : 13+3,
 					bloc : blc_types.mid,
 					strg: 2, //1 = Light/ Pry, 2= Mid, 3= Heavy, 4 = Special
@@ -780,13 +780,13 @@ attacks = {
 		lnd_strng: 2,
 		hboxs: [//hit 1
 			{
-				create : 6,
+				create : 5,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 5/3,
 					scale_y : 0.5,
-					duration : 12, // -2 pnts
+					duration : 14, // -2 pnts
 					dmg : 35, // -6 pnts
 					kdwn: false,
 					hts : 19+3,
@@ -862,7 +862,7 @@ attacks = {
 					scale_x : 1,
 					scale_y : 1.5,
 					duration : 4,
-					dmg : 50,
+					dmg : 50+4,
 					kdwn: false,
 					hts : 26+12,
 					bls : 26+12,
@@ -1011,7 +1011,7 @@ attacks = {
 					scale_x : 2,
 					scale_y : 1,
 					duration : 6,
-					dmg : 45,
+					dmg : 45+8,
 					kdwn: true,
 					hts : 27+24,
 					bls : 27-20,
@@ -1024,7 +1024,7 @@ attacks = {
 						posy : -48,
 					},
 					kback : {
-						strength : 20, // +1 pnts
+						strength : 20+1, // +1 pnts
 						angle : 60, //counter-clock
 					},
 					stt_effects : {
@@ -1078,16 +1078,16 @@ attacks = {
 		lnd_strng: 3,
 		hboxs: [//hit 1
 			{
-				create : 6,
+				create : 5,
 				hbox: {
 					hitspark: hitspark_normal,
 					spr : hitbox_spr,
 					scale_x : 2,
 					scale_y : 1,
 					duration : 6,
-					dmg : 60, // -6 pnts
+					dmg : 60+8, // -6 pnts
 					kdwn: true,
-					hts : 20+22,
+					hts : 20+32,
 					bls : 20-18,
 					bloc : blc_types.ovh,
 					reflect : false,
@@ -1207,9 +1207,7 @@ attacks = {
 								_victim.depth = 0
 								_victim.image_index=0
 								
-								if input_check(_victim.inputs.k_L, _victim.wich_player , 5)
-									and input_check(_victim.inputs.k_M, _victim.wich_player, 5)
-									and _victim.techable == true{
+								if _victim.input_checkers.tap.l and _victim.input_checkers.tap.m and _victim.techable == true{
 									_victim.velx = 8* _graber.image_xscale;
 									_graber.velx = -8* _graber.image_xscale;
 									_victim.sprite_index = _victim.animations.landing.heavy;
@@ -1356,9 +1354,7 @@ attacks = {
 								_victim.image_index=0
 								
 								
-								if input_check(_victim.inputs.k_L, _victim.wich_player , 5)
-									and input_check(_victim.inputs.k_M, _victim.wich_player, 5)
-									and _victim.techable == true{
+								if _victim.input_checkers.tap.l and _victim.input_checkers.tap.m and _victim.techable == true{
 									_victim.velx = 8* _graber.image_xscale;
 									_graber.velx = -8* _graber.image_xscale;
 									_victim.sprite_index = _victim.animations.landing.heavy;

@@ -1201,9 +1201,7 @@ attacks = {
 								_victim.depth = 0
 								_victim.image_index=0
 								
-								if input_check(_victim.inputs.k_L, _victim.wich_player , 5)
-									and input_check(_victim.inputs.k_M, _victim.wich_player, 5)
-									and _victim.techable == true{
+								if _victim.input_checkers.tap.l and _victim.input_checkers.tap.m and _victim.techable == true{
 									_victim.velx = 8* _graber.image_xscale;
 									_graber.velx = -8* _graber.image_xscale;
 									_victim.sprite_index = _victim.animations.landing.heavy;

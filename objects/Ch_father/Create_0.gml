@@ -2163,56 +2163,63 @@ super_func = function (){}
 /// @function					input_reader
 /// @description				Reads the necesary inputs for the charater object to work, enemy or otherwise.
 function input_reader() {
-			//var _dt = delta_time / 20;
-			var _dt = room_speed/20;
-			//taps
-			input_checkers.tap.left			= input_check_pressed(inputs.k_left		, wich_player, _dt);
-			input_checkers.tap.right		= input_check_pressed(inputs.k_right	, wich_player, _dt);
-			input_checkers.tap.up			= input_check_pressed(inputs.k_up		, wich_player, _dt);
-			input_checkers.tap.down			= input_check_pressed(inputs.k_down		, wich_player, _dt);
-			input_checkers.tap.l			= input_check_pressed(inputs.k_L		, wich_player, _dt);
-			input_checkers.tap.m			= input_check_pressed(inputs.k_M		, wich_player, _dt);
-			input_checkers.tap.h			= input_check_pressed(inputs.k_H		, wich_player, _dt);
-			input_checkers.tap.s1			= input_check_pressed(inputs.k_S1		, wich_player, _dt);
-			input_checkers.tap.s2			= input_check_pressed(inputs.k_S2		, wich_player, _dt);
-			input_checkers.tap.s3			= input_check_pressed(inputs.k_S3		, wich_player, _dt);
-			input_checkers.tap._pause		= input_check_pressed(inputs.k_pause	, wich_player);
-			//holds
-			input_checkers.hold.left		= input_check(inputs.k_left		, wich_player);
-			input_checkers.hold.right		= input_check(inputs.k_right	, wich_player);
-			input_checkers.hold.up			= input_check(inputs.k_up		, wich_player);
-			input_checkers.hold.down		= input_check(inputs.k_down		, wich_player);
-			input_checkers.hold.l			= input_check(inputs.k_L		, wich_player);
-			input_checkers.hold.m			= input_check(inputs.k_M		, wich_player);
-			input_checkers.hold.h			= input_check(inputs.k_H		, wich_player);
-			input_checkers.hold.s1			= input_check(inputs.k_S1		, wich_player);
-			input_checkers.hold.s2			= input_check(inputs.k_S2		, wich_player);
-			input_checkers.hold.s3			= input_check(inputs.k_S3		, wich_player);
-			input_checkers.hold._pause		= input_check(inputs.k_pause	, wich_player);
-			//release
-			input_checkers.release.left			= input_check_released(inputs.k_left	, wich_player);
-			input_checkers.release.right		= input_check_released(inputs.k_right	, wich_player);
-			input_checkers.release.up			= input_check_released(inputs.k_up		, wich_player);
-			input_checkers.release.down			= input_check_released(inputs.k_down	, wich_player);
-			input_checkers.release.l			= input_check_released(inputs.k_L		, wich_player);
-			input_checkers.release.m			= input_check_released(inputs.k_M		, wich_player);
-			input_checkers.release.h			= input_check_released(inputs.k_H		, wich_player);
-			input_checkers.release.s1			= input_check_released(inputs.k_S1		, wich_player);
-			input_checkers.release.s2			= input_check_released(inputs.k_S2		, wich_player);
-			input_checkers.release.s3			= input_check_released(inputs.k_S3		, wich_player);
-			input_checkers.release._pause		= input_check_released(inputs.k_pause	, wich_player);
-			//double
-			input_checkers.double.left			= input_check_double_pressed(inputs.k_left		, wich_player, _dt + 1);
-			input_checkers.double.right			= input_check_double_pressed(inputs.k_right		, wich_player, _dt + 1);
-			input_checkers.double.up			= input_check_double_pressed(inputs.k_up		, wich_player, _dt + 1);
-			input_checkers.double.down			= input_check_double_pressed(inputs.k_down		, wich_player, _dt + 1);
-			input_checkers.double.l				= input_check_double_pressed(inputs.k_L			, wich_player, _dt + 1);
-			input_checkers.double.m				= input_check_double_pressed(inputs.k_M			, wich_player, _dt + 1);
-			input_checkers.double.h				= input_check_double_pressed(inputs.k_H			, wich_player, _dt + 1);
-			input_checkers.double.s1			= input_check_double_pressed(inputs.k_S1		, wich_player, _dt + 1);
-			input_checkers.double.s2			= input_check_double_pressed(inputs.k_S2		, wich_player, _dt + 1);
-			input_checkers.double.s3			= input_check_double_pressed(inputs.k_S3		, wich_player, _dt + 1);
-			input_checkers.double._pause		= input_check_double_pressed(inputs.k_pause		, wich_player);	
+	if global.training_mode == true and
+		wich_player == 2 and
+		match_controller.training_settings[? "Control"] != 0 {
+			training_settings();
+	}
+	else {
+		//var _dt = delta_time / 20;
+		var _dt = room_speed/20;
+		//taps
+		input_checkers.tap.left			= input_check_pressed(inputs.k_left		, wich_player, _dt);
+		input_checkers.tap.right		= input_check_pressed(inputs.k_right	, wich_player, _dt);
+		input_checkers.tap.up			= input_check_pressed(inputs.k_up		, wich_player, _dt);
+		input_checkers.tap.down			= input_check_pressed(inputs.k_down		, wich_player, _dt);
+		input_checkers.tap.l			= input_check_pressed(inputs.k_L		, wich_player, _dt);
+		input_checkers.tap.m			= input_check_pressed(inputs.k_M		, wich_player, _dt);
+		input_checkers.tap.h			= input_check_pressed(inputs.k_H		, wich_player, _dt);
+		input_checkers.tap.s1			= input_check_pressed(inputs.k_S1		, wich_player, _dt);
+		input_checkers.tap.s2			= input_check_pressed(inputs.k_S2		, wich_player, _dt);
+		input_checkers.tap.s3			= input_check_pressed(inputs.k_S3		, wich_player, _dt);
+		input_checkers.tap._pause		= input_check_pressed(inputs.k_pause	, wich_player);
+		//holds
+		input_checkers.hold.left		= input_check(inputs.k_left		, wich_player);
+		input_checkers.hold.right		= input_check(inputs.k_right	, wich_player);
+		input_checkers.hold.up			= input_check(inputs.k_up		, wich_player);
+		input_checkers.hold.down		= input_check(inputs.k_down		, wich_player);
+		input_checkers.hold.l			= input_check(inputs.k_L		, wich_player);
+		input_checkers.hold.m			= input_check(inputs.k_M		, wich_player);
+		input_checkers.hold.h			= input_check(inputs.k_H		, wich_player);
+		input_checkers.hold.s1			= input_check(inputs.k_S1		, wich_player);
+		input_checkers.hold.s2			= input_check(inputs.k_S2		, wich_player);
+		input_checkers.hold.s3			= input_check(inputs.k_S3		, wich_player);
+		input_checkers.hold._pause		= input_check(inputs.k_pause	, wich_player);
+		//release
+		input_checkers.release.left			= input_check_released(inputs.k_left	, wich_player);
+		input_checkers.release.right		= input_check_released(inputs.k_right	, wich_player);
+		input_checkers.release.up			= input_check_released(inputs.k_up		, wich_player);
+		input_checkers.release.down			= input_check_released(inputs.k_down	, wich_player);
+		input_checkers.release.l			= input_check_released(inputs.k_L		, wich_player);
+		input_checkers.release.m			= input_check_released(inputs.k_M		, wich_player);
+		input_checkers.release.h			= input_check_released(inputs.k_H		, wich_player);
+		input_checkers.release.s1			= input_check_released(inputs.k_S1		, wich_player);
+		input_checkers.release.s2			= input_check_released(inputs.k_S2		, wich_player);
+		input_checkers.release.s3			= input_check_released(inputs.k_S3		, wich_player);
+		input_checkers.release._pause		= input_check_released(inputs.k_pause	, wich_player);
+		//double
+		input_checkers.double.left			= input_check_double_pressed(inputs.k_left		, wich_player, _dt + 1);
+		input_checkers.double.right			= input_check_double_pressed(inputs.k_right		, wich_player, _dt + 1);
+		input_checkers.double.up			= input_check_double_pressed(inputs.k_up		, wich_player, _dt + 1);
+		input_checkers.double.down			= input_check_double_pressed(inputs.k_down		, wich_player, _dt + 1);
+		input_checkers.double.l				= input_check_double_pressed(inputs.k_L			, wich_player, _dt + 1);
+		input_checkers.double.m				= input_check_double_pressed(inputs.k_M			, wich_player, _dt + 1);
+		input_checkers.double.h				= input_check_double_pressed(inputs.k_H			, wich_player, _dt + 1);
+		input_checkers.double.s1			= input_check_double_pressed(inputs.k_S1		, wich_player, _dt + 1);
+		input_checkers.double.s2			= input_check_double_pressed(inputs.k_S2		, wich_player, _dt + 1);
+		input_checkers.double.s3			= input_check_double_pressed(inputs.k_S3		, wich_player, _dt + 1);
+		input_checkers.double._pause		= input_check_double_pressed(inputs.k_pause		, wich_player);	
+	}
 }
 
 //create bounding box
@@ -2248,273 +2255,317 @@ function bbox_instance_place(posx, posy, obj_col){
 }
 
 #region Functions indeed
+
 #region training mode
-/*
-function training_settings(){
-	enemy_current = match_controller.player_one.current_attack;
-	if enemy_current != noone{
-		if enemy_current.animation != match_controller.player_one.sprite_index {
-			enemy_current = noone;
-		}
-	}
+
 	function switch_stance(){
 		switch(match_controller.training_settings[? "Block Stance"]){
-								case 0:
-									keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									break;
-								case 1:
-									keyboard_key_press(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									break;
-								case 2:
-									if place_meeting(x, y, hitbox_obj) {
-										var frame_block = choose(0, 1);
-										if frame_block == 0 {
-											keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value); 
-										}
-										else{
-											keyboard_key_press(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-										}
-									}
-									break;
-								case 3:
-									if !variable_instance_exists(self, "hitbox_bloc"){
-										var hitbox_bloc = blc_types.mid;
-									}
-									if enemy_current != noone{
-										//hboxs
-										var boxes = array_length(enemy_current.hboxs);
-										for (var i = 0; i < boxes; i += 1){
-											if (
-											match_controller.player_one.image_index < enemy_current.hboxs[i].create + enemy_current.hboxs[i].hbox.duration
-											){
-												hitbox_bloc = enemy_current.hboxs[i].hbox.bloc;
-												break;
-											}
-										}
-									}
-									//
-									if hitbox_bloc == blc_types.ovh {
-										keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value); 
-									}
-									else{
-										keyboard_key_press(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									}
-									break;
-								default:
-									keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									break;
-							}
-	}
-	function switch_stance_parry(){
-		if !variable_instance_exists(self, "hitbox_bloc"){
-			var hitbox_bloc = blc_types.mid;
-		}
-		if !variable_instance_exists(self, "parry_time"){
-			var parry_time = false;
-		}
-		if enemy_current != noone{
-			//hboxs
-			var boxes = array_length(enemy_current.hboxs);
-			for (var i = 0; i < boxes; i += 1){
-				if (
-				match_controller.player_one.image_index < enemy_current.hboxs[i].create and
-				match_controller.player_one.image_index > enemy_current.hboxs[i].create - 5
-				){
-					hitbox_bloc = enemy_current.hboxs[i].hbox.bloc;
-					parry_time = true;
-					
+			case 0:
+				if (input_checkers.hold.down == true){
+					input_checkers.hold.down = false;
 				}
-			}
-		}
-		switch(match_controller.training_settings[? "Block Stance"]){
-								case 0:
-									keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									break;
-								case 1:
-									keyboard_key_press(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									break;
-								case 2:
-									if place_meeting(x, y, hitbox_obj) {
-										var frame_block = choose(0, 1);
-										if frame_block == 0 {
-											keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value); 
-										}
-										else{
-											keyboard_key_press(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-										}
-									}
-									break;
-								case 3:
-									if hitbox_bloc != blc_types.low {
-										keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value); 
-									}
-									else{
-										keyboard_key_press(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									}
-									break;
-								default:
-									keyboard_key_release(input_binding_get("down_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-									break;
-							}
-		if parry_time == true and state == states.block and bars.HitstunBar.actual <= 0 {//
-			if input_check("down_p2", 2){
-				sprite_index = extras.parry.animations.low;
-			}
-			else{
-				sprite_index = extras.parry.animations.high;
-			}
-			state = states.parry;
-			parry_time = false;
-		}
-	}
-	
-	if global.training_mode == true and wich_player == 2 {
-			//input_player_source_set(INPUT_SOURCE.NONE, 2)
-		if match_controller.training_settings[? "Control"] != 0 {
-			input_clear_momentary(true)
-			//input_consume(all, 2)
-			switch(match_controller.training_settings[? "Control"]){
-				case 1:
-					switch(match_controller.training_settings[? "Block"]){
-						case 3:
-							keyboard_key_press(input_binding_get("blc_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-							if extras.parry.can {
-								switch_stance_parry()
-							}
-							break;
-						case 2:
-							p_bloc.active = true
-							p_bloc.duration = 10;
-							p_bloc.cooldown = 0;
-						case 1:
-							switch_stance();
-							keyboard_key_press(input_binding_get("blc_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-							break;
-						default:
-						break;
-					}
-					switch(match_controller.training_settings[? "Grab parry"]){
-						case 1:
-							if !variable_instance_exists(self, "hitbox_bloc"){
-								var hitbox_bloc = blc_types.mid;
-							}
-							if enemy_current != noone{
-								var boxes = array_length(enemy_current.hboxs);
-								if boxes > 0 {
-									if (
-											match_controller.player_one.image_index < enemy_current.hboxs[0].create + 2 and
-											match_controller.player_one.image_index > enemy_current.hboxs[0].create - 2
-									){
-										hitbox_bloc = enemy_current.hboxs[0].hbox.bloc;
-									}
-								}
-							}
-							
-							if hitbox_bloc == blc_types.grb {
-								keyboard_key_press(input_binding_get("grb_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value); 
-							}
-							else{
-								keyboard_key_release(input_binding_get("grb_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-							}
-							break;
-						case 2:
-							var tech = choose(true, false);
-							if state == states.grab and sprite_index == animations.hitstun and tech {
-								keyboard_key_press(input_binding_get("grb_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-							}
-							else{
-								keyboard_key_release(input_binding_get("grb_p2", INPUT_SOURCE.KEYBOARD_AND_MOUSE , 2).value);
-							}
-							break;
-						default: break;
-					}
-					switch(match_controller.training_settings[? "Inst. Recovery"]){
-						case 1:
-							if state == states.knockdown {
-								if (bars.HitstunBar.actual < 60 and image_index <= 6 and bars.HealthBar.actual > 0){
-									bars.HitstunBar.kdwn = 0
-									image_index = -1
-									bars.HitstunBar.actual = 0
-									state = states.kdown_recovery
-								}
-							}
-							break;
-						case 2:
-							var choosing = choose(0, 1);
-							if choosing == 1 {
-								if state == states.knockdown {
-									if (bars.HitstunBar.actual < 60 and image_index <= 6 and bars.HealthBar.actual > 0){
-										bars.HitstunBar.kdwn = 0
-										image_index = -1
-										bars.HitstunBar.actual = 0
-										state = states.kdown_recovery
-									}
-								}
-							}
-							break;
-						default :
-							break;
-					}
-					if should_reverse == true and bars.HitstunBar.actual == 0 and (state == states.idle or state == states.block) {
-						switch(match_controller.training_settings[? "Recovery"]){
-							case 1:
-								if should_reverse == true and prot = protections.nothing{
-									//state = states.idle;
-									image_index = -1
-									if bbox_collision_function(x, y + 1){
-										functionAttackStart(attacks.n_tilt, states.normal_atack);
-									}
-									else{
-										functionAttackStart(attacks.n_air, states.normal_atack);
-									}
-									should_reverse = false;
-								}
-								break;
-							case 2:
-								if  should_reverse == true and prot = protections.nothing{
-									//state = states.idle;
-									image_index = -1
-									if bbox_collision_function(x, y + 1){
-										functionAttackStart(attacks.n_u_spe, states.special_atack);
-									}
-									else{
-										functionAttackStart(attacks.a_u_spe, states.special_atack);
-									}
-									should_reverse = false;
-								}
-								break;
-							case 3:
-								if  should_reverse == true and prot = protections.nothing{
-									//state = states.idle;
-									image_index = -1
-									if bbox_collision_function(x, y + 1){
-										functionAttackStart(attacks.super_n, states.super_atack);
-									}
-									else{
-										functionAttackStart(attacks.super_a, states.super_atack);
-									}
-									should_reverse = false;
-								}
-								break;
-							default: break;
+				break;
+			case 1:
+				if (input_checkers.hold.down == false){
+					input_checkers.hold.down = true;
+				}
+				break;
+			case 2:
+				if place_meeting(x, y, hitbox_obj) {
+					var frame_block = choose(0, 1);
+					if frame_block == 0 {
+						if (input_checkers.hold.down == true){
+							input_checkers.hold.down = false;
 						}
 					}
-					//
-					break;
-				case 2:
-					break;
-			}
+					else{
+						if (input_checkers.hold.down == false){
+							input_checkers.hold.down = true;
+						}
+					}
+				}
+				break;
+			case 3:
+				if !variable_instance_exists(self, "hitbox_bloc"){
+					hitbox_bloc = blc_types.mid;
+				}
+				if enemy_current != noone {
+					//hboxs
+					var boxes = array_length(enemy_current.hboxs);
+					for (var i = 0; i < boxes; i += 1){
+						if (
+						match_controller.player_one.image_index < enemy_current.hboxs[i].create + enemy_current.hboxs[i].hbox.duration
+						and match_controller.player_one.image_index > enemy_current.hboxs[i].create - 5
+						){
+							hitbox_bloc = enemy_current.hboxs[i].hbox.bloc;
+							break;
+						}
+					}
+				}
+				//
+				if hitbox_bloc == blc_types.ovh {
+					if (input_checkers.hold.down == true){
+						input_checkers.hold.down = false;
+					}
+				}
+				else{
+					if (input_checkers.hold.down == false){
+						input_checkers.hold.down = true;
+					}
+				}
+				break;
+			default:
+				if (input_checkers.hold.down == true and should_reverse != true){
+					input_checkers.hold.down = false;
+				}
+				break;
 		}
 	}
-	else{
-		input_clear_momentary(false)
-		keyboard_key_release(vk_anykey);
+
+	function training_settings(){
+	    var ts = match_controller.training_settings;
+	    var p1 = match_controller.player_one;
+
+		var blc = "left";
+		
+		if match_controller.x < x {
+			blc = "right";
+		}
+
+	    var control  = ts[? "Control"];
+	    var block    = ts[? "Block"];
+	    var grabPar  = ts[? "Grab tech"];
+	    var instRec  = ts[? "Kndwn recovery"];
+	    var recovery = ts[? "Recovery"];
+	    var burst = ts[? "Humanity Burst"];
+		
+		var allow_block = (recovery == 0 || !should_reverse);
+		
+		enemy_current = p1.current_attack;
+		
+	    if (enemy_current != noone &&
+	        enemy_current.animation != p1.sprite_index)
+	    {
+	        enemy_current = noone;
+	    }
+		
+		var boxes = 0;
+		if enemy_current != noone {
+			boxes = array_length(enemy_current.hboxs);
+		}
+		
+		switch (block)
+	    {
+	        case 3: // shield
+				input_checkers.hold.h = false;
+				input_checkers.hold.m = false;
+				input_checkers.tap.h = false;
+				input_checkers.tap.m = false;
+	            switch_stance();
+				if (allow_block){
+					
+					for (var i = 0; i < boxes; i += 1){
+						if (
+						match_controller.player_one.image_index < enemy_current.hboxs[i].create + enemy_current.hboxs[i].hbox.duration
+						and match_controller.player_one.image_index > enemy_current.hboxs[i].create - 5
+						){
+						input_checkers.hold.h = true;
+						input_checkers.hold.m = true;
+						input_checkers.tap.h = true;
+						input_checkers.tap.m = true;
+						input_checkers.tap.l = false;
+						}
+					}
+					if distance_to_object(hitbox_obj) < 16 {
+						input_checkers.hold.h = true;
+						input_checkers.hold.m = true;
+						input_checkers.tap.h = true;
+						input_checkers.tap.m = true;
+						input_checkers.tap.l = false;
+					}
+				}
+	        break;
+
+	        case 2: // Perfect block
+	            p_bloc.active = true;
+	            p_bloc.duration = 10;
+	            p_bloc.cooldown = 0;
+				variable_struct_set(input_checkers.hold, blc, false);
+	            if (allow_block)
+	            {
+	                switch_stance();
+					for (var i = 0; i < boxes; i += 1){
+						if (
+						match_controller.player_one.image_index < enemy_current.hboxs[i].create + enemy_current.hboxs[i].hbox.duration
+						and match_controller.player_one.image_index > enemy_current.hboxs[i].create - 5
+						){
+							variable_struct_set(input_checkers.hold, blc, true);
+						}
+					}
+					if distance_to_object(hitbox_obj) < 16 {
+						variable_struct_set(input_checkers.hold, blc, true);
+					}
+	            }
+				break;
+
+	        case 1: // Normal block
+	            p_bloc.active = false;
+	            p_bloc.duration = -100;
+	            p_bloc.cooldown = 10000;
+				variable_struct_set(input_checkers.hold, blc, false);
+	            if (allow_block)
+	            {
+	                switch_stance();
+					for (var i = 0; i < boxes; i += 1){
+						if (
+						match_controller.player_one.image_index < enemy_current.hboxs[i].create + enemy_current.hboxs[i].hbox.duration
+						and match_controller.player_one.image_index > enemy_current.hboxs[i].create - 5
+						){
+							variable_struct_set(input_checkers.hold, blc, true);
+						}
+					}
+					if distance_to_object(hitbox_obj) < 16 {
+						variable_struct_set(input_checkers.hold, blc, true);
+					}
+	            }
+				break;
+	    }
+		
+		switch (grabPar) {
+        case 1:
+            if (state == states.grab &&
+                sprite_index == animations.hitstun &&
+                choose(true, false))
+            {
+                input_checkers.tap.l = true;
+                input_checkers.tap.m = true;
+            }
+            else
+            {
+                input_checkers.tap.l = false;
+                input_checkers.tap.m = false;
+            }
+        break;
+        case 2: 
+            var bloc_type = 0;
+
+            if (enemy_current != noone)
+            {
+                boxes = array_length(enemy_current.hboxs);
+                if (boxes > 0)
+                {
+                    var h = enemy_current.hboxs[0];
+                    if (p1.image_index < h.create + 2 &&
+                        p1.image_index > h.create - 2)
+                    {
+                        bloc_type = h.hbox.bloc;
+                    }
+                }
+            }
+
+            if (bloc_type == blc_types.grb) {
+                input_checkers.tap.l = true;
+                input_checkers.tap.m = true;
+			}
+            else {
+                input_checkers.tap.l = false;
+                input_checkers.tap.m = false;
+			}
+        break;
+    }
+		
+		var can_inst_recover =
+	        (state == states.knockdown and
+			bars.HitstunBar.kdwn == 1 and
+	        image_index <= 6) or (state == states.hitstun and bars.HitstunBar.kdwn == 1)
+
+	    switch (instRec)
+	    {
+	        case 2:
+	            input_checkers.tap.l = can_inst_recover;
+	        break;
+
+	        case 1:
+	            if (choose(false, true)){
+	                input_checkers.tap.l = can_inst_recover;
+				}
+	            else {
+	                input_checkers.tap.l = false;
+				} 
+	        break;
+	    }
+	
+		switch (recovery) {
+	        case 1: // Attack reversal
+	            if (should_reverse)
+	            {
+	                input_checkers.tap.l = true;
+	            }
+	            else
+	            {
+	                 input_checkers.tap.l = false;
+	            }
+	        break;
+
+	        case 2: // Special 1 reversal
+	            if (should_reverse)
+	            {
+	                input_checkers.tap.s1 = true;
+	            }
+	            else
+	            {
+	                input_checkers.tap.special = false;
+	            }
+	        break;
+
+	        case 3: // Special 2 reversal
+	            if (should_reverse)
+	            {
+	                input_checkers.tap.s2 = true;
+	            }
+	            else
+	            {
+	                input_checkers.tap.s2 = false;
+	            }
+	        break;
+
+	        case 4: // Special 2 reversal
+	            if (should_reverse)
+	            {
+	                input_checkers.tap.s3 = true;
+	            }
+	            else
+	            {
+	                input_checkers.tap.s3 = false;
+	            }
+	        break;
+			
+	        default:
+	            should_reverse = false;
+	        break;
+			}
+	
+		var can_burst = (state == states.hitstun) 
+		switch (burst)
+	    {
+	        case 2:
+	            input_checkers.tap.m = can_burst;
+	            input_checkers.tap.h = can_burst;
+	        break;
+
+	        case 1:
+	            if (choose(false, true)){
+		            input_checkers.tap.m = can_burst;
+		            input_checkers.tap.h = can_burst;
+				}
+	            else {
+	                input_checkers.tap.m = false;
+		            input_checkers.tap.h = false;
+				} 
+	        break;
+	    }
 	}
-}
 
-training_settings()
-
-*/
 	function GetFrameData(){
 		if (wich_player == 1) {
 			var _enemy = match_controller.player_two;
@@ -2540,8 +2591,6 @@ training_settings()
 			_enemy.frame_data = frame_data*-1;
 		}
 	}
-
-	
 #endregion
 
 function InspirationGain(){

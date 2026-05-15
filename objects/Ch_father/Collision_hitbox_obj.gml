@@ -309,7 +309,7 @@ function did_he_blocked(){
 		if collision_function(self.x, self.y+1, pass){
 			switch(_hbox.bloc){
 				case blc_types.low:
-					 if input_check(inputs.k_down, wich_player){
+					 if input_checkers.hold.down {
 						if p_bloc.active {
 							match_controller.modify_blodlust(4, wich_player);
 							bars.Humanity.actual += 4;
@@ -329,7 +329,7 @@ function did_he_blocked(){
 					 }
 					 break;
 				case blc_types.ovh:
-					 if !input_check(inputs.k_down, wich_player){
+					 if !input_checkers.hold.down{
 						if p_bloc.active{
 							match_controller.modify_blodlust(4, wich_player);
 							bars.Humanity.actual += 4;

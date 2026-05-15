@@ -83,11 +83,6 @@ switch(selected) {
 		room_goto(CharSelect_training)
 		selected = "";
 		break;
-	case "Stage Select":
-		global.training_mode = true;
-		room_goto(StageSelect);
-		selected = "";
-		break;
 	case "Resume":
 		if instance_exists(match_controller){
 			with(match_controller){
@@ -101,9 +96,9 @@ switch(selected) {
 	case "Recovery":
 	case "Block":
 	case "Block Stance":
-	case "Grab parry":
-	case "Inst. Recovery":
-	case "Dir. Influence":
+	case "Grab tech":
+	case "Kndwn recovery":
+	case "Humanity Burst":
 	case "Vel. Influence":
 	case "Control":
 		var choices = options[actual_menu_screen][cursor].slider;

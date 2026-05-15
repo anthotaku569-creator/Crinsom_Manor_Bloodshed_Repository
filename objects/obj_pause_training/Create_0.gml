@@ -1,5 +1,5 @@
 cursor = 0;
-max_options = 4;
+max_options = 3;
 actual_menu_screen = 0;
 selected = "";
 //Normal Menu
@@ -11,9 +11,6 @@ options[0] = [
 		name: "Character Select"
 	},
 	{
-		name: "Stage Select"
-	},
-	{
 		name: "Resume"
 	}
 ]
@@ -21,37 +18,37 @@ options[0] = [
 options[1] = [
 	{
 		name: "Recovery",
-		slider: ["Noone", "N. Atck", "Up Spe", "P.I.", "Rec01", "Rec02", "Rec03", "Random"]
+		slider: ["Noone", "Light attack", "Special 1", "Special 2", "Special 3"]
 	},
 	{
 		name: "Block",
-		slider: ["Noone", "Normal", "Perfect", "Parry"]
+		slider: ["Noone", "Normal", "Perfect", "Shield"]
 	},
 	{
 		name: "Block Stance",
 		slider: ["Stand", "Crouch", "Random", "Perfect"]
 	},
+	{
+		name: "Grab tech",
+		slider: ["Never", "Random", "Always"]
+	}
 ]
 //CPU On Hit
 options[2] = [
 	{
-		name: "Inst. Recovery",
-		slider: ["Noone", "Random", "Perfect"]
+		name: "Kndwn recovery",
+		slider: ["Never", "Random", "Always"]
 	},
 	{
-		name: "Dir. Influence",
-		slider: ["Noone", "Random", "Up", "Down", "Left", "Right", "In", "Out"]
-	},
-	{
-		name: "Vel. Influence",
-		slider: ["Noone", "Random", "Up", "Down", "Left", "Right", "In", "Out"]
+		name: "Humanity Burst",
+		slider: ["Never", "Random", "Always"]
 	}
 ]
 //Input Recordings
 options[3] = [
 	{
 		name: "Control",
-		slider: ["Player2", "CPU", "Rec01", "Rec02", "Rec03", "Random"]
+		slider: ["Player2", "CPU", "--WIP--"]
 	},
 	{
 		name: "Delay",

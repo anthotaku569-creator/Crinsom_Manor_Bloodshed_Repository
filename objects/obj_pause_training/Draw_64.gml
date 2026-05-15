@@ -47,9 +47,9 @@ if actual_menu_screen > -1  and actual_menu_screen < 4 {
 			case "Recovery":
 			case "Block":
 			case "Block Stance":
-			case "Grab parry":
-			case "Inst. Recovery":
-			case "Dir. Influence":
+			case "Grab tech":
+			case "Kndwn recovery":
+			case "Humanity Burst":
 			case "Vel. Influence":
 			case "Control":
 				draw_text_ext_transformed(
