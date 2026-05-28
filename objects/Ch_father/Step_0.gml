@@ -603,11 +603,11 @@ switch(state){
 			bars.HitstunBar.actual = 0;
 			stt_effects.paralysis = 0;
 			
-			if sprite_index == animations.thumble{
+			if sprite_index == animations.thumble {
 				jumpFunction(6)
 				prot = protections.full;
 				image_index = -1
-				state = states.kdown_recovery
+				state = states.kdown_recovery;
 				bars.HitstunBar.kdwn = 0
 				bars.HitstunBar.actual = 0
 			}
@@ -640,6 +640,7 @@ switch(state){
 				image_index = bars.HitstunBar.actual;
 				if (!check_collision) {
 					sprite_index = animations.thumble;
+					show_debug_message("Thumbling down ")
 					scaling.kbck = scaling.kbck*1.2
 					bars.HitstunBar.kdwn = 1;
 				}
@@ -650,12 +651,16 @@ switch(state){
 			if (sprite_index == animations.thumble
 				and bbox_collision_function (self.x, self.y + 1, pass)
 				and vely >= 0){
-					image_index = -1
-					state = states.knockdown
+					image_index = 0;
+					image_speed = 1;
+					sprite_index = animations.kdown.light
+					show_debug_message("Should knock down: bars.HitstunBar.kdwn: " + string(bars.HitstunBar.kdwn))
 					scaling.dmg = scaling.dmg*1.5
+					show_debug_message("image index " + string(image_index) +"/" + string(image_number))
 					if (scaling.enemy.current_attack != scaling.enemy.attacks.empty){
 						scaling.enemy = noone
 					}
+					state = states.knockdown
 			}
 		}
 		else {
@@ -682,11 +687,14 @@ switch(state){
 		run_framedata = 0;
 		pass = false;
 		
-		if scaling.enemy!= noone{
+		if scaling.enemy!= noone {
 			if scaling.enemy.state == states.idle{
 				scaling.attack = noone;
 			}
 		}
+		show_debug_message("sprite index " + sprite_get_name(sprite_index))
+		show_debug_message("image index " + string(image_index))
+		show_debug_message("bars.HitstunBar.kdwn " + string(bars.HitstunBar.kdwn))
 		reduceVelocity()
 		
 		if (image_index > 15) {
